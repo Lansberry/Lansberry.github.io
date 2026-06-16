@@ -398,6 +398,144 @@
 
     /* date stamp */
     #last-updated { color: var(--neon-blue); }
+
+    /* ══════════════════════════════ TAB NAV ══════════════════════════════ */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      background: #000011;
+      border-bottom: 2px solid var(--neon-blue);
+      padding: 0 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .tab-btn {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: #555;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 10px 22px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: color 0.1s, border-color 0.1s;
+      margin-bottom: -2px;
+    }
+
+    .tab-btn:hover { color: var(--neon-blue); }
+    .tab-btn.active {
+      color: var(--neon-blue);
+      border-bottom-color: var(--neon-blue);
+      text-shadow: 0 0 8px var(--neon-blue);
+    }
+
+    /* ══════════════════════════════ ABOUT TAB ══════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .about-hero {
+      grid-column: 1 / -1;
+    }
+
+    .impact-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .impact-stat {
+      background: rgba(0,0,80,0.6);
+      border: 1px solid var(--neon-blue);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .impact-number {
+      font-family: 'VT323', monospace;
+      font-size: 28px;
+      color: var(--neon-yellow);
+      text-shadow: 0 0 8px var(--neon-yellow);
+      display: block;
+      line-height: 1;
+    }
+
+    .impact-label {
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .accolade-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .accolade-list li {
+      font-size: 13px;
+      color: #ddd;
+      padding: 6px 0 6px 22px;
+      border-bottom: 1px dotted #112;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .accolade-list li:last-child { border-bottom: none; }
+
+    .accolade-list li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--neon-green);
+      font-size: 11px;
+    }
+
+    .accolade-list li strong {
+      color: var(--neon-yellow);
+    }
+
+    .quote-block {
+      background: rgba(0,0,50,0.4);
+      border-left: 4px solid var(--neon-pink);
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 13px;
+      color: #ddd;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .quote-block cite {
+      display: block;
+      margin-top: 6px;
+      color: var(--neon-pink);
+      font-style: normal;
+      font-size: 12px;
+    }
+
+    .cert-badge {
+      display: inline-block;
+      background: #001133;
+      border: 1px solid var(--neon-blue);
+      color: var(--neon-blue);
+      font-size: 11px;
+      padding: 3px 8px;
+      margin: 3px 3px 3px 0;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
@@ -407,7 +545,7 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.16.2026 v3</span></span>
+    <span>UPDATED: <span id="last-updated">06.16.2026 v4</span></span>
     <span>VISITORS: <span class="visitor-counter">004237</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -430,7 +568,14 @@
   </span>
 </div>
 
-<!-- ══════════════════════════════ MAIN GRID ══════════════════════════════ -->
+<!-- ══════════════════════════════ TAB NAV ══════════════════════════════ -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('tracker', this)">[ TRACKER ]</button>
+  <button class="tab-btn" onclick="showTab('about', this)">[ ABOUT NICK ]</button>
+</nav>
+
+<!-- ══════════════════════════════ TAB: TRACKER ══════════════════════════════ -->
+<div id="tab-tracker">
 <div class="main-grid">
 
   <!-- ══ LEFT COLUMN ══ -->
@@ -464,7 +609,7 @@
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Duplicate query trigger — 5 of 8 queries fire twice per click</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> 5 GTM fields never queried: QT_Net_Impact__c, Revenue_Tier__c, Current_MRR__c, Targeted_Persona__c, DISC_Profile__c</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Wire newOppsLookup + newOppsTeamLookup queries in Retool UI</li>
-            <li><strong style="color:#aaa;font-size:12px;">P3</strong> SF write-back after Meeting Quality AI (tabled — Ben scope)</li>
+            <li><strong style="color:#aaa;font-size:12px;">P3</strong> SF write-back after Meeting Quality AI (tabled — scope TBD)</li>
             <li><strong style="color:#aaa;font-size:12px;">P3</strong> SOQL-level AVP filtering for aggregate KPI stats (~10 SOQLs)</li>
             <li><strong style="color:#aaa;font-size:12px;">P3</strong> Activity data bug: Nordson/F&M meetings missing from AI analysis</li>
             <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state</li>
@@ -510,22 +655,20 @@
           </ul>
         </div>
 
-        <!-- COMCAST URGENT -->
-        <div class="project-card status-fire">
+        <!-- COMCAST — DONE -->
+        <div class="project-card status-tabled" style="opacity:0.65;">
           <div class="project-name">
-            <span class="pulse orange"></span>
             Comcast Lead Submission Flow Fix
-            <span class="status-badge badge-fire">🔥 URGENT</span>
+            <span class="status-badge badge-active">✓ DONE</span>
           </div>
           <div class="project-desc">
-            Tim flagged: solution data may not be populating and records are erroring on submission. Lost leads + damaged named partner relationship. Externally visible. Also: Comcast dashboard updates needed (funnel &amp; leads, naming scheme in SF/Partner Account in QT).
+            Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.
           </div>
-          <div class="project-next">Pull error logs — scope unknown until we see what's failing. Michael Cruz + Nick. Need running early next week.</div>
           <ul class="todo-list">
-            <li>Pull Comcast lead submission error logs from SF</li>
-            <li>Fix solution data population issue</li>
-            <li>Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
-            <li>Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
+            <li class="done">Pull Comcast lead submission error logs from SF</li>
+            <li class="done">Fix solution data population issue</li>
+            <li class="done">Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
+            <li class="done">Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
           </ul>
         </div>
 
@@ -632,9 +775,9 @@
             <span class="status-badge badge-tabled">TABLED — PENDING SCOPE</span>
           </div>
           <div class="project-desc">
-            Three-part initiative: (1) /expedient-meeting-analyzer skill for transcript analysis; (2) 11 SF Event write-back fields for AI scoring (Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.); (3) Sandler coaching output feeding AVP review. Tabled pending Ben Schecter scoping what to track.
+            Three-part initiative: (1) /expedient-meeting-analyzer skill for transcript analysis; (2) 11 SF Event write-back fields for AI scoring (Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.); (3) Sandler coaching output feeding AVP review. Tabled pending leadership scope on what to track.
           </div>
-          <div class="project-blocker">Ben Schecter — must scope what to track/report before building write-back</div>
+          <div class="project-blocker">Tabled — needs scope definition on what to track/report before building write-back</div>
           <ul class="todo-list">
             <li>11 Event fields spec ready (see project_sandler_meeting_fields.md memory)</li>
             <li>Meeting_Pain_Level__c = most important for AVP coaching (L1/L2/L3 Sandler depth)</li>
@@ -653,7 +796,7 @@
           <div class="project-desc">
             Add Help Text, Description, Data Owner, Field Usage=Active, Data Sensitivity to all Expedient custom fields. Labeling ONLY — no FLS changes. Brief: salesforce/SF-Field-Metadata-Update-Project.md. Pilot = Opportunity object (~30 fields).
           </div>
-          <div class="project-next">Start after Dashboard Phase 1 kickoff. Need Ben/Michael Cruz/Allison to confirm data owner mapping.</div>
+          <div class="project-next">Start after Dashboard Phase 1 kickoff. Need Michael Cruz/Allison to confirm data owner mapping.</div>
           <div class="project-blocker">Confirm which L1 Pain field is being deprecated before deploy</div>
         </div>
 
@@ -665,18 +808,17 @@
           <div class="project-desc">
             11 SF Event fields for AI meeting analysis write-back from rAIdarr. PATCH /services/data/v59.0/sobjects/Event/{Id}. Key field: Meeting_Pain_Level__c (Sandler L1/L2/L3). Most important for AVP coaching reports.
           </div>
-          <div class="project-blocker">Ben Schecter — needs to scope what to track/report before building</div>
+          <div class="project-blocker">Tabled — needs scope definition before building</div>
         </div>
 
-        <div class="project-card status-blocked">
+        <div class="project-card status-tabled" style="opacity:0.65;">
           <div class="project-name">
             SF Account Type: Former Client Automation
-            <span class="status-badge badge-blocked">BLOCKED</span>
+            <span class="status-badge badge-tabled">✓ DONE — ON STANDBY</span>
           </div>
           <div class="project-desc">
-            SMC → SF: when Client/Existing Customer goes inactive → becomes Former Client. Logic confirmed. Allison Betts owns SF side, Marcel Mejia (IS) owns SMC trigger. Also: consolidate "Existing Customer" → "Client".
+            Nick's side complete. Logic confirmed, SMC trigger deployed by IS (Marcel Mejia). IS still cleaning up edge cases — on standby if they need anything.
           </div>
-          <div class="project-blocker">⚠ INVESTIGATE: Michael Cruz shows 100% on "Previous Client" in 15Five as of Q2 — is the SMC trigger actually done? Check with Marcel/Michael before closing.</div>
         </div>
 
         <div class="project-card status-parked">
@@ -987,10 +1129,6 @@
               <td class="blocker-items">Collaborative Forecasting · Budget_Target__c object · PSG for MCP Server · Contract date field confirm · Tenured__c fallback confirm</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Ben Schecter</span></td>
-              <td class="blocker-items">Sandler meeting write-back scope · L1 Pain field deprecation confirm</td>
-            </tr>
-            <tr>
               <td><span class="owner-name">Anita Osborne</span></td>
               <td class="blocker-items">Confirm May $308k EOM figure source (GoTransverse vs SF)</td>
             </tr>
@@ -1013,7 +1151,6 @@
             <tr>
               <td><span class="owner-name">Nick (YOU)</span></td>
               <td class="blocker-items">
-                <span class="blink" style="color:var(--exp-red);">⚠</span> Revoke leaked GitHub PAT NOW<br>
                 Fix home dir git tree (~/.git)<br>
                 Rotate .envrc ES_API_KEY
               </td>
@@ -1096,11 +1233,6 @@
         <span class="panel-title">:: THIS WEEK'S FOCUS ::</span>
       </div>
       <div class="panel-body">
-        <div class="priority-row">
-          <span class="prio-name">🔴 Revoke GitHub PAT</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">DO NOW</span>
-        </div>
         <div class="priority-row">
           <span class="prio-name">🔴 Chase Michael Cruz (IS)</span>
           <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
@@ -1234,6 +1366,156 @@
   </div>
 </div>
 
+</div><!-- end main-grid -->
+</div><!-- end tab-tracker -->
+
+<!-- ══════════════════════════════ TAB: ABOUT NICK ══════════════════════════════ -->
+<div id="tab-about" style="display:none;">
+<div class="about-grid">
+
+  <!-- HERO ROW -->
+  <div class="panel about-hero">
+    <div class="panel-header">
+      <span class="pulse orange"></span>
+      <span class="panel-title" style="color:var(--neon-pink);text-shadow:0 0 8px var(--neon-pink);">:: PERSONNEL FILE :: NICK LANSBERRY ::</span>
+    </div>
+    <div class="panel-body">
+      <div style="display:flex;gap:24px;align-items:flex-start;">
+        <div style="flex:1;">
+          <div style="font-family:'VT323',monospace;font-size:30px;color:var(--neon-yellow);margin-bottom:4px;text-shadow:0 0 8px var(--neon-yellow);">REVENUE ANALYTICS MANAGER</div>
+          <div style="font-size:13px;color:#bbb;line-height:1.7;margin-bottom:14px;">
+            The person who makes the GTM engine run at Expedient. When reps need clean pipeline data, when leadership needs a dashboard that isn't 48 Excel tabs, when a partner deal needs proper attribution, when AI could save 45 minutes of manual prep before every call — that's Nick's territory.
+            <br><br>
+            10 years at Expedient. Revenue Analytics Manager (April 2025–present). Go-to-Market Operations Manager before that (2022–2025). Built the partner program from scratch. Built the attribution model from scratch. Built the AI workflow stack from scratch. MBA from Katz (Pitt, 2024), Salesforce certified, and deep enough in Retool + Claude that it's become a competitive advantage for the org.
+          </div>
+          <div class="impact-box">
+            <div class="impact-stat">
+              <span class="impact-number">$453K</span>
+              <span class="impact-label">Partner-Influenced MRR (cumulative, 338 opps)</span>
+            </div>
+            <div class="impact-stat">
+              <span class="impact-number">$177K</span>
+              <span class="impact-label">New Logo MRR influenced in 2025 (14 net-new logos)</span>
+            </div>
+            <div class="impact-stat">
+              <span class="impact-number">$148K</span>
+              <span class="impact-label">4-Year Cost Savings (RingLead consolidation)</span>
+            </div>
+            <div class="impact-stat">
+              <span class="impact-number">50+ hrs</span>
+              <span class="impact-label">Returned to reps per quarter (AI tools alone)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEFT: ACCOMPLISHMENTS -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="pulse"></span>
+      <span class="panel-title">:: ACCOMPLISHMENTS ::</span>
+    </div>
+    <div class="panel-body">
+      <div class="section-label">// BUILT THINGS THAT WORK</div>
+      <ul class="accolade-list">
+        <li><strong>3 production AI workflows</strong> running daily — SBR Generator, Pre-Meeting Planner, Post-Meeting Follow-Up. Pre-call research: 30–45 min → under 3 min. George Hamm says the SBR saves him ~1 hour per review.</li>
+        <li><strong>Complete Partner Portal rebuild</strong> — differentiated submission + routing flows for Named, ReBill, and Referral partner types. Live January 2026. 170+ active partners across 7 markets.</li>
+        <li><strong>rAIdarr (AVP Executive Review)</strong> — custom Retool React tool surfacing rep activity, pipeline health, Sandler meeting quality, ICP coverage, and partner contribution for weekly AVP review. Turned reporting sessions into decision sessions.</li>
+        <li><strong>ATAC automation framework</strong> — Salesforce flows, 6sense integrations, ICP scoring, meeting routing. The infrastructure behind $177K new logo MRR in 2025.</li>
+        <li><strong>Magellan attribution platform</strong> — first partner contribution model in company history. Adopted company-wide as the standard for revenue reporting.</li>
+        <li><strong>12 cross-functional demand programs</strong> — 2,976 unique prospects engaged, $461,684 in won MRR within 120 days.</li>
+        <li><strong>ICP tier auto-classification</strong> across 90,000+ accounts. ZoomInfo enrichment pipelines. RingLead deduplication. "The data is garbage" complaints: gone.</li>
+      </ul>
+
+      <div class="section-label" style="margin-top:14px;">// SAVED MONEY AND CLEANED HOUSE</div>
+      <ul class="accolade-list">
+        <li><strong>$148,378 saved over 4 years</strong> — identified 3-tool overlap (ZoomInfo + LeanData + Cloudingo running at ~$164K/yr), built the business case, mapped 60+ routing rules to the new platform, executed zero-disruption migration to RingLead.</li>
+        <li><strong>GTM stack rationalization</strong> — migrated from Outreach to Salesforce Sales Engagement, reducing tool sprawl and cost.</li>
+      </ul>
+
+      <div class="section-label" style="margin-top:14px;">// AWARDS + RECOGNITION</div>
+      <ul class="accolade-list">
+        <li><strong>LeanData Ops Star Account of the Year</strong> — national award. Featured case study presenter at LeanData's national Sales Kickoff. Redesigned 6QA Auto-Cadence into a scalable end-to-end process.</li>
+        <li><strong>Expedient Expy Award</strong> — Most Helpful Employee. Stepped into SF Administrator role during staffing gap, maintained platform continuity, contributed to full re-implementation.</li>
+        <li><strong>Expedient Leadership Cohort</strong> (2025–2026) — selected by leadership, completed all requirements.</li>
+        <li><strong>MBA, Katz School of Business (Pitt)</strong> — December 2024. Completed while working full-time in a cross-functional GTM ops leadership role.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT: WHAT NICK DOES + MANAGER QUOTES -->
+  <div style="display:flex;flex-direction:column;gap:16px;">
+
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse orange"></span>
+        <span class="panel-title">:: WHAT THIS ROLE ACTUALLY IS ::</span>
+      </div>
+      <div class="panel-body">
+        <div style="font-size:13px;color:#ccc;line-height:1.7;margin-bottom:12px;">
+          Revenue Analytics Manager is the title. The job is: own every system, data source, and automation that makes commercial decisions possible at Expedient — and then make it better.
+        </div>
+        <ul class="accolade-list">
+          <li><strong>GTM Strategy &amp; Architecture</strong> — partner program infrastructure, attribution modeling, ICP strategy, pipeline analytics across Sales, Marketing, Partner, and Finance</li>
+          <li><strong>Salesforce Administration</strong> — flows, data architecture, object design, security model, reporting, connected apps, integrations</li>
+          <li><strong>6sense Instance Ownership</strong> — intent scoring, campaign automation, buying group configuration, sales training, full platform migration</li>
+          <li><strong>AI/Automation Development</strong> — Retool + Claude API workflow design, production deployment, adoption measurement</li>
+          <li><strong>Revenue Analytics</strong> — Sigma dashboards, pipeline/forecast modeling, partner contribution analytics, self-service enablement</li>
+          <li><strong>Operating Rhythm</strong> — QBR and pipeline review infrastructure, AVP exec tooling, forecast cadence design</li>
+        </ul>
+        <div style="margin-top:12px;font-size:12px;color:#888;">Stack: Salesforce · 6sense · Retool · Sigma · RingLead · ZoomInfo · Pardot/Marketing Cloud · Claude API · MuleSoft (stakeholder)</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse" style="background:var(--neon-pink);box-shadow:0 0 6px var(--neon-pink);"></span>
+        <span class="panel-title" style="color:var(--neon-pink);text-shadow:0 0 8px var(--neon-pink);">:: WHAT OTHERS SAY ::</span>
+      </div>
+      <div class="panel-body">
+        <div class="quote-block">
+          "Your ability to translate complex technical challenges into tangible business value is a rare and highly valued skill. The AI-powered sales tools are a game-changer for those that leverage them. You learned Retool, designed, and built practical, production-grade solutions within two quarters."
+          <cite>— Jim Kothe, VP Revenue (Best Self Review 2026)</cite>
+        </div>
+        <div class="quote-block">
+          "The vendor consolidation to a single platform with ZI/RingLead is a standout achievement. You identified an opportunity, built the business case, and executed flawlessly, delivering significant, multi-year cost savings ($148K). This demonstrates a level of financial discipline and strategic thinking that has been needed in RevOps."
+          <cite>— Jim Kothe</cite>
+        </div>
+        <div class="quote-block">
+          "You seamlessly transitioned from Marketing to the RevOps team and were instrumental in providing new growth opportunities. The old cliché 'all ships rise' absolutely applies to the results of the team under your daily leadership."
+          <cite>— Jim Kothe</cite>
+        </div>
+        <div class="quote-block">
+          "Your willingness to take on new projects, learn new technologies, and to pivot on a minute's notice are a true testament to your adaptability."
+          <cite>— Jim Kothe</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">:: CERTIFICATIONS &amp; EDUCATION ::</span>
+      </div>
+      <div class="panel-body">
+        <span class="cert-badge">Salesforce Administrator (Feb 2022)</span>
+        <span class="cert-badge">Scrum Master Certified (Mar 2021)</span>
+        <span class="cert-badge">Lean Six Sigma White Belt</span>
+        <span class="cert-badge">LeanData Ops Star (National Award)</span>
+        <div style="margin-top:10px;font-size:12px;color:#aaa;line-height:1.7;">
+          <div><span style="color:var(--neon-yellow);">MBA</span> — Katz School of Business, University of Pittsburgh · Dec 2024</div>
+          <div><span style="color:var(--neon-yellow);">B.S. Business Administration</span> — Franklin University · Dec 2019</div>
+          <div style="margin-top:8px;color:#666;font-size:11px;">📍 Pittsburgh, PA · linkedin.com/in/nlansberry · trailblazer.me/id/nlansberry</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end right col -->
+
+</div><!-- end about-grid -->
+</div><!-- end tab-about -->
+
 <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
 <div class="footer-rainbow"></div>
 <footer class="site-footer">
@@ -1241,7 +1523,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 16, 2026 v2</span>
+    Last updated: <span style="color:var(--neon-green);">June 16, 2026 v4</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">GTM COMMAND CENTER 9000™</span>
     &nbsp;|&nbsp;
@@ -1261,5 +1543,13 @@
   </div>
 </footer>
 
+<script>
+  function showTab(name, btn) {
+    document.getElementById('tab-tracker').style.display = name === 'tracker' ? '' : 'none';
+    document.getElementById('tab-about').style.display = name === 'about' ? '' : 'none';
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+</script>
 </body>
 </html>

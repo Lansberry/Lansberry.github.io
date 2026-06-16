@@ -407,7 +407,7 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.16.2026 v2</span></span>
+    <span>UPDATED: <span id="last-updated">06.16.2026 v3</span></span>
     <span>VISITORS: <span class="visitor-counter">004237</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -417,15 +417,16 @@
 <!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
 <div class="alert-bar">
   <span class="marquee-inner">
+    🚨 SECURITY: jennifer.priddy@epedient.com (typo domain, never logged in) — deactivate NOW &nbsp;&nbsp;&nbsp;
     🚨 BLOCKER: Michael Cruz (IS) owns 4 prereqs for The Dashboard + MCP Server — chase this week &nbsp;&nbsp;&nbsp;
     ★★ rAIdarr P1: aiDealInspection still 504ing — Retool resource timeout (180s+) — escalate &nbsp;&nbsp;&nbsp;
     🔒 SF ORG SECURITY: 2 dormant EXTERNAL ADMINS active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
-    📊 OKR #2: Dashboard MVP due End of June — MISSED — Phase 1 not yet started &nbsp;&nbsp;&nbsp;
-    🤝 Tim Cooper: AVP/RPM Partner Dashboard in active build — Nutanix reporting + lead validation in scope &nbsp;&nbsp;&nbsp;
-    📋 38 open SF cases — review queue for closeable tickets &nbsp;&nbsp;&nbsp;
-    ⚠️ ZI/LISN: Q2 deadline passed — check status with Ben Gallo on LISN training &nbsp;&nbsp;&nbsp;
-    🔧 SF Account Type (Former Client): blocked — IS trigger owner unknown since Allison on mat leave &nbsp;&nbsp;&nbsp;
-    📁 SF Admin Queue: Enable Forecasting · Upload 2026 Quotas · Field Metadata · Expire Cases · Validated Partner Review &nbsp;&nbsp;&nbsp;
+    📊 OKR #2 (Revenue Dashboard): 15% complete per 15Five — Phase 1 not yet started — MISSED June deadline &nbsp;&nbsp;&nbsp;
+    📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% per 15Five · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
+    🗑 BULK CLOSE: Apex script ready to close 655 pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
+    ⚠️ INVESTIGATE: Michael Cruz shows "Previous Client" 100% in 15Five — is the SMC trigger actually done? &nbsp;&nbsp;&nbsp;
+    🤝 Tim Cooper: RPM Homepage 50% · Portal 3.0 scoped (100%) · VAR routing 100% &nbsp;&nbsp;&nbsp;
+    📁 SF Governance: 5 Retool Connected Apps → only 1 needed · Dead apps to decommission: Brainshark, Cloudingo ×4, SalesforceIQ ×2, Mediafly &nbsp;&nbsp;&nbsp;
   </span>
 </div>
 
@@ -495,13 +496,37 @@
         <div class="project-card status-active">
           <div class="project-name">
             <span class="pulse"></span>
-            Pre-Call / Post-Call Planner Updates
-            <span class="status-badge badge-active">IN PROGRESS</span>
+            Pre-Call / Post-Call Planner
+            <span class="status-badge badge-active">✓ LIVE — FEATURE WORK</span>
           </div>
           <div class="project-desc">
-            Updates to the Pre-Call Planner and Post-Call workflows in retool/workflows/Revenue Operations/. SF Case #15 (Nick, New). ES5-safe JS transformers + Claude API structured JSON output.
+            Pre/Post are in production and running stably every day (moved out of NEXT environment). Phase I feature improvements in progress. Jennifer Priddy request: Pre/Post summaries for Delivery/Premier Care use case. SF Case #15.
           </div>
-          <div class="project-next">Pull SF Case #15 to scope exact changes requested</div>
+          <div class="project-next">Scope Jennifer Priddy's Delivery Premier Care use case — same workflow or separate output?</div>
+          <ul class="todo-list">
+            <li>Phase I feature improvements (SF Case #15)</li>
+            <li>Jennifer Priddy — Delivery Premier Care Pre/Post summaries (new use case to define)</li>
+            <li>Marchetecture additional changes — follow up with George Hamm</li>
+          </ul>
+        </div>
+
+        <!-- COMCAST URGENT -->
+        <div class="project-card status-fire">
+          <div class="project-name">
+            <span class="pulse orange"></span>
+            Comcast Lead Submission Flow Fix
+            <span class="status-badge badge-fire">🔥 URGENT</span>
+          </div>
+          <div class="project-desc">
+            Tim flagged: solution data may not be populating and records are erroring on submission. Lost leads + damaged named partner relationship. Externally visible. Also: Comcast dashboard updates needed (funnel &amp; leads, naming scheme in SF/Partner Account in QT).
+          </div>
+          <div class="project-next">Pull error logs — scope unknown until we see what's failing. Michael Cruz + Nick. Need running early next week.</div>
+          <ul class="todo-list">
+            <li>Pull Comcast lead submission error logs from SF</li>
+            <li>Fix solution data population issue</li>
+            <li>Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
+            <li>Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
+          </ul>
         </div>
 
         <!-- THE DASHBOARD -->
@@ -563,13 +588,17 @@
           <div class="project-next">Escalate dormant external admin accounts to IS immediately</div>
           <ul class="todo-list">
             <li>🔴 REVOKE leaked GitHub PAT in claude_desktop_config.json (ghp_OiFZ...340J4kw) — do this NOW</li>
+            <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in, unknown system (Confluence page confirms: deactivate immediately)</li>
             <li>🔴 Deactivate sfdcadmin1@expedient.com (last login 2015) + sfdcadmin2@expedient.com (2022)</li>
-            <li>🔴 Move RingLead integration off full System Administrator profile</li>
-            <li>🔴 Remove Modify All Data from Expedient Sales Manager profile (26 users have it)</li>
+            <li>🔴 Move RingLead off System Administrator → Salesforce API Only + scoped PSG</li>
+            <li>🔴 Remove Modify All Data from Expedient Sales Manager profile (14 managers affected)</li>
+            <li>Rename btc-integration@expedient.com → svc_6sense@expedient.com · Rename sfdc_6sense_oauth_app to match</li>
+            <li>Run bulk case close (655 pre-2026 cases) — Apex script ready in "SF for the Future" Confluence page 3188621337</li>
+            <li>Audit + decommission dead Connected Apps: Brainshark · Cloudingo ×4 · SalesforceIQ ×2 · Mediafly · OIQ_Integration · Brad SF Lead Creator · Gather · DELETE Expedient Admin Test Group profile</li>
+            <li>Audit 5 Retool Connected Apps — only 1 needed, decommission rest</li>
             <li>Fix home dir git working tree (~/.git → move to ~/.git.DELETE-ME)</li>
             <li>Rotate .envrc ES_API_KEY — cleartext in iCloud</li>
             <li>Migrate legacy SF stages: AAE Qualified (52), Business Qualification dup (4), BDR Qualified (1)</li>
-            <li>Chase Pascal: data quality issue — em-dash vs hyphen dupe partner values</li>
           </ul>
         </div>
 
@@ -647,7 +676,7 @@
           <div class="project-desc">
             SMC → SF: when Client/Existing Customer goes inactive → becomes Former Client. Logic confirmed. Allison Betts owns SF side, Marcel Mejia (IS) owns SMC trigger. Also: consolidate "Existing Customer" → "Client".
           </div>
-          <div class="project-blocker">IS trigger owner unknown — Allison on mat leave, Marcel didn't take ownership. Escalate to find temp owner.</div>
+          <div class="project-blocker">⚠ INVESTIGATE: Michael Cruz shows 100% on "Previous Client" in 15Five as of Q2 — is the SMC trigger actually done? Check with Marcel/Michael before closing.</div>
         </div>
 
         <div class="project-card status-parked">
@@ -734,6 +763,85 @@
       </div>
     </div>
 
+    <!-- INTERRUPT LOAD -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse red"></span>
+        <span class="panel-title" style="color:var(--exp-red);text-shadow:0 0 8px var(--exp-red);">:: INTERRUPT LOAD (ALWAYS ON) ::</span>
+      </div>
+      <div class="panel-body" style="font-size:12px;">
+        <div style="color:#888;margin-bottom:8px;">~10–15 hrs/week before any project work. Competes with everything below.</div>
+        <div class="priority-row">
+          <span class="prio-name">Support Tickets (reports, merges, missing data)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:80%"></div></div>
+          <span class="prio-label" style="color:var(--exp-red);">5–8 hrs/wk</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">Lead Routing Admin (bugs, daily review)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:70%"></div></div>
+          <span class="prio-label" style="color:var(--exp-red);">5–7 hrs/wk</span>
+        </div>
+        <div style="margin-top:8px;color:#666;font-size:11px;">⚠ No SLA = expands to fill capacity. Risk: mis-routed leads = revenue leak + broken attribution.</div>
+      </div>
+    </div>
+
+    <!-- BUILD QUEUE -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse" style="background:#00aaff;box-shadow:0 0 6px #00aaff;"></span>
+        <span class="panel-title" style="color:#00aaff;text-shadow:0 0 8px #00aaff;">:: BUILD QUEUE (NEXT UP) ::</span>
+      </div>
+      <div class="panel-body">
+        <div style="color:#888;font-size:12px;margin-bottom:10px;">Scoped, not yet started. Ordered roughly by urgency.</div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">Duplicate Opp Merge Screen Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+          <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map all downstream relationships before building.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">RPM Head/Tail Attribution Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+          <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Need to audit current Lead conversion rules first.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">AI Notes Ingestion → Opp Pain Points <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+          <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Could also ingest call transcripts and account notes. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">Win Review Assembly Button <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+          <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow (George Hamm). Need field enforcement before button fires — incomplete Opp fields = bad output.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">Partner Account List + 6sense Tagging Tool <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–5 WKS</span></div>
+          <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Could absorb Alliance partner tagging and Leaf's manual 6sense lookups. Hard part: fuzzy account name matching with confidence thresholds.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">AI Team Reporting Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–4 WKS · MICHAEL</span></div>
+          <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Leadership can't manage what they can't see. Risk: building on a moving target — confirm Robbie's structure is finalized before starting.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">Event / Partner IRB Approval Overhaul <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">~10% · WAITING MKTG</span></div>
+          <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction. Need tight phasing to contain scope creep. Q: when does Marketing come back? Who owns approval decision on their side?</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">Partner Portal 3.0 Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">6–10 WKS · TIM + MC + NL</span></div>
+          <div class="project-desc">Portal is 7 years old. Full rebuild: clean terminology, modern architecture, tighter permissioning, self-serve lead status, routing/escalation workflows, individual logins, reporting, CMS backend. Requirements scoped (Tim, 100% KR). Needs exec sponsorship + phased delivery.</div>
+        </div>
+
+        <div class="project-card" style="border-left-color:#00aaff;">
+          <div class="project-name" style="color:#66ccff;">QT Feature Requests <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">KOTHE</span></div>
+          <div class="project-desc">4 QT enhancements: Validated Partner lookup in QT · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (on mat leave). Target: migrate off QT within 18 months.</div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- IN SCOPING -->
     <div class="panel">
       <div class="panel-header">
@@ -783,63 +891,76 @@
       </div>
       <div class="panel-body" style="font-size:12px;">
 
-        <div style="margin-bottom:12px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 1 — AI-Assisted Workflows</div>
-          <div style="color:#bbb;margin-bottom:5px;">4–6 targeted AI workflows deployed across the year</div>
+        <div style="color:#555;font-size:11px;margin-bottom:10px;font-style:italic;">Source: 15Five KRs (Nick's contributions to others' objectives) · Jun 16 2026</div>
+
+        <div style="margin-bottom:14px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">AI-Assisted Workflows <span style="color:#888;font-size:13px;">(Kothe obj · 83%)</span></div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Q2: 1–2 deployed</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
-            <span class="prio-label" style="color:var(--neon-orange);">PARTIAL</span>
+            <span class="prio-name">rAIdar / AVP Exec Assistant</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:70%"></div></div>
+            <span class="prio-label" style="color:var(--neon-orange);">70%</span>
           </div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Q3: 1–2 deployed</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
-            <span class="prio-label" style="color:#666;">NOT YET</span>
+            <span class="prio-name">Marketecture → SF integration</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
           </div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Q4: 1–2 deployed</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
-            <span class="prio-label" style="color:#666;">NOT YET</span>
+            <span class="prio-name">Maintain workflows uptime</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
+            <span class="prio-label" style="color:var(--neon-yellow);">80%</span>
           </div>
         </div>
 
-        <div style="margin-bottom:12px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 2 — Revenue Dashboard</div>
-          <div style="color:#bbb;margin-bottom:5px;">Single source of truth for revenue analytics</div>
+        <div style="margin-bottom:14px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">Revenue Dashboard <span style="color:#888;font-size:13px;">(Kothe obj · 65%)</span></div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Apr: KPIs signed off</span>
+            <span class="prio-name">Define + rollout dashboard</span>
+            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:15%"></div></div>
+            <span class="prio-label" style="color:var(--exp-red);">15% MISSED</span>
+          </div>
+          <div style="color:#888;font-size:11px;padding:3px 0;">→ Q3 focus: Sigma w/Lessick + Mark B. Stakeholders: Ben, Anita, Pam (Finance). Validate data first.</div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">RPM Dashboard <span style="color:#888;font-size:13px;">(Cooper obj · 56%)</span></div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Spec → SF implementation</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
+            <span class="prio-label" style="color:var(--neon-orange);">50%</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Finalize + launch RPM homepage</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
+            <span class="prio-label" style="color:var(--neon-orange);">50%</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">VAR Project <span style="color:#888;font-size:13px;">(Cooper obj · 83%)</span></div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">SF report — RPMs + VAR accounts</span>
             <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-            <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
+            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
           </div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Jun: MVP 1.0 launch</span>
-            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:10%"></div></div>
-            <span class="prio-label" style="color:var(--exp-red);">MISSED</span>
-          </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Oct: Quarterly summary</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
-            <span class="prio-label" style="color:#666;">NOT YET</span>
+            <span class="prio-name">Routing logic + head/tail popup</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
           </div>
         </div>
 
         <div>
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 3 — GTM Engine Optimization</div>
-          <div style="color:#bbb;margin-bottom:5px;">ICP alignment, routing, MarTech efficiency</div>
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">SF Experience <span style="color:#888;font-size:13px;">(Kothe obj · 77%)</span></div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Q1: ZI/RingLead, off LeanData</span>
+            <span class="prio-name">VAR updates + portal changes</span>
             <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
-            <span class="prio-label" style="color:var(--neon-orange);">PARTIAL</span>
+            <span class="prio-label" style="color:var(--neon-yellow);">80%</span>
           </div>
           <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Q2: SalesNav → SF sync</span>
-            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:15%"></div></div>
-            <span class="prio-label" style="color:var(--exp-red);">STALLED</span>
-          </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Ongoing: ICP + routing</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
-            <span class="prio-label" style="color:var(--neon-yellow);">ACTIVE</span>
+            <span class="prio-name">Portal 3.0 scoped (Cooper)</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
           </div>
         </div>
 
@@ -1089,6 +1210,18 @@
         <div class="fact-row">
           <span class="fact-label">Field Metadata Brief</span>
           <span class="fact-value" style="font-size:12px;">salesforce/SF-Field-Metadata-Update-Project.md</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">SF for the Future</span>
+          <span class="fact-value" style="font-size:12px;">Confluence 3188621337</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Project Proposals Index</span>
+          <span class="fact-value" style="font-size:12px;">Confluence 3189178381</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Sales Dashboard 2.0 Blueprint</span>
+          <span class="fact-value" style="font-size:12px;">Confluence 1766457409</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">REV Confluence Space</span>

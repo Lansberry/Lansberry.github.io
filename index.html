@@ -407,7 +407,7 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.16.2026</span></span>
+    <span>UPDATED: <span id="last-updated">06.16.2026 v2</span></span>
     <span>VISITORS: <span class="visitor-counter">004237</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -420,10 +420,12 @@
     🚨 BLOCKER: Michael Cruz (IS) owns 4 prereqs for The Dashboard + MCP Server — chase this week &nbsp;&nbsp;&nbsp;
     ★★ rAIdarr P1: aiDealInspection still 504ing — Retool resource timeout (180s+) — escalate &nbsp;&nbsp;&nbsp;
     🔒 SF ORG SECURITY: 2 dormant EXTERNAL ADMINS active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
-    ⏸ Sandler Meeting Fields: tabled until Ben Schecter scopes write-back &nbsp;&nbsp;&nbsp;
-    📋 Dashboard spec now v7 (Jun 12) — Phase 1 dataset validation not yet started &nbsp;&nbsp;&nbsp;
+    📊 OKR #2: Dashboard MVP due End of June — MISSED — Phase 1 not yet started &nbsp;&nbsp;&nbsp;
+    🤝 Tim Cooper: AVP/RPM Partner Dashboard in active build — Nutanix reporting + lead validation in scope &nbsp;&nbsp;&nbsp;
+    📋 38 open SF cases — review queue for closeable tickets &nbsp;&nbsp;&nbsp;
     ⚠️ ZI/LISN: Q2 deadline passed — check status with Ben Gallo on LISN training &nbsp;&nbsp;&nbsp;
     🔧 SF Account Type (Former Client): blocked — IS trigger owner unknown since Allison on mat leave &nbsp;&nbsp;&nbsp;
+    📁 SF Admin Queue: Enable Forecasting · Upload 2026 Quotas · Field Metadata · Expire Cases · Validated Partner Review &nbsp;&nbsp;&nbsp;
   </span>
 </div>
 
@@ -466,6 +468,40 @@
             <li><strong style="color:#aaa;font-size:12px;">P3</strong> Activity data bug: Nordson/F&M meetings missing from AI analysis</li>
             <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state</li>
           </ul>
+        </div>
+
+        <!-- TIM'S PARTNER DASHBOARD -->
+        <div class="project-card status-fire">
+          <div class="project-name">
+            <span class="pulse orange"></span>
+            Tim's Partner Dashboard (RPM + AVP)
+            <span class="status-badge badge-fire">🔥 ACTIVE</span>
+          </div>
+          <div class="project-desc">
+            Two dashboards for Tim Cooper's channel team. RPM Dashboard (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type. SF Cases #8 + #10.
+          </div>
+          <div class="project-next">Scope with Tim — confirm which SF Case (#10 OKR – AVP/RPM Dashboard Update) is the active vehicle</div>
+          <ul class="todo-list">
+            <li>Part 1 — RPM Dashboard: Leads (all, by status), Forecast (opps by stage, 50%+, past close date), Sales (CW all, by solution type, by TX count, by revenue)</li>
+            <li>Part 2 — Named Partner: partner name, AE owner, tier, leads YTD vs goal, MRR sold YTD vs goal, funnel snapshot, last activity</li>
+            <li>Part 3 — TSD + Alliance: leads YTD by TSD/Alliance, pipeline snapshot 30-day funnel, opps 50%+</li>
+            <li>AVP Dashboard: Leads (all, accepted, DQ, promoted, Known Partners top 5), Pipeline (all open, 30-day new, Known Partners), Sales (QT MRR by partner type + solution type, top 5 partners)</li>
+            <li>Nutanix Won Reporting for Partner Quota Retirement — tie into same build</li>
+            <li>Review Active Validated Partners with Tim — surface which have open opps vs which are dormant</li>
+          </ul>
+        </div>
+
+        <!-- PRE / POST CALL -->
+        <div class="project-card status-active">
+          <div class="project-name">
+            <span class="pulse"></span>
+            Pre-Call / Post-Call Planner Updates
+            <span class="status-badge badge-active">IN PROGRESS</span>
+          </div>
+          <div class="project-desc">
+            Updates to the Pre-Call Planner and Post-Call workflows in retool/workflows/Revenue Operations/. SF Case #15 (Nick, New). ES5-safe JS transformers + Claude API structured JSON output.
+          </div>
+          <div class="project-next">Pull SF Case #15 to scope exact changes requested</div>
         </div>
 
         <!-- THE DASHBOARD -->
@@ -537,6 +573,46 @@
           </ul>
         </div>
 
+        <!-- FIX PARTNER -->
+        <div class="section-label">// PARTNER & CHANNEL</div>
+
+        <div class="project-card status-active">
+          <div class="project-name">
+            <span class="pulse"></span>
+            Fix Partner — Validated Convert + Portal UI
+            <span class="status-badge badge-active">SCOPING</span>
+          </div>
+          <div class="project-desc">
+            Two partner-side fixes: (1) Validated Partner conversion flow — currently broken or missing a step when converting leads through partner validation; (2) Partner Portal UI issues. Ties to Tim's dash work and the Validated Partner review.
+          </div>
+          <div class="project-next">Scope exact conversion flow issue with Tim — what's breaking and where</div>
+          <ul class="todo-list">
+            <li>Map current Validated Partner conversion path in SF</li>
+            <li>Identify where the convert step fails or is missing</li>
+            <li>Partner Portal UI — pull list of reported issues</li>
+            <li>Tagging Leads to Nutanix from .NEXT Conference (SF Case #9, Catherine Rudolph) — may be related</li>
+          </ul>
+        </div>
+
+        <!-- SANDLER -->
+        <div class="section-label">// MEETING QUALITY & SANDLER</div>
+
+        <div class="project-card status-tabled">
+          <div class="project-name">
+            Sandler Meeting Quality Suite
+            <span class="status-badge badge-tabled">TABLED — PENDING SCOPE</span>
+          </div>
+          <div class="project-desc">
+            Three-part initiative: (1) /expedient-meeting-analyzer skill for transcript analysis; (2) 11 SF Event write-back fields for AI scoring (Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.); (3) Sandler coaching output feeding AVP review. Tabled pending Ben Schecter scoping what to track.
+          </div>
+          <div class="project-blocker">Ben Schecter — must scope what to track/report before building write-back</div>
+          <ul class="todo-list">
+            <li>11 Event fields spec ready (see project_sandler_meeting_fields.md memory)</li>
+            <li>Meeting_Pain_Level__c = most important for AVP coaching (L1/L2/L3 Sandler depth)</li>
+            <li>AI prompt update needed to return structured JSON for write-back parse</li>
+          </ul>
+        </div>
+
         <!-- BLOCKED / TABLED PROJECTS -->
         <div class="section-label">// BLOCKED · TABLED · PARKED</div>
 
@@ -599,10 +675,176 @@
       </div>
     </div>
 
+    <!-- SF ADMIN QUEUE -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse"></span>
+        <span class="panel-title">:: SF ADMIN QUEUE ::</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="project-card status-active">
+          <div class="project-name">Enable Forecasting For Everyone
+            <span class="status-badge badge-active">TODO</span>
+          </div>
+          <div class="project-desc">Enable Collaborative Forecasting in SF so all reps have access to the forecast module. Required prereq for ForecastingQuota object (Dashboard Phase 1) and SF Pipeline Inspection (Q4). Michael Cruz must enable in setup.</div>
+          <div class="project-blocker">Michael Cruz (IS) — turn on in SF Setup → Forecasts Settings</div>
+        </div>
+
+        <div class="project-card status-active">
+          <div class="project-name">Upload 2026 Quotas
+            <span class="status-badge badge-active">TODO</span>
+          </div>
+          <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Requires Collaborative Forecasting to be enabled first. Budget data ready in 2026-Budget-Data.md.</div>
+          <div class="project-next">Blocked on Forecasting enable — after that, prep CSV + Data Loader job</div>
+        </div>
+
+        <div class="project-card status-active">
+          <div class="project-name">Update Fields — Description, Help Text, Owners
+            <span class="status-badge badge-active">NOT STARTED</span>
+          </div>
+          <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage=Active, and Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields). Brief: salesforce/SF-Field-Metadata-Update-Project.md. v3 descriptions are the source (Confluence 3194126341).</div>
+          <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick before/after → deploy → next object</div>
+          <div class="project-blocker">Confirm which L1 Pain field is being deprecated + data owner mapping</div>
+        </div>
+
+        <div class="project-card status-active">
+          <div class="project-name">Expire Old Cases
+            <span class="status-badge badge-active">REVIEW NEEDED</span>
+          </div>
+          <div class="project-desc">38 open SF cases in the queue. Several are On Hold with no activity or already-resolved work. Review and close stale ones before they inflate the backlog. Case queue: Project Tickets + Salesforce Support Open Cases views.</div>
+          <div class="project-next">Review each case — candidates to close: #3 (Former Client On Hold), #5 (SF & Sigma On Hold), #9 (Nutanix .NEXT leads, likely done), #12 (Retool Opp Permissions)</div>
+          <ul class="todo-list">
+            <li>#3 OKR – Former Client/Inactive Client change (On Hold, Jim Kothe) — blocked on IS, not closeable yet</li>
+            <li>#5 SF & Sigma Updates (On Hold, Peggy Hancock) — check if still needed</li>
+            <li>#9 Tagging Leads to Nutanix from .NEXT (Catherine Rudolph) — conference was spring, likely done</li>
+            <li>#12 Retool Edit Opportunity Permissions (Josh Davis) — check if resolved</li>
+            <li>#13 Activity emails/meetings not tracking in SF (Kim Kosar) — may be SF Inbox config issue</li>
+          </ul>
+        </div>
+
+        <div class="project-card status-active">
+          <div class="project-name">Help Tim Review Active Validated Partners
+            <span class="status-badge badge-active">COORDINATE</span>
+          </div>
+          <div class="project-desc">Walk through Active Validated Partners (Related_Partners__c) with Tim Cooper — surface which have open opps vs which are dormant. 4,334 Active + 256 Expired. Ties into Tim's Dashboard build and Fix Partner work.</div>
+          <div class="project-next">Pull Active Validated Partners via /expedient-sf or SF MCP — filter by no open opp in last 90 days</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- IN SCOPING -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse" style="background:#9966ff;box-shadow:0 0 6px #9966ff;"></span>
+        <span class="panel-title" style="color:#9966ff;text-shadow:0 0 8px #9966ff;">:: IN SCOPING ::</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="project-card" style="border-left-color:#9966ff;">
+          <div class="project-name" style="color:#cc99ff;">Dashboards &amp; Reporting Strategy
+            <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
+          </div>
+          <div class="project-desc">
+            Broader reporting strategy beyond The Dashboard — what does the full reporting layer look like? Includes: SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
+          </div>
+          <ul class="todo-list">
+            <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
+            <li>2026 Sales Leaderboard (SF Case #16, Jim Kothe, New)</li>
+            <li>Homepage Dashboard (SF Case #14, Kasey Cowan, New)</li>
+            <li>OKR – AI Reporting Needs (SF Case #6, Robert Brennan) — what does this scope?</li>
+          </ul>
+        </div>
+
+        <div class="project-card" style="border-left-color:#9966ff;">
+          <div class="project-name" style="color:#cc99ff;">How To Use AI As Admin
+            <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
+          </div>
+          <div class="project-desc">
+            Internal guide / playbook for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
+          </div>
+          <div class="project-next">Define audience + format before scoping content — Michael Cruz + IS team as primary audience?</div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- ══ RIGHT COLUMN ══ -->
   <div class="right-col">
+
+    <!-- OKR TRACKER -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse orange"></span>
+        <span class="panel-title">:: 2026 OKRs ::</span>
+      </div>
+      <div class="panel-body" style="font-size:12px;">
+
+        <div style="margin-bottom:12px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 1 — AI-Assisted Workflows</div>
+          <div style="color:#bbb;margin-bottom:5px;">4–6 targeted AI workflows deployed across the year</div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Q2: 1–2 deployed</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
+            <span class="prio-label" style="color:var(--neon-orange);">PARTIAL</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Q3: 1–2 deployed</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
+            <span class="prio-label" style="color:#666;">NOT YET</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Q4: 1–2 deployed</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
+            <span class="prio-label" style="color:#666;">NOT YET</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 2 — Revenue Dashboard</div>
+          <div style="color:#bbb;margin-bottom:5px;">Single source of truth for revenue analytics</div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Apr: KPIs signed off</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+            <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Jun: MVP 1.0 launch</span>
+            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:10%"></div></div>
+            <span class="prio-label" style="color:var(--exp-red);">MISSED</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Oct: Quarterly summary</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:0%"></div></div>
+            <span class="prio-label" style="color:#666;">NOT YET</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:4px;">OKR 3 — GTM Engine Optimization</div>
+          <div style="color:#bbb;margin-bottom:5px;">ICP alignment, routing, MarTech efficiency</div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Q1: ZI/RingLead, off LeanData</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
+            <span class="prio-label" style="color:var(--neon-orange);">PARTIAL</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Q2: SalesNav → SF sync</span>
+            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:15%"></div></div>
+            <span class="prio-label" style="color:var(--exp-red);">STALLED</span>
+          </div>
+          <div class="priority-row" style="font-size:11px;">
+            <span class="prio-name">Ongoing: ICP + routing</span>
+            <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
+            <span class="prio-label" style="color:var(--neon-yellow);">ACTIVE</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- BLOCKER BOARD -->
     <div class="panel">
@@ -641,7 +883,7 @@
             </tr>
             <tr>
               <td><span class="owner-name">Tim Cooper</span></td>
-              <td class="blocker-items">Partner-specific questions for /expedient-sf skill validation (Confluence 3191341058)</td>
+              <td class="blocker-items">Partner dashboard scope confirm (RPM + AVP) · Validated Partner review session · /expedient-sf skill validation Qs (Confluence 3191341058) · Nutanix reporting clarification</td>
             </tr>
             <tr>
               <td><span class="owner-name">Ben Gallo</span></td>
@@ -669,7 +911,15 @@
       <div class="panel-body">
         <div class="fact-row">
           <span class="fact-label">Active Projects</span>
-          <span class="fact-value">4 HOT</span>
+          <span class="fact-value">7 HOT</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">SF Admin Queue</span>
+          <span class="fact-value" style="color:var(--neon-orange);">5 tasks</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">In Scoping</span>
+          <span class="fact-value" style="color:#9966ff;">2 items</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Hard-Blocked</span>
@@ -678,6 +928,14 @@
         <div class="fact-row">
           <span class="fact-label">Tabled / Parked</span>
           <span class="fact-value" style="color:#888;">4</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Open SF Cases</span>
+          <span class="fact-value" style="color:var(--neon-orange);">38 (review queue)</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">OKR Milestones Missed</span>
+          <span class="fact-value" style="color:var(--exp-red);">2 (Jun dash + Q2 LISN)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">External Blockers</span>
@@ -760,6 +1018,40 @@
       </div>
     </div>
 
+    <!-- OPEN CASES -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="pulse orange"></span>
+        <span class="panel-title">:: OPEN CASE QUEUE ::</span>
+      </div>
+      <div class="panel-body" style="font-size:11px;">
+        <div style="color:#888;margin-bottom:8px;">38 open · Sorted by date opened · Closeable candidates marked 🗑</div>
+        <table class="blocker-table" style="font-size:11px;">
+          <thead><tr><th>#</th><th>SUBJECT</th><th>OWNER</th><th>STATUS</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="blocker-items">OKR – Commercial Analytics Dashboard</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>2</td><td class="blocker-items">OKR – Case Submission Flow Updates</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>3</td><td class="blocker-items">OKR – Former Client/Inactive Client change</td><td><span class="owner-name">Jim Kothe</span></td><td style="color:#888;">On Hold</td></tr>
+            <tr><td>4</td><td class="blocker-items">OKR – rAIdar Build (Exec Assistant)</td><td><span class="owner-name">Ben Gallo</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>5</td><td class="blocker-items">SF &amp; Sigma Updates Requirement Doc 🗑?</td><td><span class="owner-name">Peggy H.</span></td><td style="color:#888;">On Hold</td></tr>
+            <tr><td>6</td><td class="blocker-items">OKR – AI Reporting Needs</td><td><span class="owner-name">R. Brennan</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>7</td><td class="blocker-items">CSM Dashboard / Retention Radar</td><td><span class="owner-name">G. Hamm</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>8</td><td class="blocker-items">Nutanix Won Reporting / Partner Quota</td><td><span class="owner-name">Tim Cooper</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>9</td><td class="blocker-items">Tagging Leads to Nutanix .NEXT Conf 🗑?</td><td><span class="owner-name">C. Rudolph</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>10</td><td class="blocker-items">OKR – AVP/RPM Dashboard Update</td><td><span class="owner-name">Tim Cooper</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>11</td><td class="blocker-items">Campaigns where Leads Not Converted</td><td><span class="owner-name">Peggy H.</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>12</td><td class="blocker-items">Retool Edit Opportunity Permissions 🗑?</td><td><span class="owner-name">Josh Davis</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>13</td><td class="blocker-items">Activity/emails not tracking in SF</td><td><span class="owner-name">Kim Kosar</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td>14</td><td class="blocker-items">Homepage Dashboard</td><td><span class="owner-name">K. Cowan</span></td><td style="color:var(--neon-blue);">New</td></tr>
+            <tr><td>15</td><td class="blocker-items">Pre Call/Post Call Updates</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-blue);">New</td></tr>
+            <tr><td>16</td><td class="blocker-items">2026 Sales Leaderboard</td><td><span class="owner-name">Jim Kothe</span></td><td style="color:var(--neon-blue);">New</td></tr>
+            <tr><td>17</td><td class="blocker-items">Remove RevOps Access – Exiting Employee</td><td><span class="owner-name">—</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
+            <tr><td colspan="4" style="color:#555;text-align:center;padding:4px;">+ 21 more below the fold</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- CONFLUENCE / FILE REFS -->
     <div class="panel">
       <div class="panel-header">
@@ -816,7 +1108,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 16, 2026</span>
+    Last updated: <span style="color:var(--neon-green);">June 16, 2026 v2</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">GTM COMMAND CENTER 9000™</span>
     &nbsp;|&nbsp;

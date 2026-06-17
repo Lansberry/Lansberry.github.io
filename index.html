@@ -582,6 +582,7 @@
   <button class="tab-btn active" onclick="showTab('tracker', this)">[ TRACKER ]</button>
   <button class="tab-btn" onclick="showTab('sfadmin', this)">[ SF ADMIN ]</button>
   <button class="tab-btn" onclick="showTab('buildqueue', this)">[ BUILD QUEUE ]</button>
+  <button class="tab-btn" onclick="showTab('scoping', this)">[ SCOPING ]</button>
   <button class="tab-btn" onclick="showTab('completed', this)">[ COMPLETED ]</button>
   <button class="tab-btn" onclick="showTab('about', this)">[ ABOUT NICK ]</button>
 </nav>
@@ -839,6 +840,11 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- ══ RIGHT COLUMN ══ -->
+  <div class="right-col">
+
     <!-- INTERRUPT LOAD -->
     <div class="panel">
       <div class="panel-header">
@@ -860,47 +866,6 @@
         <div style="margin-top:8px;color:#666;font-size:11px;">⚠ No SLA = expands to fill capacity. Risk: mis-routed leads = revenue leak + broken attribution.</div>
       </div>
     </div>
-
-    <!-- IN SCOPING -->
-    <div class="panel">
-      <div class="panel-header">
-        <span class="pulse" style="background:#9966ff;box-shadow:0 0 6px #9966ff;"></span>
-        <span class="panel-title" style="color:#9966ff;text-shadow:0 0 8px #9966ff;">:: IN SCOPING ::</span>
-      </div>
-      <div class="panel-body">
-
-        <div class="project-card" style="border-left-color:#9966ff;">
-          <div class="project-name" style="color:#cc99ff;">Dashboards &amp; Reporting Strategy
-            <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
-          </div>
-          <div class="project-desc">
-            Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
-          </div>
-          <ul class="todo-list">
-            <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
-            <li>2026 Sales Leaderboard (SF Case #16, Jim Kothe, New)</li>
-            <li>Homepage Dashboard (SF Case #14, Kasey Cowan, New)</li>
-            <li>OKR – AI Reporting Needs (SF Case #6, Robert Brennan) — what does this scope?</li>
-          </ul>
-        </div>
-
-        <div class="project-card" style="border-left-color:#9966ff;">
-          <div class="project-name" style="color:#cc99ff;">How To Use AI As Admin
-            <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
-          </div>
-          <div class="project-desc">
-            Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
-          </div>
-          <div class="project-next">Define audience + format before scoping content</div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ══ RIGHT COLUMN ══ -->
-  <div class="right-col">
 
     <!-- OKR TRACKER -->
     <div class="panel">
@@ -1333,6 +1298,49 @@
 </div>
 </div><!-- end tab-buildqueue -->
 
+<!-- ══════════════════════════════ TAB: SCOPING ══════════════════════════════ -->
+<div id="tab-scoping" style="display:none;">
+<div class="single-col-tab">
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="pulse" style="background:#9966ff;box-shadow:0 0 6px #9966ff;"></span>
+      <span class="panel-title" style="color:#9966ff;text-shadow:0 0 8px #9966ff;">:: IN SCOPING ::</span>
+    </div>
+    <div class="panel-body">
+      <div style="color:#555;font-size:12px;margin-bottom:14px;">Being defined. Not yet ready to build.</div>
+
+      <div class="project-card" style="border-left-color:#9966ff;">
+        <div class="project-name" style="color:#cc99ff;">Dashboards &amp; Reporting Strategy
+          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
+        </div>
+        <div class="project-desc">
+          Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
+        </div>
+        <ul class="todo-list">
+          <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
+          <li>2026 Sales Leaderboard (SF Case #16, Jim Kothe, New)</li>
+          <li>Homepage Dashboard (SF Case #14, Kasey Cowan, New)</li>
+          <li>OKR – AI Reporting Needs (SF Case #6, Robert Brennan) — what does this scope?</li>
+        </ul>
+      </div>
+
+      <div class="project-card" style="border-left-color:#9966ff;">
+        <div class="project-name" style="color:#cc99ff;">How To Use AI As Admin
+          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
+        </div>
+        <div class="project-desc">
+          Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
+        </div>
+        <div class="project-next">Define audience + format before scoping content</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div><!-- end tab-scoping -->
+
 <!-- ══════════════════════════════ TAB: COMPLETED ══════════════════════════════ -->
 <div id="tab-completed" style="display:none;">
 <div class="single-col-tab">
@@ -1613,7 +1621,7 @@
 
 <script>
   function showTab(name, btn) {
-    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'completed', 'about'];
+    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'scoping', 'completed', 'about'];
     tabs.forEach(function(t) {
       var el = document.getElementById('tab-' + t);
       if (el) el.style.display = (t === name) ? '' : 'none';

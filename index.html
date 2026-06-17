@@ -555,7 +555,7 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.17.2026 v5</span></span>
+    <span>UPDATED: <span id="last-updated">06.17.2026 v6</span></span>
     <span>VISITORS: <span class="visitor-counter">004238</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -565,15 +565,15 @@
 <!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
 <div class="alert-bar">
   <span class="marquee-inner">
-    🚨 rAIdarr RETOOL DEPLOYMENT BROKEN — changes uncovered Trevor's existing issue — meeting with Retool today &nbsp;&nbsp;&nbsp;
-    ★★ rAIdarr P1: aiDealInspection still broken — meeting with Retool to resolve &nbsp;&nbsp;&nbsp;
+    ✅ rAIdarr RETOOL DEPLOYMENT FIXED (Jun 17) — unprotected app, merged to main, full deploy succeeded · NO full deployments until @mesi patches source control bug (~Wed Jun 25) &nbsp;&nbsp;&nbsp;
+    ⚠️ rAIdarr P1: aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI) — next up &nbsp;&nbsp;&nbsp;
     🔒 SF ORG SECURITY: 2 dormant external admins active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
     📊 PARTNER: Tim meeting done — Partner Alliances Story quick build is HIGH PRIORITY &nbsp;&nbsp;&nbsp;
     📊 OKR #2 (Revenue Dashboard): 15% complete — schedule kickoff with Tim/Jim/Daniel &nbsp;&nbsp;&nbsp;
     📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
     🗑 BULK CLOSE: Apex script ready to close pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
     📁 SF Governance: 5 Retool Connected Apps → only 1 needed · Dead apps to decommission: Brainshark, Cloudingo ×4, SalesforceIQ ×2, Mediafly &nbsp;&nbsp;&nbsp;
-    ✅ LISN training complete · Comcast done · Marketecture 100% to George's spec &nbsp;&nbsp;&nbsp;
+    ✅ LISN training complete · Comcast done · Marketecture 100% to George's spec · Retool Opp permissions fixed (Josh Davis unblocked) &nbsp;&nbsp;&nbsp;
   </span>
 </div>
 
@@ -609,15 +609,15 @@
           <div class="project-name">
             <span class="pulse orange"></span>
             rAIdarr (AVP Weekly Review)
-            <span class="status-badge badge-fire">🔥 P1 BUGS</span>
+            <span class="status-badge badge-fire">🔥 P1 BUG</span>
           </div>
           <div class="project-desc">
             Retool custom component — AVP-level rep scorecard: activity, pipeline health, Sandler matrix, meeting quality, ICP coverage, partner coverage. Branch: nicklansberry/avp-exec-build-docs.
           </div>
-          <div class="project-next">Retool deployment meeting today — resolve deployment breakage before any other fixes</div>
-          <div class="project-blocker">Retool deployment broken — changes committed uncovered Trevor's existing issue</div>
+          <div class="project-next">aiDealInspection P1 — Retool timeout setting (180s+ / 3000 max_tokens in UI) needs fix in Retool UI</div>
+          <div style="font-size:12px;color:#ff9900;margin-bottom:6px;">⚠ DO NOT run full deployments until @mesi patches source control bug (~Wed Jun 25). After patch: upgrade to latest Retool version.</div>
           <ul class="todo-list">
-            <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> Retool deployment broken — meeting with Retool today</li>
+            <li class="done"><strong style="color:#555;font-size:12px;">P1 RESOLVED</strong> Retool deployment broken — unprotected app, merged to main, full deploy succeeded Jun 17</li>
             <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> AVP filtering for KPI stats — HIGH PRIORITY — reps/My Market/AVP summary views need SOQL-level filter (~10 SOQLs)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
@@ -993,6 +993,7 @@
             <tr>
               <td><span class="owner-name">Nick (YOU)</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
               <td class="blocker-items">
+                <strong style="color:var(--neon-orange);">Take Sandler Exam</strong><br>
                 Upload 2026 Quotas (data ready, Nick owns)<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
@@ -1025,7 +1026,7 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">Hard-Blocked</span>
-          <span class="fact-value" style="color:var(--exp-red);">1 (rAIdarr deployment)</span>
+          <span class="fact-value" style="color:var(--neon-green);">0 — deployment unblocked ✓</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Tabled / Parked</span>
@@ -1066,9 +1067,14 @@
       </div>
       <div class="panel-body">
         <div class="priority-row">
-          <span class="prio-name">🔴 Retool deployment fix (rAIdarr)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:98%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">TODAY</span>
+          <span class="prio-name">✅ Retool deployment fix (rAIdarr)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">🔴 rAIdarr P1: aiDealInspection broken</span>
+          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
+          <span class="prio-label" style="color:var(--exp-red);">NEXT UP</span>
         </div>
         <div class="priority-row">
           <span class="prio-name">🔴 Deactivate 2 external SF admins</span>
@@ -1083,11 +1089,6 @@
         <div class="priority-row">
           <span class="prio-name">🟠 Schedule Tim/Jim/Daniel — Dashboard kickoff</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
-          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟠 rAIdarr P1: aiDealInspection broken</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:75%"></div></div>
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
         <div class="priority-row">
@@ -1215,7 +1216,7 @@
           <li>#3 OKR – Former Client/Inactive Client (On Hold, Jim Kothe) — still pending IS</li>
           <li>#5 SF &amp; Sigma Updates (On Hold, Peggy H.) — check if still needed</li>
           <li>#9 Tagging Leads to Nutanix from .NEXT (Catherine Rudolph) — conference was spring, likely done</li>
-          <li>#12 Retool Edit Opportunity Permissions (Josh Davis) — check if resolved</li>
+          <li class="done">#12 Retool Edit Opportunity Permissions (Josh Davis) — RESOLVED Jun 17: added Modify All Records to Integration Access permission set</li>
           <li>#13 Activity emails/meetings not tracking (Kim Kosar) — may be SF Inbox config issue</li>
           <li>Run Apex bulk close script for pre-2026 Marketing cases</li>
         </ul>
@@ -1352,6 +1353,40 @@
     </div>
     <div class="panel-body">
       <div style="color:#555;font-size:12px;margin-bottom:14px;">Done is done. Archived here so the tracker stays clean.</div>
+
+      <div class="section-label">// JUN 17 2026 — TODAY'S WINS</div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          Retool Deployment Unblocked
+          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
+        </div>
+        <div class="project-desc">rAIdarr P1 deployment blocker resolved. Root cause: Retool source control bug that tries to remove releases on full deployment even with multi-instance releases feature flag off. Fix: removed branch protection in GitHub, merged to main, ran full deployment — succeeded. Bug patch expected from @mesi ~Wed Jun 25. Until then: app re-protected, no full deployments. After patch: upgrade to latest Retool version.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          Retool Integration User — Opp Write Permissions Fixed
+          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
+        </div>
+        <div class="project-desc">Case #00007623 — Josh Davis getting INSUFFICIENT_ACCESS_OR_READONLY on all Opportunity fields via Retool. Diagnosed: Integration Access permission set had Edit but not Modify All on Opportunity (user on Minimum Access profile = no implicit sharing). Fix: added Modify All Records to Opportunity in Integration Access permission set. Josh unblocked.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          SF Case Queue Cleanup — 6 Closed
+          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
+        </div>
+        <div class="project-desc">Closed 6 open SF cases today.</div>
+        <ul class="todo-list">
+          <li class="done">#00007594 — List of Campaigns where Leads have not Converted</li>
+          <li class="done">#00007705 — Remove RevOps Access - Exiting Employee</li>
+          <li class="done">#00007726 — SF User Account Clean Up</li>
+          <li class="done">#00007733 — New Fields on Campaign Member</li>
+          <li class="done">#00007756 — Platform Access Request</li>
+          <li class="done">#00007746 — Change Account Owner</li>
+        </ul>
+      </div>
 
       <div class="section-label">// RETOOL APPS</div>
 
@@ -1600,7 +1635,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 17, 2026 v5</span>
+    Last updated: <span style="color:var(--neon-green);">June 17, 2026 v6</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">GTM COMMAND CENTER 9000™</span>
     &nbsp;|&nbsp;

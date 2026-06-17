@@ -536,6 +536,16 @@
       margin: 3px 3px 3px 0;
       letter-spacing: 1px;
     }
+
+    /* ══════════════════════════════ SINGLE-COL TAB LAYOUT ══════════════════════════════ */
+    .single-col-tab {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
   </style>
 </head>
 <body>
@@ -545,8 +555,8 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.16.2026 v4</span></span>
-    <span>VISITORS: <span class="visitor-counter">004237</span></span>
+    <span>UPDATED: <span id="last-updated">06.17.2026 v5</span></span>
+    <span>VISITORS: <span class="visitor-counter">004238</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
   </div>
@@ -555,22 +565,23 @@
 <!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
 <div class="alert-bar">
   <span class="marquee-inner">
-    🚨 SECURITY: jennifer.priddy@epedient.com (typo domain, never logged in) — deactivate NOW &nbsp;&nbsp;&nbsp;
-    🚨 BLOCKER: Michael Cruz (IS) owns 4 prereqs for The Dashboard + MCP Server — chase this week &nbsp;&nbsp;&nbsp;
-    ★★ rAIdarr P1: aiDealInspection still 504ing — Retool resource timeout (180s+) — escalate &nbsp;&nbsp;&nbsp;
-    🔒 SF ORG SECURITY: 2 dormant EXTERNAL ADMINS active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
-    📊 OKR #2 (Revenue Dashboard): 15% complete per 15Five — Phase 1 not yet started — MISSED June deadline &nbsp;&nbsp;&nbsp;
-    📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% per 15Five · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
-    🗑 BULK CLOSE: Apex script ready to close 655 pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
-    ⚠️ INVESTIGATE: Michael Cruz shows "Previous Client" 100% in 15Five — is the SMC trigger actually done? &nbsp;&nbsp;&nbsp;
-    🤝 Tim Cooper: RPM Homepage 50% · Portal 3.0 scoped (100%) · VAR routing 100% &nbsp;&nbsp;&nbsp;
+    🚨 rAIdarr RETOOL DEPLOYMENT BROKEN — changes uncovered Trevor's existing issue — meeting with Retool today &nbsp;&nbsp;&nbsp;
+    ★★ rAIdarr P1: aiDealInspection still broken — meeting with Retool to resolve &nbsp;&nbsp;&nbsp;
+    🔒 SF ORG SECURITY: 2 dormant external admins active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
+    📊 PARTNER: Tim meeting done — Partner Alliances Story quick build is HIGH PRIORITY &nbsp;&nbsp;&nbsp;
+    📊 OKR #2 (Revenue Dashboard): 15% complete — schedule kickoff with Tim/Jim/Daniel &nbsp;&nbsp;&nbsp;
+    📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
+    🗑 BULK CLOSE: Apex script ready to close pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
     📁 SF Governance: 5 Retool Connected Apps → only 1 needed · Dead apps to decommission: Brainshark, Cloudingo ×4, SalesforceIQ ×2, Mediafly &nbsp;&nbsp;&nbsp;
+    ✅ LISN training complete · Comcast done · Marketecture 100% to George's spec &nbsp;&nbsp;&nbsp;
   </span>
 </div>
 
 <!-- ══════════════════════════════ TAB NAV ══════════════════════════════ -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="showTab('tracker', this)">[ TRACKER ]</button>
+  <button class="tab-btn" onclick="showTab('sfadmin', this)">[ SF ADMIN ]</button>
+  <button class="tab-btn" onclick="showTab('buildqueue', this)">[ BUILD QUEUE ]</button>
   <button class="tab-btn" onclick="showTab('about', this)">[ ABOUT NICK ]</button>
 </nav>
 
@@ -589,51 +600,70 @@
       </div>
       <div class="panel-body">
 
-        <!-- rAIdarr -->
         <div class="section-label">// RETOOL APPS</div>
 
+        <!-- rAIdarr -->
         <div class="project-card status-fire">
           <div class="project-name">
             <span class="pulse orange"></span>
             rAIdarr (AVP Weekly Review)
-            <span class="status-badge badge-fire">🔥 P1 BUG</span>
+            <span class="status-badge badge-fire">🔥 P1 BUGS</span>
           </div>
           <div class="project-desc">
             Retool custom component — AVP-level rep scorecard: activity, pipeline health, Sandler matrix, meeting quality, ICP coverage, partner coverage. Branch: nicklansberry/avp-exec-build-docs.
           </div>
-          <div class="project-next">Fix aiDealInspection 504 (Retool resource timeout — 180s, 3000 max_tokens needed in UI)</div>
+          <div class="project-next">Retool deployment meeting today — resolve deployment breakage before any other fixes</div>
+          <div class="project-blocker">Retool deployment broken — changes committed uncovered Trevor's existing issue</div>
           <ul class="todo-list">
-            <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> aiDealInspection 504 — Retool timeout setting (can't fix in code)</li>
+            <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> Retool deployment broken — meeting with Retool today</li>
+            <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI)</li>
+            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> AVP filtering for KPI stats — HIGH PRIORITY — reps/My Market/AVP summary views need SOQL-level filter (~10 SOQLs)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> No loading state during 4-query AI chain in Rep Modal</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Duplicate query trigger — 5 of 8 queries fire twice per click</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> 5 GTM fields never queried: QT_Net_Impact__c, Revenue_Tier__c, Current_MRR__c, Targeted_Persona__c, DISC_Profile__c</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Wire newOppsLookup + newOppsTeamLookup queries in Retool UI</li>
             <li><strong style="color:#aaa;font-size:12px;">P3</strong> SF write-back after Meeting Quality AI (tabled — scope TBD)</li>
-            <li><strong style="color:#aaa;font-size:12px;">P3</strong> SOQL-level AVP filtering for aggregate KPI stats (~10 SOQLs)</li>
-            <li><strong style="color:#aaa;font-size:12px;">P3</strong> Activity data bug: Nordson/F&M meetings missing from AI analysis</li>
             <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state</li>
           </ul>
         </div>
 
-        <!-- TIM'S PARTNER DASHBOARD -->
+        <!-- PARTNER ALLIANCES STORY -->
         <div class="project-card status-fire">
           <div class="project-name">
             <span class="pulse orange"></span>
-            Tim's Partner Dashboard (RPM + AVP)
-            <span class="status-badge badge-fire">🔥 ACTIVE</span>
+            Partner Alliances Story (Quick Build — Tim)
+            <span class="status-badge badge-fire">🔥 HIGH PRIORITY</span>
           </div>
           <div class="project-desc">
-            Two dashboards for Tim Cooper's channel team. RPM Dashboard (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type. SF Cases #8 + #10.
+            Met with Tim — decision: take a quick stab at building the current Partner Alliances Story in SF using notes + Tim's asks. This will meet ~80% of their needs now and give us the learnings to springboard into the major RPM/AVP dash. Smart phased approach.
           </div>
-          <div class="project-next">Scope with Tim — confirm which SF Case (#10 OKR – AVP/RPM Dashboard Update) is the active vehicle</div>
+          <div class="project-next">Build Partner Alliances Story dashboard from Tim's notes + asks — scope what 80% looks like</div>
+          <ul class="todo-list">
+            <li>Pull Tim's notes + existing asks — map to SF fields available today</li>
+            <li>Build Partner Alliances Story view in Retool/Sigma — keep scope tight</li>
+            <li>Create Active Validated Partners Report for Tim (check if one already exists first)</li>
+            <li>Use learnings from this build to scope the full RPM/AVP Dashboard (Phase 2)</li>
+            <li>Note: Michael Cruz is separately building RPM Activity Dashboard for Ben Gallo + Stacey Osenburg</li>
+          </ul>
+        </div>
+
+        <!-- TIM'S PARTNER DASHBOARD (FULL BUILD) -->
+        <div class="project-card status-active">
+          <div class="project-name">
+            <span class="pulse"></span>
+            Tim's Partner Dashboard (Full Build — Phase 2)
+            <span class="status-badge badge-active">PHASE 2 — AFTER QUICK BUILD</span>
+          </div>
+          <div class="project-desc">
+            Full RPM + AVP dashboards for Tim Cooper's channel team. RPM Dashboard (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type. SF Cases #8 + #10. Scoping will use learnings from Partner Alliances quick build.
+          </div>
+          <div class="project-next">Wait for Partner Alliances quick build learnings before scoping full build</div>
           <ul class="todo-list">
             <li>Part 1 — RPM Dashboard: Leads (all, by status), Forecast (opps by stage, 50%+, past close date), Sales (CW all, by solution type, by TX count, by revenue)</li>
             <li>Part 2 — Named Partner: partner name, AE owner, tier, leads YTD vs goal, MRR sold YTD vs goal, funnel snapshot, last activity</li>
             <li>Part 3 — TSD + Alliance: leads YTD by TSD/Alliance, pipeline snapshot 30-day funnel, opps 50%+</li>
             <li>AVP Dashboard: Leads (all, accepted, DQ, promoted, Known Partners top 5), Pipeline (all open, 30-day new, Known Partners), Sales (QT MRR by partner type + solution type, top 5 partners)</li>
-            <li>Nutanix Won Reporting for Partner Quota Retirement — tie into same build</li>
-            <li>Review Active Validated Partners with Tim — surface which have open opps vs which are dormant</li>
           </ul>
         </div>
 
@@ -645,13 +675,13 @@
             <span class="status-badge badge-active">✓ LIVE — FEATURE WORK</span>
           </div>
           <div class="project-desc">
-            Pre/Post are in production and running stably every day (moved out of NEXT environment). Phase I feature improvements in progress. Jennifer Priddy request: Pre/Post summaries for Delivery/Premier Care use case. SF Case #15.
+            Pre/Post in production and running stably every day. Marketecture running 100% and good to George's spec. Jennifer Priddy's Premier Care use case delivered. SF Case #15.
           </div>
-          <div class="project-next">Scope Jennifer Priddy's Delivery Premier Care use case — same workflow or separate output?</div>
+          <div class="project-next">Phase I feature improvements (SF Case #15) — scope next enhancements</div>
           <ul class="todo-list">
             <li>Phase I feature improvements (SF Case #15)</li>
-            <li>Jennifer Priddy — Delivery Premier Care Pre/Post summaries (new use case to define)</li>
-            <li>Marchetecture additional changes — follow up with George Hamm</li>
+            <li class="done">Jennifer Priddy — Delivery Premier Care Pre/Post summaries — delivered</li>
+            <li class="done">Marketecture additional changes — complete and running to George's spec</li>
           </ul>
         </div>
 
@@ -662,7 +692,7 @@
             <span class="status-badge badge-active">✓ DONE</span>
           </div>
           <div class="project-desc">
-            Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.
+            Done and ready to go. Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.
           </div>
           <ul class="todo-list">
             <li class="done">Pull Comcast lead submission error logs from SF</li>
@@ -675,41 +705,42 @@
         <!-- THE DASHBOARD -->
         <div class="section-label">// DATA & ANALYTICS</div>
 
-        <div class="project-card status-blocked">
+        <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse red"></span>
+            <span class="pulse orange"></span>
             The Dashboard (Commercial Analytics)
-            <span class="status-badge badge-blocked">⚠ BLOCKED</span>
+            <span class="status-badge badge-fire">HIGH PRIORITY</span>
           </div>
           <div class="project-desc">
-            6-lens Sigma dashboard replacing Anita's 48-sheet EOM xlsx. Lenses: Revenue Health, Sales Engine, Pipeline Integrity, Partner Motion, Marketing Engine, Client Health. Spec is v7 (Confluence page 3135307797). SF Case 00007236.
+            6-lens Sigma dashboard replacing Anita's 48-sheet EOM xlsx. Lenses: Revenue Health, Sales Engine, Pipeline Integrity, Partner Motion, Marketing Engine, Client Health. Spec v7 (Confluence 3135307797). SF Case 00007236. Working with Michael Cruz to turn on Collaborative Forecasting in sandbox first — test before prod. Nick owns all field creation and data work. Contract Effective Dates = Account Contract Start Date (confirmed). EOM/funnel reports: sum by Amount to include add/drops (QT Net Impact Logic changed).
           </div>
-          <div class="project-next">Chase Michael Cruz — 4 IS prereqs before Phase 1 dataset build can start</div>
-          <div class="project-blocker">Michael Cruz (IS) — all 4 prereqs below</div>
+          <div class="project-next">Schedule kickoff meeting with Tim/Jim/Daniel — HIGH PRIORITY</div>
           <ul class="todo-list">
-            <li>Enable Collaborative Forecasting (ForecastingQuota object)</li>
-            <li>Create Budget_Target__c custom object (~120 records/yr, design in 2026-Budget-Data.md)</li>
-            <li>Confirm Contract_Effective_Date_to_Close__c as Contract Start Date proxy</li>
+            <li><strong style="color:#ff8800;font-size:12px;">HIGH</strong> Schedule meeting with Tim/Jim/Daniel to tee up dashboard kickoff</li>
+            <li>Collaborative Forecasting: testing in sandbox with Michael Cruz first → then enable in prod</li>
+            <li>Nick creates Budget_Target__c custom object (~120 records/yr)</li>
+            <li class="done">Contract_Effective_Date_to_Close__c = Account Contract Start Date (confirmed)</li>
             <li>Confirm Tenured__c formula fallback for null Hire_Date__c</li>
-            <li>Confirm with Anita: does May EOM $308k pull from GoTransverse or SF?</li>
-            <li>Phase 1 kickoff with Mike Lessick (Sigma) — Revenue Health lens can start NOW</li>
+            <li>Confirm with Anita: May EOM $308k source (GoTransverse vs SF)</li>
+            <li>Phase 1 kickoff with Mike Lessick (Sigma) — Revenue Health lens</li>
+            <li>Funnel reports: sum by Amount (not QT Net Impact) to capture add/drops correctly</li>
           </ul>
         </div>
 
         <!-- MCP SERVER -->
-        <div class="project-card status-blocked">
+        <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse red"></span>
+            <span class="pulse"></span>
             P1 Read Gateway (SF MCP Server)
-            <span class="status-badge badge-blocked">⚠ BLOCKED</span>
+            <span class="status-badge badge-active">ACTIVE — NICK OWNS</span>
           </div>
           <div class="project-desc">
-            TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf, /expedient-opp-analyzer, /expedient-daily-brief, /expedient-pipeline-review skills. Server code complete. Files: salesforce/sf-mcp-server/.
+            TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf, /expedient-opp-analyzer, /expedient-daily-brief, /expedient-pipeline-review skills. Server code complete. Nick owns the full build — need to work through how users connect, then build the Connected App + MCP config. Files: salesforce/sf-mcp-server/.
           </div>
-          <div class="project-blocker">Michael Cruz (IS) — PSG finalization + Connected App setup</div>
+          <div class="project-next">Figure out user auth/connect approach, then build Connected App + MCP server</div>
           <ul class="todo-list">
-            <li>IS: grant FLS read access on enrichment fields to svc_aiplatform_read</li>
-            <li>IS: provision Connected App credentials</li>
+            <li>Decide on user authentication approach — how will users connect?</li>
+            <li>Build Connected App in SF + configure MCP server around it</li>
             <li class="done">Server scaffolded: JWT auth, SELECT-only, object allow-list, fail-loud boot</li>
             <li>Fix: MCP_AUTH_TOKEN — make required (not optional) in prod</li>
             <li>Fix: subquery bypass in run_soql allow-list (validate ALL objects)</li>
@@ -719,28 +750,24 @@
         </div>
 
         <!-- SF ORG SECURITY -->
-        <div class="project-card status-fire">
+        <div class="project-card status-tabled">
           <div class="project-name">
-            <span class="pulse red"></span>
-            SF Org Security Remediation
-            <span class="status-badge badge-fire">🚨 URGENT</span>
+            SF Org Security Best Practices
+            <span class="status-badge badge-tabled">HYGIENE — LOW PRIORITY</span>
           </div>
           <div class="project-desc">
-            Two companion docs: Security-And-Cleanup-Remediation.md (repo hygiene) + Salesforce-Org-Audit-2026-06.md (prod org). This org is upstream of rAIdarr, MCP gateway, The Dashboard, and EOM report — must clean before Phase 1.
+            Best practice security suggestions for the Expedient SF org. Michael Cruz owns most of these as SF Admin. Lower priority — tackle as hygiene when capacity allows. Two companion docs: Security-And-Cleanup-Remediation.md + Salesforce-Org-Audit-2026-06.md.
           </div>
-          <div class="project-next">Escalate dormant external admin accounts to IS immediately</div>
+          <div class="project-next">Frame hygiene task list for Michael Cruz — handle when capacity allows</div>
           <ul class="todo-list">
-            <li>🔴 REVOKE leaked GitHub PAT in claude_desktop_config.json (ghp_OiFZ...340J4kw) — do this NOW</li>
-            <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in, unknown system (Confluence page confirms: deactivate immediately)</li>
+            <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in</li>
             <li>🔴 Deactivate sfdcadmin1@expedient.com (last login 2015) + sfdcadmin2@expedient.com (2022)</li>
-            <li>🔴 Move RingLead off System Administrator → Salesforce API Only + scoped PSG</li>
-            <li>🔴 Remove Modify All Data from Expedient Sales Manager profile (14 managers affected)</li>
-            <li>Rename btc-integration@expedient.com → svc_6sense@expedient.com · Rename sfdc_6sense_oauth_app to match</li>
-            <li>Run bulk case close (655 pre-2026 cases) — Apex script ready in "SF for the Future" Confluence page 3188621337</li>
-            <li>Audit + decommission dead Connected Apps: Brainshark · Cloudingo ×4 · SalesforceIQ ×2 · Mediafly · OIQ_Integration · Brad SF Lead Creator · Gather · DELETE Expedient Admin Test Group profile</li>
+            <li>Move RingLead off System Administrator → Salesforce API Only + scoped PSG</li>
+            <li>Remove Modify All Data from Expedient Sales Manager profile (14 managers)</li>
+            <li>Rename btc-integration@expedient.com → svc_6sense@expedient.com</li>
+            <li>Run bulk case close (pre-2026 cases) — Apex script ready in Confluence page 3188621337</li>
+            <li>Audit + decommission dead Connected Apps: Brainshark · Cloudingo ×4 · SalesforceIQ ×2 · Mediafly</li>
             <li>Audit 5 Retool Connected Apps — only 1 needed, decommission rest</li>
-            <li>Fix home dir git working tree (~/.git → move to ~/.git.DELETE-ME)</li>
-            <li>Rotate .envrc ES_API_KEY — cleartext in iCloud</li>
             <li>Migrate legacy SF stages: AAE Qualified (52), Business Qualification dup (4), BDR Qualified (1)</li>
           </ul>
         </div>
@@ -751,18 +778,17 @@
         <div class="project-card status-active">
           <div class="project-name">
             <span class="pulse"></span>
-            Fix Partner — Validated Convert + Portal UI
-            <span class="status-badge badge-active">SCOPING</span>
+            Fix Partner — Validated Convert Flow
+            <span class="status-badge badge-active">IN PROGRESS</span>
           </div>
           <div class="project-desc">
-            Two partner-side fixes: (1) Validated Partner conversion flow — currently broken or missing a step when converting leads through partner validation; (2) Partner Portal UI issues. Ties to Tim's dash work and the Validated Partner review.
+            Validated Partner conversion flow needs the "Existing Opportunity" route wired up and fixed. Screenflow for lead submit is complete. Partner portal cleanup is a backlog item.
           </div>
-          <div class="project-next">Scope exact conversion flow issue with Tim — what's breaking and where</div>
+          <div class="project-next">Wire "Existing Opportunity" route in Validated Partner conversion flow</div>
           <ul class="todo-list">
-            <li>Map current Validated Partner conversion path in SF</li>
-            <li>Identify where the convert step fails or is missing</li>
-            <li>Partner Portal UI — pull list of reported issues</li>
-            <li>Tagging Leads to Nutanix from .NEXT Conference (SF Case #9, Catherine Rudolph) — may be related</li>
+            <li><strong style="color:#ff8800;font-size:12px;">ACTIVE</strong> Wire + fix "Existing Opportunity" route in Validated Partner flow</li>
+            <li class="done">Screenflow for lead submit — complete</li>
+            <li>Partner Portal UI cleanup — backlog item</li>
           </ul>
         </div>
 
@@ -772,134 +798,68 @@
         <div class="project-card status-tabled">
           <div class="project-name">
             Sandler Meeting Quality Suite
-            <span class="status-badge badge-tabled">TABLED — PENDING SCOPE</span>
+            <span class="status-badge badge-tabled">SKILLS READY — WRITE-BACK NEXT PHASE</span>
           </div>
           <div class="project-desc">
-            Three-part initiative: (1) /expedient-meeting-analyzer skill for transcript analysis; (2) 11 SF Event write-back fields for AI scoring (Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.); (3) Sandler coaching output feeding AVP review. Tabled pending leadership scope on what to track.
+            Skills exist on this machine (/expedient-meeting-analyzer, Pre/Post/SBR). Use them now for internal review sessions. SF write-back (11 Event fields: Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.) is a next-phase item — tabled until leadership scopes what to track.
           </div>
-          <div class="project-blocker">Tabled — needs scope definition on what to track/report before building write-back</div>
+          <div class="project-blocker">SF write-back tabled — needs scope on what to track before building</div>
           <ul class="todo-list">
-            <li>11 Event fields spec ready (see project_sandler_meeting_fields.md memory)</li>
+            <li class="done">Skills ready: /expedient-meeting-analyzer, Pre/Post/SBR — use now for review sessions</li>
+            <li>11 Event fields spec saved (see project_sandler_meeting_fields.md memory)</li>
             <li>Meeting_Pain_Level__c = most important for AVP coaching (L1/L2/L3 Sandler depth)</li>
             <li>AI prompt update needed to return structured JSON for write-back parse</li>
           </ul>
         </div>
 
         <!-- BLOCKED / TABLED PROJECTS -->
-        <div class="section-label">// BLOCKED · TABLED · PARKED</div>
+        <div class="section-label">// TABLED · PARKED</div>
 
         <div class="project-card status-tabled">
           <div class="project-name">
             SF Field Metadata Labeling
-            <span class="status-badge badge-tabled">NOT STARTED</span>
+            <span class="status-badge badge-tabled">BACKLOG HYGIENE</span>
           </div>
           <div class="project-desc">
-            Add Help Text, Description, Data Owner, Field Usage=Active, Data Sensitivity to all Expedient custom fields. Labeling ONLY — no FLS changes. Brief: salesforce/SF-Field-Metadata-Update-Project.md. Pilot = Opportunity object (~30 fields).
+            Add Help Text, Description, Data Owner, Field Usage=Active, Data Sensitivity to all Expedient custom SF fields. Labeling ONLY — no FLS changes. Brief: salesforce/SF-Field-Metadata-Update-Project.md. Pilot = Opportunity object (~30 fields).
           </div>
-          <div class="project-next">Start after Dashboard Phase 1 kickoff. Need Michael Cruz/Allison to confirm data owner mapping.</div>
-          <div class="project-blocker">Confirm which L1 Pain field is being deprecated before deploy</div>
-        </div>
-
-        <div class="project-card status-tabled">
-          <div class="project-name">
-            Sandler Meeting SF Write-Back
-            <span class="status-badge badge-tabled">TABLED</span>
-          </div>
-          <div class="project-desc">
-            11 SF Event fields for AI meeting analysis write-back from rAIdarr. PATCH /services/data/v59.0/sobjects/Event/{Id}. Key field: Meeting_Pain_Level__c (Sandler L1/L2/L3). Most important for AVP coaching reports.
-          </div>
-          <div class="project-blocker">Tabled — needs scope definition before building</div>
+          <div class="project-next">Start after Dashboard Phase 1 kickoff. Confirm data owner mapping with Michael Cruz/Allison.</div>
         </div>
 
         <div class="project-card status-tabled" style="opacity:0.65;">
           <div class="project-name">
             SF Account Type: Former Client Automation
-            <span class="status-badge badge-tabled">✓ DONE — ON STANDBY</span>
+            <span class="status-badge badge-tabled">✓ DONE — FINISHING TOUCHES</span>
           </div>
           <div class="project-desc">
-            Nick's side complete. Logic confirmed, SMC trigger deployed by IS (Marcel Mejia). IS still cleaning up edge cases — on standby if they need anything.
+            Nick's side complete. Logic confirmed. Mark B (Head of IS) is finishing — Ben identified some clients with edge case issues. On standby if they need anything.
           </div>
         </div>
 
-        <div class="project-card status-parked">
+        <div class="project-card status-tabled">
           <div class="project-name">
             ZI / LISN Tool Split
-            <span class="status-badge badge-parked">STALLED</span>
+            <span class="status-badge badge-tabled">TRAINING DONE — MIGRATION TBD</span>
           </div>
           <div class="project-desc">
-            ZI stays for enrichment/RingLead automations. LISN replaces ZI for rep daily prospecting. ~$47k savings from Copilot seat reduction. RingLead Route licenses: +15 → 70 total. Brett raised concern about ZI org chart vs LISN hierarchy explorer.
+            ZI stays for enrichment/RingLead automations. LISN replaces ZI for rep daily prospecting. ~$47k savings from Copilot seat reduction. LISN sales training delivered by rep + Ben on a sales call — complete. Migration plan and RingLead Route license expansion still TBD.
           </div>
-          <div class="project-next">LISN rep training session — has this been scheduled? Check status with Ben Gallo. Q2 deadline passed.</div>
+          <div class="project-next">Confirm migration plan with Ben Gallo — training done, execution pending.</div>
+          <ul class="todo-list">
+            <li class="done">LISN sales training — delivered by rep + Ben, complete</li>
+            <li>Migration plan finalization with Ben Gallo</li>
+            <li>RingLead Route licenses: +15 → 70 total</li>
+          </ul>
         </div>
 
         <div class="project-card status-parked">
           <div class="project-name">
             Rep Calendar / Scheduling Automation
-            <span class="status-badge badge-parked">PARKED</span>
+            <span class="status-badge badge-parked">BACKLOG — FUN FUTURE PROJECT</span>
           </div>
           <div class="project-desc">
-            Automate meeting booking for reps. Options: Microsoft Graph API (Expedient is M365, native path), SF Inbox (check license status), Zoom Scheduler API (OAuth already in Retool). No active build.
+            Automate meeting booking for reps. Options: Microsoft Graph API (Expedient is M365, native path), SF Inbox (check license status), Zoom Scheduler API (OAuth already in Retool). No active build — parked for future.
           </div>
-          <div class="project-next">Evaluate MS Graph App Registration status with Kirk/IT when a trigger appears.</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- SF ADMIN QUEUE -->
-    <div class="panel">
-      <div class="panel-header">
-        <span class="pulse"></span>
-        <span class="panel-title">:: SF ADMIN QUEUE ::</span>
-      </div>
-      <div class="panel-body">
-
-        <div class="project-card status-active">
-          <div class="project-name">Enable Forecasting For Everyone
-            <span class="status-badge badge-active">TODO</span>
-          </div>
-          <div class="project-desc">Enable Collaborative Forecasting in SF so all reps have access to the forecast module. Required prereq for ForecastingQuota object (Dashboard Phase 1) and SF Pipeline Inspection (Q4). Michael Cruz must enable in setup.</div>
-          <div class="project-blocker">Michael Cruz (IS) — turn on in SF Setup → Forecasts Settings</div>
-        </div>
-
-        <div class="project-card status-active">
-          <div class="project-name">Upload 2026 Quotas
-            <span class="status-badge badge-active">TODO</span>
-          </div>
-          <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Requires Collaborative Forecasting to be enabled first. Budget data ready in 2026-Budget-Data.md.</div>
-          <div class="project-next">Blocked on Forecasting enable — after that, prep CSV + Data Loader job</div>
-        </div>
-
-        <div class="project-card status-active">
-          <div class="project-name">Update Fields — Description, Help Text, Owners
-            <span class="status-badge badge-active">NOT STARTED</span>
-          </div>
-          <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage=Active, and Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields). Brief: salesforce/SF-Field-Metadata-Update-Project.md. v3 descriptions are the source (Confluence 3194126341).</div>
-          <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick before/after → deploy → next object</div>
-          <div class="project-blocker">Confirm which L1 Pain field is being deprecated + data owner mapping</div>
-        </div>
-
-        <div class="project-card status-active">
-          <div class="project-name">Expire Old Cases
-            <span class="status-badge badge-active">REVIEW NEEDED</span>
-          </div>
-          <div class="project-desc">38 open SF cases in the queue. Several are On Hold with no activity or already-resolved work. Review and close stale ones before they inflate the backlog. Case queue: Project Tickets + Salesforce Support Open Cases views.</div>
-          <div class="project-next">Review each case — candidates to close: #3 (Former Client On Hold), #5 (SF & Sigma On Hold), #9 (Nutanix .NEXT leads, likely done), #12 (Retool Opp Permissions)</div>
-          <ul class="todo-list">
-            <li>#3 OKR – Former Client/Inactive Client change (On Hold, Jim Kothe) — blocked on IS, not closeable yet</li>
-            <li>#5 SF & Sigma Updates (On Hold, Peggy Hancock) — check if still needed</li>
-            <li>#9 Tagging Leads to Nutanix from .NEXT (Catherine Rudolph) — conference was spring, likely done</li>
-            <li>#12 Retool Edit Opportunity Permissions (Josh Davis) — check if resolved</li>
-            <li>#13 Activity emails/meetings not tracking in SF (Kim Kosar) — may be SF Inbox config issue</li>
-          </ul>
-        </div>
-
-        <div class="project-card status-active">
-          <div class="project-name">Help Tim Review Active Validated Partners
-            <span class="status-badge badge-active">COORDINATE</span>
-          </div>
-          <div class="project-desc">Walk through Active Validated Partners (Related_Partners__c) with Tim Cooper — surface which have open opps vs which are dormant. 4,334 Active + 256 Expired. Ties into Tim's Dashboard build and Fix Partner work.</div>
-          <div class="project-next">Pull Active Validated Partners via /expedient-sf or SF MCP — filter by no open opp in last 90 days</div>
         </div>
 
       </div>
@@ -927,63 +887,6 @@
       </div>
     </div>
 
-    <!-- BUILD QUEUE -->
-    <div class="panel">
-      <div class="panel-header">
-        <span class="pulse" style="background:#00aaff;box-shadow:0 0 6px #00aaff;"></span>
-        <span class="panel-title" style="color:#00aaff;text-shadow:0 0 8px #00aaff;">:: BUILD QUEUE (NEXT UP) ::</span>
-      </div>
-      <div class="panel-body">
-        <div style="color:#888;font-size:12px;margin-bottom:10px;">Scoped, not yet started. Ordered roughly by urgency.</div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">Duplicate Opp Merge Screen Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-          <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map all downstream relationships before building.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">RPM Head/Tail Attribution Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-          <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Need to audit current Lead conversion rules first.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">AI Notes Ingestion → Opp Pain Points <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-          <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Could also ingest call transcripts and account notes. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">Win Review Assembly Button <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-          <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow (George Hamm). Need field enforcement before button fires — incomplete Opp fields = bad output.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">Partner Account List + 6sense Tagging Tool <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–5 WKS</span></div>
-          <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Could absorb Alliance partner tagging and Leaf's manual 6sense lookups. Hard part: fuzzy account name matching with confidence thresholds.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">AI Team Reporting Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–4 WKS · MICHAEL</span></div>
-          <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Leadership can't manage what they can't see. Risk: building on a moving target — confirm Robbie's structure is finalized before starting.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">Event / Partner IRB Approval Overhaul <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">~10% · WAITING MKTG</span></div>
-          <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction. Need tight phasing to contain scope creep. Q: when does Marketing come back? Who owns approval decision on their side?</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">Partner Portal 3.0 Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">6–10 WKS · TIM + MC + NL</span></div>
-          <div class="project-desc">Portal is 7 years old. Full rebuild: clean terminology, modern architecture, tighter permissioning, self-serve lead status, routing/escalation workflows, individual logins, reporting, CMS backend. Requirements scoped (Tim, 100% KR). Needs exec sponsorship + phased delivery.</div>
-        </div>
-
-        <div class="project-card" style="border-left-color:#00aaff;">
-          <div class="project-name" style="color:#66ccff;">QT Feature Requests <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">KOTHE</span></div>
-          <div class="project-desc">4 QT enhancements: Validated Partner lookup in QT · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (on mat leave). Target: migrate off QT within 18 months.</div>
-        </div>
-
-      </div>
-    </div>
-
     <!-- IN SCOPING -->
     <div class="panel">
       <div class="panel-header">
@@ -997,7 +900,7 @@
             <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
           </div>
           <div class="project-desc">
-            Broader reporting strategy beyond The Dashboard — what does the full reporting layer look like? Includes: SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
+            Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
           </div>
           <ul class="todo-list">
             <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
@@ -1012,9 +915,9 @@
             <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
           </div>
           <div class="project-desc">
-            Internal guide / playbook for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
+            Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
           </div>
-          <div class="project-next">Define audience + format before scoping content — Michael Cruz + IS team as primary audience?</div>
+          <div class="project-next">Define audience + format before scoping content</div>
         </div>
 
       </div>
@@ -1033,7 +936,7 @@
       </div>
       <div class="panel-body" style="font-size:12px;">
 
-        <div style="color:#555;font-size:11px;margin-bottom:10px;font-style:italic;">Source: 15Five KRs (Nick's contributions to others' objectives) · Jun 16 2026</div>
+        <div style="color:#555;font-size:11px;margin-bottom:10px;font-style:italic;">Source: 15Five KRs (Nick's contributions to others' objectives) · Jun 17 2026</div>
 
         <div style="margin-bottom:14px;">
           <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">AI-Assisted Workflows <span style="color:#888;font-size:13px;">(Kothe obj · 83%)</span></div>
@@ -1061,7 +964,7 @@
             <div class="prio-bar-wrap"><div class="prio-bar red" style="width:15%"></div></div>
             <span class="prio-label" style="color:var(--exp-red);">15% MISSED</span>
           </div>
-          <div style="color:#888;font-size:11px;padding:3px 0;">→ Q3 focus: Sigma w/Lessick + Mark B. Stakeholders: Ben, Anita, Pam (Finance). Validate data first.</div>
+          <div style="color:#888;font-size:11px;padding:3px 0;">→ Q3 focus: Sigma w/Lessick + Mark B. Stakeholders: Ben, Anita (Financial Leadership), Pam (Finance).</div>
         </div>
 
         <div style="margin-bottom:14px;">
@@ -1120,37 +1023,39 @@
           <thead>
             <tr>
               <th>OWNER</th>
-              <th>BLOCKING</th>
+              <th>BLOCKING / OWNS</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="owner-name">Michael Cruz (IS)</span></td>
-              <td class="blocker-items">Collaborative Forecasting · Budget_Target__c object · PSG for MCP Server · Contract date field confirm · Tenured__c fallback confirm</td>
+              <td><span class="owner-name">Michael Cruz</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
+              <td class="blocker-items">Collaborative Forecasting sandbox test (co-working with Nick) · Budget_Target__c object · Tenured__c fallback confirm</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Anita Osborne</span></td>
+              <td><span class="owner-name">Anita Osborne</span><br><span style="color:#666;font-size:11px;">Financial Leadership</span></td>
               <td class="blocker-items">Confirm May $308k EOM figure source (GoTransverse vs SF)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Marcel Mejia (IS)</span></td>
-              <td class="blocker-items">SMC trigger for Former Client account type (no owner since Allison on leave)</td>
+              <td><span class="owner-name">Mark B</span><br><span style="color:#666;font-size:11px;">Head of IS</span></td>
+              <td class="blocker-items">Finishing Former Client automation edge cases (Ben identified some clients with issues)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Mike Lessick</span></td>
-              <td class="blocker-items">Sigma Phase 1 kickoff (Revenue Health lens — can start now)</td>
+              <td><span class="owner-name">Mike Lessick</span><br><span style="color:#666;font-size:11px;">BI/IS</span></td>
+              <td class="blocker-items">Sigma Phase 1 kickoff (Revenue Health lens — can start after Tim/Jim/Daniel meeting)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Tim Cooper</span></td>
-              <td class="blocker-items">Partner dashboard scope confirm (RPM + AVP) · Validated Partner review session · /expedient-sf skill validation Qs (Confluence 3191341058) · Nutanix reporting clarification</td>
+              <td><span class="owner-name">Tim Cooper</span><br><span style="color:#666;font-size:11px;">Partner Ops</span></td>
+              <td class="blocker-items">Partner Alliances Story scope session · Validated Partner review · /expedient-sf skill validation Qs (Confluence 3191341058)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Ben Gallo</span></td>
-              <td class="blocker-items">ZI/LISN migration plan finalization + LISN training scheduling</td>
+              <td><span class="owner-name">Ben Gallo</span><br><span style="color:#666;font-size:11px;">Rev Acceleration</span></td>
+              <td class="blocker-items">ZI/LISN migration plan finalization (training done)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Nick (YOU)</span></td>
+              <td><span class="owner-name">Nick (YOU)</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
               <td class="blocker-items">
+                Upload 2026 Quotas (data ready, Nick owns)<br>
+                Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
                 Rotate .envrc ES_API_KEY
               </td>
@@ -1173,7 +1078,7 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">SF Admin Queue</span>
-          <span class="fact-value" style="color:var(--neon-orange);">5 tasks</span>
+          <span class="fact-value" style="color:var(--neon-orange);">5 tasks (see SF ADMIN tab)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">In Scoping</span>
@@ -1181,23 +1086,15 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">Hard-Blocked</span>
-          <span class="fact-value" style="color:var(--exp-red);">3</span>
+          <span class="fact-value" style="color:var(--exp-red);">1 (rAIdarr deployment)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Tabled / Parked</span>
           <span class="fact-value" style="color:#888;">4</span>
         </div>
         <div class="fact-row">
-          <span class="fact-label">Open SF Cases</span>
-          <span class="fact-value" style="color:var(--neon-orange);">38 (review queue)</span>
-        </div>
-        <div class="fact-row">
           <span class="fact-label">OKR Milestones Missed</span>
           <span class="fact-value" style="color:var(--exp-red);">2 (Jun dash + Q2 LISN)</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">External Blockers</span>
-          <span class="fact-value" style="color:var(--neon-orange);">7 people</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">rAIdarr Branch</span>
@@ -1209,15 +1106,11 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">MCP Server</span>
-          <span class="fact-value" style="color:var(--exp-red);">AUTH BLOCKED</span>
+          <span class="fact-value" style="color:var(--neon-orange);">NICK OWNS — IN PROGRESS</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">ZI/LISN Migration</span>
-          <span class="fact-value" style="color:var(--neon-orange);">Q2 OVERDUE</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SF Org Admins</span>
-          <span class="fact-value" style="color:var(--exp-red);">~12 (SHOULD BE 4)</span>
+          <span class="fact-value" style="color:var(--neon-orange);">TRAINING DONE — MIGRATION TBD</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Open SF Pipeline Past CloseDate</span>
@@ -1234,9 +1127,9 @@
       </div>
       <div class="panel-body">
         <div class="priority-row">
-          <span class="prio-name">🔴 Chase Michael Cruz (IS)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">CRITICAL</span>
+          <span class="prio-name">🔴 Retool deployment fix (rAIdarr)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:98%"></div></div>
+          <span class="prio-label" style="color:var(--exp-red);">TODAY</span>
         </div>
         <div class="priority-row">
           <span class="prio-name">🔴 Deactivate 2 external SF admins</span>
@@ -1244,64 +1137,35 @@
           <span class="prio-label" style="color:var(--exp-red);">URGENT</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟠 rAIdarr P1 504 timeout</span>
+          <span class="prio-name">🟠 Partner Alliances Story quick build</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:85%"></div></div>
+          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">🟠 Schedule Tim/Jim/Daniel — Dashboard kickoff</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟠 Sigma Phase 1 kickoff</span>
+          <span class="prio-name">🟠 rAIdarr P1: aiDealInspection broken</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:75%"></div></div>
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟡 rAIdarr P2 — RPM fix</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:55%"></div></div>
+          <span class="prio-name">🟡 rAIdarr P2 — AVP KPI filtering</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
           <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟡 ZI/LISN — check status</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:40%"></div></div>
+          <span class="prio-name">🟡 rAIdarr P2 — RPM data source fix</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
           <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🔵 SF Field Metadata (post-dash)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:20%"></div></div>
+          <span class="prio-name">🔵 SF Field Metadata (backlog hygiene)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:15%"></div></div>
           <span class="prio-label" style="color:#666;">QUEUED</span>
         </div>
-      </div>
-    </div>
-
-    <!-- OPEN CASES -->
-    <div class="panel">
-      <div class="panel-header">
-        <span class="pulse orange"></span>
-        <span class="panel-title">:: OPEN CASE QUEUE ::</span>
-      </div>
-      <div class="panel-body" style="font-size:11px;">
-        <div style="color:#888;margin-bottom:8px;">38 open · Sorted by date opened · Closeable candidates marked 🗑</div>
-        <table class="blocker-table" style="font-size:11px;">
-          <thead><tr><th>#</th><th>SUBJECT</th><th>OWNER</th><th>STATUS</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td class="blocker-items">OKR – Commercial Analytics Dashboard</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>2</td><td class="blocker-items">OKR – Case Submission Flow Updates</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>3</td><td class="blocker-items">OKR – Former Client/Inactive Client change</td><td><span class="owner-name">Jim Kothe</span></td><td style="color:#888;">On Hold</td></tr>
-            <tr><td>4</td><td class="blocker-items">OKR – rAIdar Build (Exec Assistant)</td><td><span class="owner-name">Ben Gallo</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>5</td><td class="blocker-items">SF &amp; Sigma Updates Requirement Doc 🗑?</td><td><span class="owner-name">Peggy H.</span></td><td style="color:#888;">On Hold</td></tr>
-            <tr><td>6</td><td class="blocker-items">OKR – AI Reporting Needs</td><td><span class="owner-name">R. Brennan</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>7</td><td class="blocker-items">CSM Dashboard / Retention Radar</td><td><span class="owner-name">G. Hamm</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>8</td><td class="blocker-items">Nutanix Won Reporting / Partner Quota</td><td><span class="owner-name">Tim Cooper</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>9</td><td class="blocker-items">Tagging Leads to Nutanix .NEXT Conf 🗑?</td><td><span class="owner-name">C. Rudolph</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>10</td><td class="blocker-items">OKR – AVP/RPM Dashboard Update</td><td><span class="owner-name">Tim Cooper</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>11</td><td class="blocker-items">Campaigns where Leads Not Converted</td><td><span class="owner-name">Peggy H.</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>12</td><td class="blocker-items">Retool Edit Opportunity Permissions 🗑?</td><td><span class="owner-name">Josh Davis</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>13</td><td class="blocker-items">Activity/emails not tracking in SF</td><td><span class="owner-name">Kim Kosar</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td>14</td><td class="blocker-items">Homepage Dashboard</td><td><span class="owner-name">K. Cowan</span></td><td style="color:var(--neon-blue);">New</td></tr>
-            <tr><td>15</td><td class="blocker-items">Pre Call/Post Call Updates</td><td><span class="owner-name">Nick</span></td><td style="color:var(--neon-blue);">New</td></tr>
-            <tr><td>16</td><td class="blocker-items">2026 Sales Leaderboard</td><td><span class="owner-name">Jim Kothe</span></td><td style="color:var(--neon-blue);">New</td></tr>
-            <tr><td>17</td><td class="blocker-items">Remove RevOps Access – Exiting Employee</td><td><span class="owner-name">—</span></td><td style="color:var(--neon-orange);">In Progress</td></tr>
-            <tr><td colspan="4" style="color:#555;text-align:center;padding:4px;">+ 21 more below the fold</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
 
@@ -1362,12 +1226,138 @@
       </div>
     </div>
 
-
   </div>
 </div>
-
-</div><!-- end main-grid -->
 </div><!-- end tab-tracker -->
+
+<!-- ══════════════════════════════ TAB: SF ADMIN ══════════════════════════════ -->
+<div id="tab-sfadmin" style="display:none;">
+<div class="single-col-tab">
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="pulse"></span>
+      <span class="panel-title">:: SF ADMIN QUEUE ::</span>
+    </div>
+    <div class="panel-body">
+
+      <div class="project-card status-active">
+        <div class="project-name">Enable Collaborative Forecasting
+          <span class="status-badge badge-active">IN PROGRESS</span>
+        </div>
+        <div class="project-desc">Working with Michael Cruz — testing in sandbox first to confirm nothing breaks (Opportunity Splits included). Once sandbox validated, enable in prod. Required prereq for ForecastingQuota object (Dashboard Phase 1).</div>
+        <div class="project-next">Validate in sandbox with Michael → then enable in prod</div>
+      </div>
+
+      <div class="project-card status-active">
+        <div class="project-name">Upload 2026 Quotas
+          <span class="status-badge badge-active">NICK OWNS — READY TO GO</span>
+        </div>
+        <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Nick has the data. Nick will do this — not Michael Cruz. Blocked on Collaborative Forecasting being enabled first.</div>
+        <div class="project-next">Wait for Collab Forecasting → then prep CSV + run Data Loader job</div>
+      </div>
+
+      <div class="project-card status-active">
+        <div class="project-name">Update Fields — Description, Help Text, Owners
+          <span class="status-badge badge-tabled">BACKLOG HYGIENE</span>
+        </div>
+        <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage=Active, and Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields). Brief: salesforce/SF-Field-Metadata-Update-Project.md.</div>
+        <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick before/after → deploy → next object</div>
+        <div class="project-blocker">Confirm which L1 Pain field is being deprecated + data owner mapping</div>
+      </div>
+
+      <div class="project-card status-active">
+        <div class="project-name">Expire Old Cases — Nick Owns
+          <span class="status-badge badge-active">REVIEW NEEDED</span>
+        </div>
+        <div class="project-desc">Nick will run through the queue. Lots of old Marketing cases that can probably just be closed. Open tickets we have that are probably done. Run the Apex bulk close script for pre-2026 cases (Confluence 3188621337).</div>
+        <div class="project-next">Review each open case → candidates: #3, #5, #9, #12 + old Marketing cases</div>
+        <ul class="todo-list">
+          <li>#3 OKR – Former Client/Inactive Client (On Hold, Jim Kothe) — still pending IS</li>
+          <li>#5 SF &amp; Sigma Updates (On Hold, Peggy H.) — check if still needed</li>
+          <li>#9 Tagging Leads to Nutanix from .NEXT (Catherine Rudolph) — conference was spring, likely done</li>
+          <li>#12 Retool Edit Opportunity Permissions (Josh Davis) — check if resolved</li>
+          <li>#13 Activity emails/meetings not tracking (Kim Kosar) — may be SF Inbox config issue</li>
+          <li>Run Apex bulk close script for pre-2026 Marketing cases</li>
+        </ul>
+      </div>
+
+      <div class="project-card status-active">
+        <div class="project-name">Help Tim Review Active Validated Partners
+          <span class="status-badge badge-active">COORDINATE</span>
+        </div>
+        <div class="project-desc">Walk through Active Validated Partners (Related_Partners__c) with Tim Cooper — surface which have open opps vs which are dormant. 4,334 Active + 256 Expired. Ties into Partner Alliances quick build.</div>
+        <div class="project-next">Pull Active Validated Partners via /expedient-sf or SF MCP — filter by no open opp in last 90 days</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div><!-- end tab-sfadmin -->
+
+<!-- ══════════════════════════════ TAB: BUILD QUEUE ══════════════════════════════ -->
+<div id="tab-buildqueue" style="display:none;">
+<div class="single-col-tab">
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="pulse" style="background:#00aaff;box-shadow:0 0 6px #00aaff;"></span>
+      <span class="panel-title" style="color:#00aaff;text-shadow:0 0 8px #00aaff;">:: BUILD QUEUE (NEXT UP) ::</span>
+    </div>
+    <div class="panel-body">
+      <div style="color:#888;font-size:12px;margin-bottom:10px;">Scoped, not yet started. Ordered roughly by urgency.</div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Duplicate Opp Merge Screen Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+        <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map all downstream relationships before building.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">RPM Head/Tail Attribution Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+        <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Need to audit current Lead conversion rules first.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">AI Notes Ingestion → Opp Pain Points <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+        <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Could also ingest call transcripts and account notes. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Win Review Assembly Button <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
+        <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow (George Hamm). Need field enforcement before button fires — incomplete Opp fields = bad output.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Partner Account List + 6sense Tagging Tool <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–5 WKS</span></div>
+        <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Could absorb Alliance partner tagging and Leaf's manual 6sense lookups. Hard part: fuzzy account name matching with confidence thresholds.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">AI Team Reporting Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–4 WKS · MICHAEL</span></div>
+        <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Leadership can't manage what they can't see. Risk: building on a moving target — confirm Robbie's structure is finalized before starting.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Event / Partner IRB Approval Overhaul <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">~10% · WAITING MKTG</span></div>
+        <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction. Need tight phasing to contain scope creep.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Partner Portal 3.0 Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">6–10 WKS · TIM + MC + NL</span></div>
+        <div class="project-desc">Portal is 7 years old. Full rebuild: clean terminology, modern architecture, tighter permissioning, self-serve lead status, routing/escalation workflows, individual logins, reporting, CMS backend. Requirements scoped (Tim, 100% KR). Needs exec sponsorship + phased delivery.</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">QT Feature Requests <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">KOTHE</span></div>
+        <div class="project-desc">4 QT enhancements: Validated Partner lookup in QT · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (on mat leave). Target: migrate off QT within 18 months.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div><!-- end tab-buildqueue -->
 
 <!-- ══════════════════════════════ TAB: ABOUT NICK ══════════════════════════════ -->
 <div id="tab-about" style="display:none;">
@@ -1506,7 +1496,7 @@
         <div style="margin-top:10px;font-size:12px;color:#aaa;line-height:1.7;">
           <div><span style="color:var(--neon-yellow);">MBA</span> — Katz School of Business, University of Pittsburgh · Dec 2024</div>
           <div><span style="color:var(--neon-yellow);">B.S. Business Administration</span> — Franklin University · Dec 2019</div>
-          <div style="margin-top:8px;color:#666;font-size:11px;">📍 Pittsburgh, PA · linkedin.com/in/nlansberry · trailblazer.me/id/nlansberry</div>
+          <div style="margin-top:8px;color:#666;font-size:11px;">Pittsburgh, PA · linkedin.com/in/nlansberry · trailblazer.me/id/nlansberry</div>
         </div>
       </div>
     </div>
@@ -1523,7 +1513,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 16, 2026 v4</span>
+    Last updated: <span style="color:var(--neon-green);">June 17, 2026 v5</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">GTM COMMAND CENTER 9000™</span>
     &nbsp;|&nbsp;
@@ -1538,15 +1528,17 @@
     <span class="retro-badge">SANDLER CERTIFIED</span>
   </div>
   <div style="margin-top:16px;color:#222;font-size:12px;">
-    GTM COMMAND CENTER 9000 · v1.0 · © 2026 NICK LANSBERRY PRODUCTIONS · ALL RIGHTS RESERVED ·
-    EXPEDIENT INTERNAL USE ONLY
+    GTM COMMAND CENTER 9000 · v1.0 · © 2026 NICK LANSBERRY PRODUCTIONS · ALL RIGHTS RESERVED
   </div>
 </footer>
 
 <script>
   function showTab(name, btn) {
-    document.getElementById('tab-tracker').style.display = name === 'tracker' ? '' : 'none';
-    document.getElementById('tab-about').style.display = name === 'about' ? '' : 'none';
+    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'about'];
+    tabs.forEach(function(t) {
+      var el = document.getElementById('tab-' + t);
+      if (el) el.style.display = (t === name) ? '' : 'none';
+    });
     document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
   }

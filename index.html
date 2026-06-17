@@ -582,6 +582,7 @@
   <button class="tab-btn active" onclick="showTab('tracker', this)">[ TRACKER ]</button>
   <button class="tab-btn" onclick="showTab('sfadmin', this)">[ SF ADMIN ]</button>
   <button class="tab-btn" onclick="showTab('buildqueue', this)">[ BUILD QUEUE ]</button>
+  <button class="tab-btn" onclick="showTab('completed', this)">[ COMPLETED ]</button>
   <button class="tab-btn" onclick="showTab('about', this)">[ ABOUT NICK ]</button>
 </nav>
 
@@ -682,23 +683,6 @@
             <li>Phase I feature improvements (SF Case #15)</li>
             <li class="done">Jennifer Priddy — Delivery Premier Care Pre/Post summaries — delivered</li>
             <li class="done">Marketecture additional changes — complete and running to George's spec</li>
-          </ul>
-        </div>
-
-        <!-- COMCAST — DONE -->
-        <div class="project-card status-tabled" style="opacity:0.65;">
-          <div class="project-name">
-            Comcast Lead Submission Flow Fix
-            <span class="status-badge badge-active">✓ DONE</span>
-          </div>
-          <div class="project-desc">
-            Done and ready to go. Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.
-          </div>
-          <ul class="todo-list">
-            <li class="done">Pull Comcast lead submission error logs from SF</li>
-            <li class="done">Fix solution data population issue</li>
-            <li class="done">Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
-            <li class="done">Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
           </ul>
         </div>
 
@@ -824,16 +808,6 @@
             Add Help Text, Description, Data Owner, Field Usage=Active, Data Sensitivity to all Expedient custom SF fields. Labeling ONLY — no FLS changes. Brief: salesforce/SF-Field-Metadata-Update-Project.md. Pilot = Opportunity object (~30 fields).
           </div>
           <div class="project-next">Start after Dashboard Phase 1 kickoff. Confirm data owner mapping with Michael Cruz/Allison.</div>
-        </div>
-
-        <div class="project-card status-tabled" style="opacity:0.65;">
-          <div class="project-name">
-            SF Account Type: Former Client Automation
-            <span class="status-badge badge-tabled">✓ DONE — FINISHING TOUCHES</span>
-          </div>
-          <div class="project-desc">
-            Nick's side complete. Logic confirmed. Mark B (Head of IS) is finishing — Ben identified some clients with edge case issues. On standby if they need anything.
-          </div>
         </div>
 
         <div class="project-card status-tabled">
@@ -1359,6 +1333,111 @@
 </div>
 </div><!-- end tab-buildqueue -->
 
+<!-- ══════════════════════════════ TAB: COMPLETED ══════════════════════════════ -->
+<div id="tab-completed" style="display:none;">
+<div class="single-col-tab">
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="pulse" style="background:var(--neon-green);box-shadow:0 0 6px var(--neon-green);"></span>
+      <span class="panel-title" style="color:var(--neon-green);text-shadow:0 0 8px var(--neon-green);">:: COMPLETED WORK ::</span>
+    </div>
+    <div class="panel-body">
+      <div style="color:#555;font-size:12px;margin-bottom:14px;">Done is done. Archived here so the tracker stays clean.</div>
+
+      <div class="section-label">// RETOOL APPS</div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          Comcast Lead Submission Flow Fix
+          <span class="status-badge badge-active">✓ DONE</span>
+        </div>
+        <div class="project-desc">Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.</div>
+        <ul class="todo-list">
+          <li class="done">Pull Comcast lead submission error logs from SF</li>
+          <li class="done">Fix solution data population issue</li>
+          <li class="done">Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
+          <li class="done">Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
+        </ul>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          Marketecture → SF Integration
+          <span class="status-badge badge-active">✓ DONE — 100% TO GEORGE'S SPEC</span>
+        </div>
+        <div class="project-desc">Running 100% in production to George Hamm's spec. No further action needed.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          Pre-Call / Post-Call — Jennifer Priddy Premier Care Use Case
+          <span class="status-badge badge-active">✓ DONE</span>
+        </div>
+        <div class="project-desc">Delivered what Jennifer needed for her Delivery / Premier Care use cases. Pre/Post workflow extended to cover this output.</div>
+      </div>
+
+      <div class="section-label">// SALESFORCE</div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          SF Account Type: Former Client Automation
+          <span class="status-badge badge-active">✓ DONE — FINISHING TOUCHES WITH MARK B</span>
+        </div>
+        <div class="project-desc">Nick's side complete. Logic confirmed. Mark B (Head of IS) finishing edge cases Ben identified. On standby if they need anything.</div>
+      </div>
+
+      <div class="section-label">// PARTNER & CHANNEL</div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          Partner Portal Rebuild (VAR / Lead Submit Screenflow)
+          <span class="status-badge badge-active">✓ DONE</span>
+        </div>
+        <div class="project-desc">Screenflow for lead submit complete. VAR routing logic 100%. Head/tail popup 100%. Portal 3.0 full rebuild is a future build queue item.</div>
+        <ul class="todo-list">
+          <li class="done">VAR routing logic + head/tail popup</li>
+          <li class="done">Lead submit screenflow</li>
+          <li class="done">SF report — RPMs + VAR accounts</li>
+        </ul>
+      </div>
+
+      <div class="section-label">// AI WORKFLOWS</div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          LISN Sales Training
+          <span class="status-badge badge-active">✓ DONE</span>
+        </div>
+        <div class="project-desc">LISN sales training delivered by LISN rep + Ben Gallo on a sales call. Migration plan and broader ZI/LISN split still TBD — tracked in active missions.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.75;">
+        <div class="project-name">
+          rAIdarr — Session 2026-06-15 Improvements
+          <span class="status-badge badge-active">✓ COMMITTED</span>
+        </div>
+        <div class="project-desc">Batch of fixes committed (commits dceb374d–ff8a1da9). Includes: AVP filter static mode fix, funnel chart click-to-filter, opp stat tooltips, event calendar fixes, territory/region columns, ICP coverage label fix, AI hidden binding fix, territory competitor rollup, NOC count + take rate columns, payload slim for aiDealInspection.</div>
+        <ul class="todo-list">
+          <li class="done">selectAVP: switched to static itemMode with hardcoded AVP options</li>
+          <li class="done">funnelChartMonth click-to-filter + title</li>
+          <li class="done">All 8 Opp statistics: tooltipText added</li>
+          <li class="done">Event Calendar: endByIndex + allDay fixed (no more 12–12am)</li>
+          <li class="done">Territory + Region columns added to tableScorecardMain</li>
+          <li class="done">AI text hidden bindings: content-presence check instead of null check</li>
+          <li class="done">buildRepScorecard.js: territory-level competitor rollup via byTerritory</li>
+          <li class="done">transformerAIPayload.js: meetings cut to 5 most recent, fields slimmed</li>
+          <li class="done">Partner Scorecard KPIs wired to filter-aware tablePartnerCoverage.data</li>
+          <li class="done">newOppsLookup + newOppsTeamLookup: NOC count + take rate columns added</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div><!-- end tab-completed -->
+
 <!-- ══════════════════════════════ TAB: ABOUT NICK ══════════════════════════════ -->
 <div id="tab-about" style="display:none;">
 <div class="about-grid">
@@ -1534,7 +1613,7 @@
 
 <script>
   function showTab(name, btn) {
-    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'about'];
+    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'completed', 'about'];
     tabs.forEach(function(t) {
       var el = document.getElementById('tab-' + t);
       if (el) el.style.display = (t === name) ? '' : 'none';

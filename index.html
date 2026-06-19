@@ -572,7 +572,7 @@
     ✅ Tim's Dashboard MVP COMPLETE (Jun 19) — meeting with Tim next week to review and decide next step (Sigma POC vs SF filters) &nbsp;&nbsp;&nbsp;
     ✅ Sandler Exam COMPLETE — confirm with James &nbsp;&nbsp;&nbsp;
     ✅ rAIdarr RETOOL DEPLOYMENT FIXED (Jun 17) — unprotected app, merged to main, full deploy succeeded · NO full deployments until @mesi patches source control bug (~Wed Jun 25) &nbsp;&nbsp;&nbsp;
-    ⚠️ rAIdarr P1: aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI) — next up &nbsp;&nbsp;&nbsp;
+    ✅ rAIdarr P1: aiDealInspection FIXED (Jun 19) — Retool timeout + max_tokens resolved, working &nbsp;&nbsp;&nbsp;
     🔒 SF ORG SECURITY: 2 dormant external admins active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
     📊 OKR #2 (Revenue Dashboard): 15% complete — schedule kickoff with Tim/Jim/Daniel &nbsp;&nbsp;&nbsp;
     📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
@@ -623,7 +623,7 @@
           <div style="font-size:12px;color:#ff9900;margin-bottom:6px;">⚠ DO NOT run full deployments until @mesi patches source control bug (~Wed Jun 25). After patch: upgrade to latest Retool version.</div>
           <ul class="todo-list">
             <li class="done"><strong style="color:#555;font-size:12px;">DONE</strong> Retool deployment fixed · Claude broken in Public fixed · AVP filter working · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
-            <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI)</li>
+            <li class="done"><strong style="color:#555;font-size:12px;">P1 FIXED Jun 19</strong> aiDealInspection — working. Retool timeout + max_tokens resolved.</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix — each of 5 tiles)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP Funnel stats (Total New Logo Funnel, ICP New Logo Funnel) — tied to transformerNewLogoStats which reads raw SOQL, not AVP-filtered. Thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP: AVP dropdown + chart click interaction weird — both work independently, conflict when combined</li>
@@ -1074,9 +1074,9 @@
       </div>
       <div class="panel-body">
         <div class="priority-row">
-          <span class="prio-name">🔴 rAIdarr P1: aiDealInspection broken</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">NEXT UP</span>
+          <span class="prio-name">✅ rAIdarr P1: aiDealInspection fixed</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
         </div>
         <div class="priority-row">
           <span class="prio-name">🔴 Deactivate 2 external SF admins</span>

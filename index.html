@@ -1356,6 +1356,12 @@
       </div>
 
       <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">90-Day-Touch → Outlook Calendar Auto-Scheduler <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">LOW · MONTY</span></div>
+        <div class="project-desc">Monty Gents request: run SF 90-day-touch report → auto-schedule 15-min Outlook self-appointments for each client on the list, spread randomly across weekday 9–5 slots within the next 90 days, max 2/day, no client email needed. Re-running the report only schedules net-new clients. Mechanism: Retool workflow + Microsoft Graph API (/getSchedule + POST /me/events). No SF Scheduler license needed. Feasibility: HIGH. Est. 1–2 days once Graph OAuth is wired.</div>
+        <div class="project-next">Wire Microsoft Graph OAuth in Retool · Confirm Monty's UPN · Pull 90-day-touch SOQL or report ID</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#00aaff;">
         <div class="project-name" style="color:#66ccff;">Pre-Call / Post-Call Planner — Phase 2 Enhancements <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">NEXT PHASE</span></div>
         <div class="project-desc">Core workflow is in production and running for Sales + Jennifer Priddy (Premier Care). Next phase: identify enhancement requests, expand output coverage, improve AI field schema alignment, and evaluate additional use cases (e.g. renewal prep, expansion plays).</div>
       </div>
@@ -1403,15 +1409,6 @@
         <div class="project-next">Define audience + format before scoping content</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#9966ff;">
-        <div class="project-name" style="color:#cc99ff;">90-Day-Touch → Outlook Calendar Auto-Scheduler
-          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING — MONTY</span>
-        </div>
-        <div class="project-desc">
-          Monty Gents request: Run SF "90-day-touch" report → auto-schedule a 15-min Outlook calendar appointment for each client on the list, spread randomly across available weekday 9–5 slots within the next 90 days, max 2/day, no contact email required (just account name + self-invite). Refresh logic: re-running the report auto-schedules newly appeared clients. Feasibility: HIGH. Mechanism: Retool workflow + Microsoft Graph API (/getSchedule + POST /me/events). No SF Scheduler license needed.
-        </div>
-        <div class="project-next">Confirm Microsoft Graph API access in Retool (OAuth connection to M365) · Confirm Monty's UPN · Scope: SOQL for 90-day-touch → Graph free/busy → event creation loop</div>
-      </div>
 
       <div class="project-card" style="border-left-color:#9966ff;">
         <div class="project-name" style="color:#cc99ff;">BigTinCan → AI CTRL Integration

@@ -555,7 +555,7 @@
   <div class="site-title">★ LANSBERRY.EXE ★</div>
   <div class="site-subtitle">Nick Lansberry's HQ &nbsp;|&nbsp; RevOps · GTM · AI · Life</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.19.2026 v7</span></span>
+    <span>UPDATED: <span id="last-updated">06.19.2026 v8</span></span>
     <span>VISITORS: <span class="visitor-counter">004238</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -565,6 +565,10 @@
 <!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
 <div class="alert-bar">
   <span class="marquee-inner">
+    ✅ Amount vs QT Net Impact SETTLED (Jun 19) — QT Net Impact double-counts add/drop pairs · Use Amount for all totals · Documented in Confluence + 5 key pages updated &nbsp;&nbsp;&nbsp;
+    ✅ rAIdarr in great shape (Jun 19) — Claude fixed, AVP filter live, NOCs/Take Rate live, competitors piped, Ben coaching tone added · 2 open bugs remain (Partner KPI filtering, ICP funnel) &nbsp;&nbsp;&nbsp;
+    ✅ ATLAS back online (Jun 19) — Rachel notified, schedule walkthrough week of Jun 23 &nbsp;&nbsp;&nbsp;
+    ✅ Josh Will briefed on all workflows + apps (Jun 19) — he's selling Retool for Expedient now &nbsp;&nbsp;&nbsp;
     ✅ Tim's Dashboard MVP COMPLETE (Jun 19) — meeting with Tim next week to review and decide next step (Sigma POC vs SF filters) &nbsp;&nbsp;&nbsp;
     ✅ Sandler Exam COMPLETE — confirm with James &nbsp;&nbsp;&nbsp;
     ✅ rAIdarr RETOOL DEPLOYMENT FIXED (Jun 17) — unprotected app, merged to main, full deploy succeeded · NO full deployments until @mesi patches source control bug (~Wed Jun 25) &nbsp;&nbsp;&nbsp;
@@ -618,16 +622,16 @@
           <div class="project-next">aiDealInspection P1 — Retool timeout setting (180s+ / 3000 max_tokens in UI) needs fix in Retool UI</div>
           <div style="font-size:12px;color:#ff9900;margin-bottom:6px;">⚠ DO NOT run full deployments until @mesi patches source control bug (~Wed Jun 25). After patch: upgrade to latest Retool version.</div>
           <ul class="todo-list">
-            <li class="done"><strong style="color:#555;font-size:12px;">P1 RESOLVED</strong> Retool deployment broken — unprotected app, merged to main, full deploy succeeded Jun 17</li>
+            <li class="done"><strong style="color:#555;font-size:12px;">DONE</strong> Retool deployment fixed · Claude broken in Public fixed · AVP filter working · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
             <li><strong class="badge-fire" style="font-size:12px;padding:1px 4px;background:#330000;border:1px solid orange;">P1</strong> aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI)</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> AVP filtering for KPI stats — HIGH PRIORITY — reps/My Market/AVP summary views need SOQL-level filter (~10 SOQLs)</li>
+            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix — each of 5 tiles)</li>
+            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP Funnel stats (Total New Logo Funnel, ICP New Logo Funnel) — tied to transformerNewLogoStats which reads raw SOQL, not AVP-filtered. Thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
+            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP: AVP dropdown + chart click interaction weird — both work independently, conflict when combined</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
             <li><strong style="color:#ff8800;font-size:12px;">P2</strong> No loading state during 4-query AI chain in Rep Modal</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Duplicate query trigger — 5 of 8 queries fire twice per click</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> 5 GTM fields never queried: QT_Net_Impact__c, Revenue_Tier__c, Current_MRR__c, Targeted_Persona__c, DISC_Profile__c</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Wire newOppsLookup + newOppsTeamLookup queries in Retool UI</li>
+            <li><strong style="color:#ff8800;font-size:12px;">P3</strong> Zoom API: check transcript availability before calling — show only meetings with transcripts</li>
             <li><strong style="color:#aaa;font-size:12px;">P3</strong> SF write-back after Meeting Quality AI (tabled — scope TBD)</li>
-            <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state</li>
+            <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state, chart→tag color matching (super low)</li>
           </ul>
         </div>
 
@@ -646,7 +650,7 @@
             <li class="done">Build Partner Alliances Story MVP — complete Jun 19</li>
             <li>Meeting with Tim next week — review dashboard, collect feedback</li>
             <li>Decide: SF filters (painful) vs Sigma POC in Retool — Tim's feedback will drive</li>
-            <li><strong style="color:#ff8800;font-size:12px;">DATA Q</strong> Ask Claude: which field is technically correct for summarizing opp $? Amount vs QT_Net_Impact__c — need to understand how QT that impact works before reporting</li>
+            <li class="done"><strong style="color:#555;font-size:12px;">SETTLED Jun 19</strong> Amount vs QT Net Impact — confirmed via live report data. Use Amount for all portfolio totals. QT Net Impact double-counts add/drop pairs. See Confluence 3230728241.</li>
             <li>Create Active Validated Partners Report for Tim (check if one already exists first)</li>
             <li>Use learnings to scope full RPM/AVP Dashboard (Phase 2)</li>
             <li>Note: Michael Cruz is separately building RPM Activity Dashboard for Ben Gallo + Stacey Osenburg</li>
@@ -1070,21 +1074,6 @@
       </div>
       <div class="panel-body">
         <div class="priority-row">
-          <span class="prio-name">✅ Retool deployment fix (rAIdarr)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">✅ Tim's Dashboard MVP complete</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">✅ Sandler Exam complete (confirm w/James)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
           <span class="prio-name">🔴 rAIdarr P1: aiDealInspection broken</span>
           <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
           <span class="prio-label" style="color:var(--exp-red);">NEXT UP</span>
@@ -1096,6 +1085,11 @@
         </div>
         <div class="priority-row">
           <span class="prio-name">🟠 Tim review meeting next week → decide Sigma POC</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:88%"></div></div>
+          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">🟠 Schedule Atlas walkthrough with Rachel (wk Jun 23)</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:85%"></div></div>
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
@@ -1105,7 +1099,12 @@
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟡 rAIdarr P2 — AVP KPI filtering</span>
+          <span class="prio-name">🟡 rAIdarr P2 — Partner KPI .filteredData fix (1-word change)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:65%"></div></div>
+          <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">🟡 rAIdarr P2 — ICP funnel stats AVP-aware</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
           <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
         </div>
@@ -1171,6 +1170,14 @@
         <div class="fact-row">
           <span class="fact-label">Sales Dashboard 2.0 Blueprint</span>
           <span class="fact-value" style="font-size:12px;">Confluence 1766457409</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Amount vs QT Net Impact Standard</span>
+          <span class="fact-value" style="font-size:12px;">Confluence 3230728241</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Partner Dashboard Build Plan</span>
+          <span class="fact-value" style="font-size:12px;">Confluence 3224633356</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">REV Confluence Space</span>
@@ -1408,6 +1415,40 @@
     </div>
     <div class="panel-body">
       <div style="color:#555;font-size:12px;margin-bottom:14px;">Done is done. Archived here so the tracker stays clean.</div>
+
+      <div class="section-label">// JUN 19 2026 — TODAY'S WINS</div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          Amount vs QT Net Impact — Debate Settled
+          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
+        </div>
+        <div class="project-desc">Confirmed via live SF report data (Partner YTD Closed Won, Jan 2026 add/drop pair): QT Net Impact is stamped identically on both the ADD and DROP opp in add/drop PCR pairs — summing it double-counts. Use Amount for all portfolio-level totals. QT Net Impact is only valid for single-deal conversations. Documented: new Confluence reference page (3230728241), footer comments on SF Object Reference Guide + The Dashboard, warning panels on Sales Dashboard 2.0 + Partner Dashboard, local context/SF-Reporting-Field-Standards.md, and skills/pipeline/SKILL.md guardrails.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          rAIdarr Session Improvements + Code Audit
+          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
+        </div>
+        <div class="project-desc">Fixed Claude broken in Retool Public. Code audit from git confirmed: AVP filter working, NOCs + Take Rate live (newOppsLookup + newOppsTeamLookup wired), competitors piped at account level via zipMap.js, Ben coaching tone added to transformerICPPrompt.js. Identified two specific remaining bugs: Partner KPI tiles use .data not .filteredData (1-word fix per tile), ICP funnel stats (transformerNewLogoStats) not AVP-aware. Business rule compliance check: app is clean — uses Amount/QT_MRR, not QT_Net_Impact for aggregation.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          ATLAS Back Online
+          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
+        </div>
+        <div class="project-desc">ATLAS Retool app is working again. Rachel notified. Next: schedule walkthrough session with Rachel week of Jun 23.</div>
+      </div>
+
+      <div class="project-card status-tabled" style="opacity:0.85;">
+        <div class="project-name">
+          Josh Will Briefed on AI Stack
+          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
+        </div>
+        <div class="project-desc">Sent Josh Will examples of all Retool workflows and apps since he's now selling Retool solutions for Expedient customers.</div>
+      </div>
 
       <div class="section-label">// JUN 17 2026 — TODAY'S WINS</div>
 
@@ -1690,7 +1731,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 19, 2026 v7</span>
+    Last updated: <span style="color:var(--neon-green);">June 19, 2026 v8</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">LANSBERRY.EXE™</span>
     &nbsp;|&nbsp;

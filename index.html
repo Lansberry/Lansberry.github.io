@@ -555,7 +555,7 @@
   <div class="site-title">★ GTM COMMAND CENTER 9000 ★</div>
   <div class="site-subtitle">Nick Lansberry's RevOps HQ &nbsp;|&nbsp; Expedient GTM &amp; AI Workflow Intelligence</div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.17.2026 v6</span></span>
+    <span>UPDATED: <span id="last-updated">06.19.2026 v7</span></span>
     <span>VISITORS: <span class="visitor-counter">004238</span></span>
     <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
     <span>RESOLUTION: 1024×768</span>
@@ -565,10 +565,11 @@
 <!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
 <div class="alert-bar">
   <span class="marquee-inner">
+    ✅ Tim's Dashboard MVP COMPLETE (Jun 19) — meeting with Tim next week to review and decide next step (Sigma POC vs SF filters) &nbsp;&nbsp;&nbsp;
+    ✅ Sandler Exam COMPLETE — confirm with James &nbsp;&nbsp;&nbsp;
     ✅ rAIdarr RETOOL DEPLOYMENT FIXED (Jun 17) — unprotected app, merged to main, full deploy succeeded · NO full deployments until @mesi patches source control bug (~Wed Jun 25) &nbsp;&nbsp;&nbsp;
     ⚠️ rAIdarr P1: aiDealInspection still broken — Retool timeout setting (180s+ / 3000 max_tokens in UI) — next up &nbsp;&nbsp;&nbsp;
     🔒 SF ORG SECURITY: 2 dormant external admins active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
-    📊 PARTNER: Tim meeting done — Partner Alliances Story quick build is HIGH PRIORITY &nbsp;&nbsp;&nbsp;
     📊 OKR #2 (Revenue Dashboard): 15% complete — schedule kickoff with Tim/Jim/Daniel &nbsp;&nbsp;&nbsp;
     📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
     🗑 BULK CLOSE: Apex script ready to close pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
@@ -631,21 +632,23 @@
         </div>
 
         <!-- PARTNER ALLIANCES STORY -->
-        <div class="project-card status-fire">
+        <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse orange"></span>
+            <span class="pulse"></span>
             Partner Alliances Story (Quick Build — Tim)
-            <span class="status-badge badge-fire">🔥 HIGH PRIORITY</span>
+            <span class="status-badge badge-active">MVP DONE — PENDING TIM FEEDBACK</span>
           </div>
           <div class="project-desc">
-            Met with Tim — decision: take a quick stab at building the current Partner Alliances Story in SF using notes + Tim's asks. This will meet ~80% of their needs now and give us the learnings to springboard into the major RPM/AVP dash. Smart phased approach.
+            MVP complete as of Jun 19. SF filters were painful — may need to do the actual Proof of Concept for Sigma in Retool instead. Meeting with Tim next week to review what he likes/doesn't and determine next step. Learnings from this build will scope the full RPM/AVP Dashboard (Phase 2).
           </div>
-          <div class="project-next">Build Partner Alliances Story dashboard from Tim's notes + asks — scope what 80% looks like</div>
+          <div class="project-next">Meet with Tim next week — review MVP, decide: iterate in SF or pivot to Sigma POC in Retool</div>
           <ul class="todo-list">
-            <li>Pull Tim's notes + existing asks — map to SF fields available today</li>
-            <li>Build Partner Alliances Story view in Retool/Sigma — keep scope tight</li>
+            <li class="done">Build Partner Alliances Story MVP — complete Jun 19</li>
+            <li>Meeting with Tim next week — review dashboard, collect feedback</li>
+            <li>Decide: SF filters (painful) vs Sigma POC in Retool — Tim's feedback will drive</li>
+            <li><strong style="color:#ff8800;font-size:12px;">DATA Q</strong> Ask Claude: which field is technically correct for summarizing opp $? Amount vs QT_Net_Impact__c — need to understand how QT that impact works before reporting</li>
             <li>Create Active Validated Partners Report for Tim (check if one already exists first)</li>
-            <li>Use learnings from this build to scope the full RPM/AVP Dashboard (Phase 2)</li>
+            <li>Use learnings to scope full RPM/AVP Dashboard (Phase 2)</li>
             <li>Note: Michael Cruz is separately building RPM Activity Dashboard for Ben Gallo + Stacey Osenburg</li>
           </ul>
         </div>
@@ -993,7 +996,7 @@
             <tr>
               <td><span class="owner-name">Nick (YOU)</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
               <td class="blocker-items">
-                <strong style="color:var(--neon-orange);">Take Sandler Exam</strong><br>
+                <strong style="color:var(--neon-green);">✓ Sandler Exam complete — confirm with James</strong><br>
                 Upload 2026 Quotas (data ready, Nick owns)<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
@@ -1072,6 +1075,16 @@
           <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
         </div>
         <div class="priority-row">
+          <span class="prio-name">✅ Tim's Dashboard MVP complete</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
+        </div>
+        <div class="priority-row">
+          <span class="prio-name">✅ Sandler Exam complete (confirm w/James)</span>
+          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
+          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
+        </div>
+        <div class="priority-row">
           <span class="prio-name">🔴 rAIdarr P1: aiDealInspection broken</span>
           <div class="prio-bar-wrap"><div class="prio-bar red" style="width:95%"></div></div>
           <span class="prio-label" style="color:var(--exp-red);">NEXT UP</span>
@@ -1082,7 +1095,7 @@
           <span class="prio-label" style="color:var(--exp-red);">URGENT</span>
         </div>
         <div class="priority-row">
-          <span class="prio-name">🟠 Partner Alliances Story quick build</span>
+          <span class="prio-name">🟠 Tim review meeting next week → decide Sigma POC</span>
           <div class="prio-bar-wrap"><div class="prio-bar" style="width:85%"></div></div>
           <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
         </div>
@@ -1162,6 +1175,48 @@
         <div class="fact-row">
           <span class="fact-label">REV Confluence Space</span>
           <span class="fact-value" style="font-size:12px;">Space ID: 6324228</span>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid #003366;color:var(--neon-pink);font-family:'VT323',monospace;font-size:15px;letter-spacing:1px;">// RETOOL WORKFLOWS</div>
+        <div class="fact-row">
+          <span class="fact-label">Account Research</span>
+          <span class="fact-value" style="font-size:11px;">eaf8b366-83bb-4946</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">SMC Client Lookup</span>
+          <span class="fact-value" style="font-size:11px;">480a263a-8999-49ce</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Contact Research</span>
+          <span class="fact-value" style="font-size:11px;">a606b12d-f190-4d15</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Personalized Email Voice</span>
+          <span class="fact-value" style="font-size:11px;">9bf30c01-3155-45d9</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Pre-Call Planner</span>
+          <span class="fact-value" style="font-size:11px;">070e2f4b-69f0-4241</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Post-Call Debrief</span>
+          <span class="fact-value" style="font-size:11px;">d4cb11dc-ed91-4c5e</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">SBR Generator</span>
+          <span class="fact-value" style="font-size:11px;">a84b0f8f-b43a-40ed</span>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid #003366;color:var(--neon-pink);font-family:'VT323',monospace;font-size:15px;letter-spacing:1px;">// RETOOL APPS</div>
+        <div class="fact-row">
+          <span class="fact-label">Marketecture Placemat</span>
+          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/…/placemat</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">rAIdar</span>
+          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/app/raidar</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">ATLAS</span>
+          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/app/atlas</span>
         </div>
       </div>
     </div>
@@ -1635,7 +1690,7 @@
     <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
   </div>
   <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 17, 2026 v6</span>
+    Last updated: <span style="color:var(--neon-green);">June 19, 2026 v7</span>
     &nbsp;|&nbsp;
     Powered by: <span style="color:var(--neon-blue);">GTM COMMAND CENTER 9000™</span>
     &nbsp;|&nbsp;

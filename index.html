@@ -1355,6 +1355,11 @@
         <div class="project-desc">4 QT enhancements: Validated Partner lookup in QT · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (on mat leave). Target: migrate off QT within 18 months.</div>
       </div>
 
+      <div class="project-card" style="border-left-color:#00aaff;">
+        <div class="project-name" style="color:#66ccff;">Pre-Call / Post-Call Planner — Phase 2 Enhancements <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">NEXT PHASE</span></div>
+        <div class="project-desc">Core workflow is in production and running for Sales + Jennifer Priddy (Premier Care). Next phase: identify enhancement requests, expand output coverage, improve AI field schema alignment, and evaluate additional use cases (e.g. renewal prep, expansion plays).</div>
+      </div>
+
     </div>
   </div>
 
@@ -1396,6 +1401,32 @@
           Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
         </div>
         <div class="project-next">Define audience + format before scoping content</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#9966ff;">
+        <div class="project-name" style="color:#cc99ff;">90-Day-Touch → Outlook Calendar Auto-Scheduler
+          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING — MONTY</span>
+        </div>
+        <div class="project-desc">
+          Monty Gents request: Run SF "90-day-touch" report → auto-schedule a 15-min Outlook calendar appointment for each client on the list, spread randomly across available weekday 9–5 slots within the next 90 days, max 2/day, no contact email required (just account name + self-invite). Refresh logic: re-running the report auto-schedules newly appeared clients. Feasibility: HIGH. Mechanism: Retool workflow + Microsoft Graph API (/getSchedule + POST /me/events). No SF Scheduler license needed.
+        </div>
+        <div class="project-next">Confirm Microsoft Graph API access in Retool (OAuth connection to M365) · Confirm Monty's UPN · Scope: SOQL for 90-day-touch → Graph free/busy → event creation loop</div>
+      </div>
+
+      <div class="project-card" style="border-left-color:#9966ff;">
+        <div class="project-name" style="color:#cc99ff;">BigTinCan → AI CTRL Integration
+          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">BACKLOG — BLOCKED</span>
+        </div>
+        <div class="project-desc">
+          Add BigTinCan as a content library in ai.expedient.cloud (AI CTRL), similar to Echo. Use case: reps want to access BTC Stories and sales content directly from AI CTRL without downloading + uploading. Nick already connected BTC to Retool (pubapi.bigtincan.com). AS_USER delegation question raised. Ben Gallo owns platform. Caleb Hills owns AI CTRL side.
+        </div>
+        <ul class="todo-list">
+          <li>Confirm API access tier — BTC API requires enterprise plan bolt-on (Helpdesk owns licensing)</li>
+          <li>Get OAuth credentials: Client ID, Client Secret, Access Token (Helpdesk creates)</li>
+          <li>Confirm AS_USER support for per-rep permission inheritance</li>
+          <li>Scope ingestion: Stories, Files, Search, Channels/Tabs</li>
+        </ul>
+        <div class="project-next">Blocked on Helpdesk confirming API license. Ben Gallo + Caleb Hills + Peter Shelly to coordinate.</div>
       </div>
 
     </div>
@@ -1541,14 +1572,14 @@
         </ul>
       </div>
 
-      <div class="section-label">// AI WORKFLOWS</div>
+      <div class="section-label">// AI WORKFLOWS + TOOLS</div>
 
       <div class="project-card status-tabled" style="opacity:0.75;">
         <div class="project-name">
-          LISN Sales Training
-          <span class="status-badge badge-active">✓ DONE</span>
+          ZI / LISN Tool Split — Complete
+          <span class="status-badge badge-active">✓ DONE — Jun 2026</span>
         </div>
-        <div class="project-desc">LISN sales training delivered by LISN rep + Ben Gallo on a sales call. Migration plan and broader ZI/LISN split still TBD — tracked in active missions.</div>
+        <div class="project-desc">Reps using LISN for daily prospecting. RingLead enriches everything from SF per spec. ZI Copilot seats cut. ~$47K savings realized. ZI stays for background enrichment only via RingLead automation. No further action needed.</div>
       </div>
 
       <div class="project-card status-tabled" style="opacity:0.75;">

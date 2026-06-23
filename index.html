@@ -3,479 +3,560 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANSBERRY.EXE :: Nick's HQ</title>
+  <title>lans.cloud — Nick Lansberry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
-
     :root {
-      --neon-green: #00ff41;
-      --neon-blue: #00d4ff;
-      --neon-pink: #ff00ff;
-      --neon-yellow: #ffff00;
-      --neon-orange: #ff6600;
-      --dark-bg: #000011;
-      --panel-bg: #000033;
-      --panel-border: #003399;
-      --red: #ff2222;
-      --exp-red: #F20505;
+      --forest:        #2D4A3E;
+      --forest-mid:    #3D6455;
+      --forest-light:  #E8F0EC;
+      --cream:         #F5F0E8;
+      --cream-dark:    #EAE4D6;
+      --amber:         #C4622D;
+      --amber-light:   #F0E4D8;
+      --charcoal:      #2C2C2C;
+      --charcoal-mid:  #5A5A52;
+      --text-muted:    #8A8A7A;
+      --border:        #D8D2C4;
+      --border-light:  #EAE6DC;
+      --white:         #FFFFFF;
+      --red-alert:     #A83232;
+      --red-bg:        #F8EDED;
+      --amber-badge:   #7A3D1A;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: var(--dark-bg);
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(0,50,150,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(100,0,150,0.1) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='50' cy='80' r='1' fill='white' opacity='0.6'/%3E%3Ccircle cx='120' cy='200' r='0.8' fill='white' opacity='0.4'/%3E%3Ccircle cx='200' cy='40' r='1.2' fill='white' opacity='0.7'/%3E%3Ccircle cx='310' cy='150' r='0.9' fill='white' opacity='0.5'/%3E%3Ccircle cx='80' cy='320' r='1' fill='white' opacity='0.6'/%3E%3Ccircle cx='250' cy='280' r='0.7' fill='white' opacity='0.4'/%3E%3Ccircle cx='360' cy='60' r='1.1' fill='white' opacity='0.8'/%3E%3Ccircle cx='170' cy='370' r='0.8' fill='white' opacity='0.5'/%3E%3Ccircle cx='340' cy='340' r='1' fill='white' opacity='0.6'/%3E%3Ccircle cx='30' cy='150' r='0.6' fill='white' opacity='0.3'/%3E%3Ccircle cx='390' cy='250' r='1.2' fill='white' opacity='0.7'/%3E%3Ccircle cx='150' cy='130' r='0.9' fill='white' opacity='0.5'/%3E%3C/svg%3E");
-      font-family: 'Share Tech Mono', 'Courier New', monospace;
-      color: var(--neon-green);
+      background: var(--cream);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.6;
       min-height: 100vh;
-      padding: 0 0 60px 0;
     }
 
-    /* ══════════════════════════════ HEADER ══════════════════════════════ */
+    /* ── HEADER ── */
     .site-header {
-      background: linear-gradient(180deg, #000000 0%, #000033 40%, #000066 100%);
-      border-bottom: 3px solid var(--neon-blue);
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background: var(--forest);
+      padding: 20px 20px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--amber);
     }
 
-    .site-header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
-      background-size: 200% 100%;
-      animation: rainbowSlide 3s linear infinite;
+    .confluence-mark {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
     }
 
-    @keyframes rainbowSlide {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 200% 0%; }
-    }
+    .header-text { flex: 1; min-width: 0; }
 
     .site-title {
-      font-family: 'VT323', monospace;
-      font-size: 52px;
-      color: var(--neon-blue);
-      text-shadow: 0 0 10px var(--neon-blue), 0 0 30px rgba(0,212,255,0.5);
-      letter-spacing: 3px;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      color: var(--cream);
+      letter-spacing: -0.5px;
       line-height: 1;
-      margin-bottom: 4px;
     }
 
     .site-subtitle {
-      font-size: 13px;
-      color: var(--neon-pink);
-      text-shadow: 0 0 8px var(--neon-pink);
-      letter-spacing: 4px;
+      font-size: 11px;
+      color: rgba(245,240,232,0.6);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-top: 3px;
     }
 
     .header-meta {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 10px;
-    }
-
-    .visitor-counter {
-      background: #000;
-      border: 2px inset #666;
-      padding: 2px 8px;
-      font-family: 'VT323', monospace;
-      font-size: 20px;
-      color: #ff6600;
-      letter-spacing: 2px;
-      display: inline-block;
-    }
-
-    /* ══════════════════════════════ MARQUEE ══════════════════════════════ */
-    .alert-bar {
-      background: #000;
-      border-top: 2px solid var(--exp-red);
-      border-bottom: 2px solid var(--exp-red);
-      padding: 6px 0;
-      overflow: hidden;
+      font-size: 11px;
+      color: rgba(245,240,232,0.5);
+      text-align: right;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .marquee-inner {
-      display: inline-block;
-      animation: marquee 35s linear infinite;
-      color: var(--neon-yellow);
-      font-size: 13px;
+    /* ── TAB NAV ── */
+    .tab-nav {
+      background: var(--forest);
+      border-bottom: 1px solid rgba(245,240,232,0.12);
+      padding: 0 12px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.45);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 10px 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+      margin-bottom: -1px;
     }
 
-    @keyframes marquee {
-      0%   { transform: translateX(100vw); }
-      100% { transform: translateX(-100%); }
+    .tab-btn:hover { color: rgba(245,240,232,0.8); }
+
+    .tab-btn.active {
+      color: var(--cream);
+      border-bottom-color: var(--amber);
     }
 
-    .blink {
-      animation: blink 0.9s step-end infinite;
+    /* ── RECENT ACTIVITY STRIP ── */
+    .activity-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
     }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-    /* ══════════════════════════════ LAYOUT ══════════════════════════════ */
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 16px;
-      padding: 16px;
-      max-width: 1400px;
+    .activity-strip-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .activity-cards {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .activity-cards::-webkit-scrollbar { display: none; }
+
+    .activity-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--forest);
+      border-radius: 4px;
+      padding: 7px 10px;
+      min-width: 220px;
+      max-width: 280px;
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--charcoal-mid);
+      line-height: 1.4;
+    }
+
+    .activity-card .ac-date {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .activity-card.urgent { border-left-color: var(--red-alert); }
+    .activity-card.amber  { border-left-color: var(--amber); }
+
+    /* ── LAYOUT ── */
+    .page-body {
+      max-width: 1360px;
       margin: 0 auto;
+      padding: 16px;
     }
 
-    .left-col { display: flex; flex-direction: column; gap: 16px; }
-    .right-col { display: flex; flex-direction: column; gap: 16px; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 16px;
+      align-items: start;
+    }
 
-    /* ══════════════════════════════ PANELS ══════════════════════════════ */
+    .left-col  { display: flex; flex-direction: column; gap: 14px; }
+    .right-col { display: flex; flex-direction: column; gap: 14px; }
+
+    /* ── PANELS ── */
     .panel {
-      background: var(--panel-bg);
-      border: 2px solid var(--panel-border);
-      border-radius: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       overflow: hidden;
     }
 
     .panel-header {
-      background: linear-gradient(90deg, #000066, #000033);
-      border-bottom: 2px solid var(--neon-blue);
-      padding: 8px 14px;
+      background: var(--forest);
+      padding: 10px 14px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .panel-title {
-      font-family: 'VT323', monospace;
-      font-size: 22px;
-      color: var(--neon-blue);
-      text-shadow: 0 0 8px var(--neon-blue);
-      letter-spacing: 1px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
     }
 
-    .panel-body { padding: 12px 14px; }
+    .panel-header.amber-header { background: var(--amber); }
+    .panel-header.alert-header { background: var(--red-alert); }
+    .panel-header.cream-header {
+      background: var(--cream-dark);
+    }
+    .panel-header.cream-header .panel-title { color: var(--forest); }
 
-    /* ══════════════════════════════ PROJECT CARDS ══════════════════════════════ */
+    .panel-body { padding: 14px; }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--forest);
+      padding: 10px 0 6px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 10px;
+    }
+
+    .section-label:first-child { padding-top: 0; }
+
+    /* ── STATUS DOTS ── */
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-green  { background: var(--forest); }
+    .dot-amber  { background: var(--amber); }
+    .dot-red    { background: var(--red-alert); }
+    .dot-gray   { background: var(--border); }
+
+    /* ── PROJECT CARDS ── */
     .project-card {
-      background: rgba(0,0,50,0.6);
-      border-left: 4px solid var(--neon-green);
-      margin-bottom: 12px;
-      padding: 10px 12px;
-      position: relative;
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--forest);
+      border-radius: 4px;
+      padding: 11px 13px;
+      margin-bottom: 10px;
+      background: var(--cream);
     }
 
     .project-card:last-child { margin-bottom: 0; }
 
-    .project-card.status-blocked { border-left-color: var(--exp-red); }
-    .project-card.status-tabled  { border-left-color: #666; }
-    .project-card.status-parked  { border-left-color: #555; }
-    .project-card.status-active  { border-left-color: var(--neon-green); }
-    .project-card.status-fire    { border-left-color: var(--neon-orange); }
+    .project-card.status-fire    { border-left-color: var(--amber); }
+    .project-card.status-blocked { border-left-color: var(--red-alert); }
+    .project-card.status-tabled  { border-left-color: var(--border); background: var(--white); opacity: 0.85; }
+    .project-card.status-parked  { border-left-color: var(--border); background: var(--white); opacity: 0.7; }
+    .project-card.status-active  { border-left-color: var(--forest); }
 
     .project-name {
-      font-family: 'VT323', monospace;
-      font-size: 20px;
-      color: var(--neon-yellow);
-      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 5px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .status-badge {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
+      padding: 2px 7px;
+      border-radius: 99px;
+      white-space: nowrap;
     }
 
-    .badge-active  { background: #003300; color: var(--neon-green); border: 1px solid var(--neon-green); }
-    .badge-fire    { background: #330000; color: var(--neon-orange); border: 1px solid var(--neon-orange); animation: blink 1.2s step-end infinite; }
-    .badge-blocked { background: #330000; color: var(--exp-red); border: 1px solid var(--exp-red); }
-    .badge-tabled  { background: #222; color: #aaa; border: 1px solid #555; }
-    .badge-parked  { background: #111; color: #888; border: 1px solid #444; }
+    .badge-active  { background: var(--forest-light); color: var(--forest); }
+    .badge-fire    { background: var(--amber-light); color: var(--amber-badge); }
+    .badge-blocked { background: var(--red-bg); color: var(--red-alert); }
+    .badge-tabled  { background: var(--cream-dark); color: var(--text-muted); }
+    .badge-parked  { background: var(--cream-dark); color: var(--text-muted); }
 
     .project-desc {
-      font-size: 13px;
-      color: #c8c8c8;
+      font-size: 12px;
+      color: var(--charcoal-mid);
       line-height: 1.6;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .project-next {
-      font-size: 13px;
-      color: var(--neon-blue);
-      margin-bottom: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 6px;
     }
 
-    .project-next::before { content: '▶ NEXT: '; color: var(--neon-pink); }
+    .project-next::before {
+      content: '→ ';
+      color: var(--amber);
+      font-weight: 700;
+    }
 
     .project-blocker {
-      font-size: 13px;
-      color: #ff5555;
+      font-size: 12px;
+      color: var(--red-alert);
+      margin-bottom: 6px;
     }
 
-    .project-blocker::before { content: '⚠ BLOCKED: '; }
+    .project-blocker::before { content: '⚠ '; }
 
     .todo-list {
-      margin-top: 8px;
       list-style: none;
-      padding-left: 0;
+      padding: 0;
+      margin: 6px 0 0;
     }
 
     .todo-list li {
       font-size: 12px;
-      color: #ddd;
-      padding: 3px 0;
-      padding-left: 18px;
+      color: var(--charcoal-mid);
+      padding: 3px 0 3px 18px;
       position: relative;
       line-height: 1.5;
+      border-bottom: 1px solid var(--border-light);
     }
+
+    .todo-list li:last-child { border-bottom: none; }
 
     .todo-list li::before {
-      content: '□';
+      content: '○';
       position: absolute;
       left: 0;
-      color: var(--neon-blue);
-    }
-
-    .todo-list li.done::before { content: '■'; color: var(--neon-green); }
-    .todo-list li.done { color: #555; text-decoration: line-through; }
-
-    /* ══════════════════════════════ BLOCKER TABLE ══════════════════════════════ */
-    .blocker-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-
-    .blocker-table th {
-      background: #000033;
-      color: var(--neon-pink);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 7px 10px;
-      border: 1px solid #003366;
-      text-align: left;
+      color: var(--forest);
       font-size: 11px;
     }
 
-    .blocker-table td {
-      padding: 7px 10px;
-      border: 1px solid #002244;
-      vertical-align: top;
-      line-height: 1.6;
-    }
+    .todo-list li.done::before { content: '●'; color: var(--text-muted); }
+    .todo-list li.done { color: var(--text-muted); text-decoration: line-through; }
 
-    .blocker-table tr:nth-child(even) td { background: rgba(0,0,50,0.4); }
-
-    .owner-name { color: var(--neon-yellow); font-weight: bold; }
-    .blocker-items { color: #ccc; }
-
-    /* ══════════════════════════════ PRIORITY METER ══════════════════════════════ */
-    .priority-row {
+    /* ── PRIORITY / FOCUS ROWS ── */
+    .focus-row {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 6px 0;
-      border-bottom: 1px solid #002244;
-      font-size: 13px;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 12px;
     }
 
-    .priority-row:last-child { border-bottom: none; }
+    .focus-row:last-child { border-bottom: none; }
 
-    .prio-name { color: #ddd; flex: 1; }
-    .prio-bar-wrap { flex: 1; background: #001; border: 1px solid #333; height: 8px; margin: 0 8px; }
-    .prio-bar { height: 100%; background: linear-gradient(90deg, var(--neon-green), var(--neon-blue)); }
-    .prio-bar.red { background: linear-gradient(90deg, var(--exp-red), var(--neon-orange)); }
-    .prio-label { font-size: 12px; color: #aaa; width: 60px; text-align: right; }
+    .focus-name { flex: 1; color: var(--charcoal); line-height: 1.4; }
 
-    /* ══════════════════════════════ QUICK FACTS ══════════════════════════════ */
+    .focus-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      min-width: 56px;
+      text-align: right;
+    }
+
+    .label-done    { color: var(--forest); }
+    .label-urgent  { color: var(--red-alert); }
+    .label-high    { color: var(--amber); }
+    .label-med     { color: var(--charcoal-mid); }
+    .label-queued  { color: var(--text-muted); }
+
+    /* ── OKR BARS ── */
+    .okr-group { margin-bottom: 14px; }
+    .okr-group:last-child { margin-bottom: 0; }
+
+    .okr-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .okr-meta { font-size: 11px; color: var(--text-muted); }
+
+    .okr-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      font-size: 12px;
+    }
+
+    .okr-name { flex: 1; color: var(--charcoal-mid); }
+
+    .bar-wrap {
+      width: 80px;
+      height: 6px;
+      background: var(--cream-dark);
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--forest);
+      border-radius: 3px;
+    }
+
+    .bar-fill.amber { background: var(--amber); }
+    .bar-fill.alert { background: var(--red-alert); }
+
+    .bar-pct {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--charcoal-mid);
+      min-width: 36px;
+      text-align: right;
+    }
+
+    /* ── BLOCKER TABLE ── */
+    .blocker-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .blocker-table th {
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .blocker-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .blocker-table tr:last-child td { border-bottom: none; }
+
+    .owner-name {
+      font-weight: 600;
+      color: var(--forest);
+      font-size: 12px;
+    }
+
+    .owner-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ── FACT ROWS ── */
     .fact-row {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
       padding: 5px 0;
-      border-bottom: 1px dotted #002244;
+      border-bottom: 1px solid var(--border-light);
       font-size: 12px;
     }
 
     .fact-row:last-child { border-bottom: none; }
-    .fact-label { color: #999; }
-    .fact-value { color: var(--neon-yellow); font-weight: bold; }
+    .fact-label { color: var(--text-muted); flex-shrink: 0; }
+    .fact-value { color: var(--charcoal); font-weight: 500; text-align: right; }
+    .fact-value.green { color: var(--forest); }
+    .fact-value.amber { color: var(--amber); }
+    .fact-value.alert { color: var(--red-alert); }
 
-    /* ══════════════════════════════ LAST UPDATED ══════════════════════════════ */
-    .site-footer {
-      text-align: center;
-      padding: 20px;
+    /* ── INTERRUPT LOAD ── */
+    .load-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-light);
       font-size: 12px;
-      color: #666;
-      border-top: 2px solid #111;
     }
 
-    .footer-rainbow {
-      height: 4px;
-      background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff);
-      margin-bottom: 12px;
-    }
+    .load-row:last-child { border-bottom: none; }
+    .load-name { color: var(--charcoal-mid); flex: 1; }
 
-    .under-construction {
-      font-family: 'VT323', monospace;
-      font-size: 15px;
-      color: var(--neon-yellow);
-      border: 2px solid var(--neon-yellow);
-      display: inline-block;
-      padding: 2px 10px;
-      background: repeating-linear-gradient(
-        45deg,
-        #1a1a00,
-        #1a1a00 5px,
-        #000000 5px,
-        #000000 10px
-      );
-    }
-
-    /* ══════════════════════════════ SECTION DIVIDER ══════════════════════════════ */
-    .section-label {
-      font-family: 'VT323', monospace;
-      font-size: 17px;
-      color: #7a7a9a;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin: 14px 0 8px 0;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #334;
-    }
-
-    .pulse {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: var(--neon-green);
-      border-radius: 50%;
-      box-shadow: 0 0 6px var(--neon-green);
-      animation: pulse 1.5s ease-in-out infinite;
-    }
-
-    .pulse.red { background: var(--exp-red); box-shadow: 0 0 6px var(--exp-red); }
-    .pulse.orange { background: var(--neon-orange); box-shadow: 0 0 6px var(--neon-orange); animation-duration: 0.7s; }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .glow-text { text-shadow: 0 0 10px currentColor; }
-
-    /* ══════════════════════════════ WEBRING / FOOTER BADGES ══════════════════════════════ */
-    .badge-strip {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .retro-badge {
+    .load-hours {
       font-size: 11px;
-      padding: 2px 8px;
-      border: 1px solid #444;
-      color: #777;
-      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--amber);
+      min-width: 64px;
+      text-align: right;
     }
 
-    /* date stamp */
-    #last-updated { color: var(--neon-blue); }
-
-    /* ══════════════════════════════ TAB NAV ══════════════════════════════ */
-    .tab-nav {
-      display: flex;
-      gap: 0;
-      background: #000011;
-      border-bottom: 2px solid var(--neon-blue);
-      padding: 0 16px;
-      max-width: 1400px;
+    /* ── SINGLE COL TAB WRAPPER ── */
+    .single-col-tab {
+      max-width: 900px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .tab-btn {
-      font-family: 'VT323', monospace;
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: #555;
-      background: transparent;
-      border: none;
-      border-bottom: 3px solid transparent;
-      padding: 10px 22px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: color 0.1s, border-color 0.1s;
-      margin-bottom: -2px;
-    }
-
-    .tab-btn:hover { color: var(--neon-blue); }
-    .tab-btn.active {
-      color: var(--neon-blue);
-      border-bottom-color: var(--neon-blue);
-      text-shadow: 0 0 8px var(--neon-blue);
-    }
-
-    /* ══════════════════════════════ ABOUT TAB ══════════════════════════════ */
+    /* ── ABOUT ── */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      padding: 16px;
-      max-width: 1400px;
-      margin: 0 auto;
+      gap: 14px;
     }
 
-    .about-hero {
-      grid-column: 1 / -1;
-    }
+    .about-hero { grid-column: 1 / -1; }
 
-    .impact-box {
+    .impact-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       margin: 12px 0;
     }
 
     .impact-stat {
-      background: rgba(0,0,80,0.6);
-      border: 1px solid var(--neon-blue);
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
       padding: 12px;
       text-align: center;
     }
 
     .impact-number {
-      font-family: 'VT323', monospace;
-      font-size: 28px;
-      color: var(--neon-yellow);
-      text-shadow: 0 0 8px var(--neon-yellow);
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--forest);
       display: block;
       line-height: 1;
     }
 
     .impact-label {
       font-size: 11px;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: var(--text-muted);
       display: block;
       margin-top: 4px;
+      line-height: 1.4;
     }
 
     .accolade-list {
@@ -486,34 +567,33 @@
 
     .accolade-list li {
       font-size: 13px;
-      color: #ddd;
-      padding: 6px 0 6px 22px;
-      border-bottom: 1px dotted #112;
+      color: var(--charcoal-mid);
+      padding: 7px 0 7px 18px;
+      border-bottom: 1px solid var(--border-light);
       position: relative;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .accolade-list li:last-child { border-bottom: none; }
 
     .accolade-list li::before {
-      content: '▶';
+      content: '—';
       position: absolute;
       left: 0;
-      color: var(--neon-green);
-      font-size: 11px;
+      color: var(--amber);
+      font-weight: 700;
     }
 
-    .accolade-list li strong {
-      color: var(--neon-yellow);
-    }
+    .accolade-list li strong { color: var(--charcoal); font-weight: 600; }
 
     .quote-block {
-      background: rgba(0,0,50,0.4);
-      border-left: 4px solid var(--neon-pink);
+      background: var(--cream);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 4px 4px 0;
       padding: 10px 14px;
-      margin: 10px 0;
+      margin: 8px 0;
       font-size: 13px;
-      color: #ddd;
+      color: var(--charcoal-mid);
       font-style: italic;
       line-height: 1.6;
     }
@@ -521,227 +601,319 @@
     .quote-block cite {
       display: block;
       margin-top: 6px;
-      color: var(--neon-pink);
+      color: var(--amber);
       font-style: normal;
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 500;
     }
 
     .cert-badge {
       display: inline-block;
-      background: #001133;
-      border: 1px solid var(--neon-blue);
-      color: var(--neon-blue);
+      background: var(--forest-light);
+      color: var(--forest);
       font-size: 11px;
-      padding: 3px 8px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 99px;
       margin: 3px 3px 3px 0;
-      letter-spacing: 1px;
     }
 
-    /* ══════════════════════════════ SINGLE-COL TAB LAYOUT ══════════════════════════════ */
-    .single-col-tab {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 16px;
+    /* ── KEY REFS ── */
+    .ref-section-head {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--forest);
+      padding: 8px 0 4px;
+      margin-top: 8px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .ref-section-head:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+
+    /* ── NOTICE BAR ── */
+    .notice-bar {
+      background: var(--red-bg);
+      border: 1px solid #D4AAAA;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--red-alert);
+      margin-bottom: 10px;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--forest);
+      color: rgba(245,240,232,0.5);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+
+    .footer-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .footer-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .footer-badge {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border: 1px solid rgba(245,240,232,0.2);
+      border-radius: 99px;
+      color: rgba(245,240,232,0.5);
+    }
+
+    /* ── PRIORITY ALERT in notice format ── */
+    .warn-inline {
+      font-size: 11px;
+      color: var(--amber-badge);
+      background: var(--amber-light);
+      border-radius: 4px;
+      padding: 5px 9px;
+      margin: 6px 0;
+      line-height: 1.5;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      .right-col {
+        order: -1;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-hero { grid-column: 1; }
+      .impact-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-meta { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title { font-size: 22px; }
+      .impact-row { grid-template-columns: repeat(2, 1fr); }
+      .page-body { padding: 12px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<!-- ── HEADER ── -->
 <header class="site-header">
-  <div class="site-title">★ LANSBERRY.EXE ★</div>
-  <div class="site-subtitle">Nick Lansberry's HQ &nbsp;|&nbsp; RevOps · GTM · AI · Life</div>
+  <svg class="confluence-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 4 C10 12 13 20 20 32" stroke="#C4622D" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M20 4 L20 32" stroke="rgba(245,240,232,0.7)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M32 4 C30 12 27 20 20 32" stroke="#C4622D" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="20" cy="35" r="2.5" fill="rgba(245,240,232,0.9)"/>
+  </svg>
+  <div class="header-text">
+    <div class="site-title">lans.cloud</div>
+    <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
+  </div>
   <div class="header-meta">
-    <span>UPDATED: <span id="last-updated">06.22.2026 v10</span></span>
-    <span>VISITORS: <span class="visitor-counter">004238</span></span>
-    <span>BEST VIEWED IN: NETSCAPE 4.0+ OR IE 5.5+</span>
-    <span>RESOLUTION: 1024×768</span>
+    Updated 06.22.2026 v11
   </div>
 </header>
 
-<!-- ══════════════════════════════ ALERT MARQUEE ══════════════════════════════ -->
-<div class="alert-bar">
-  <span class="marquee-inner">
-    ✅ Opportunity Edit v4 flow FIXED (Jun 22) — Decision_4 condition repaired · validated partner lookup now correctly gates RPM field write · Is_New_MSA branch wired (New_Logo__c OR Contract_Type = MSA) · v28 draft ready to test tomorrow &nbsp;&nbsp;&nbsp;
-    ✅ jack-in morning brief LIVE (Jun 22) — first full production run · all 8 SF health checks firing against expedient-prod · partner leads, cases, pipeline, marketing leads, dupes, orphans, flows, VoC &nbsp;&nbsp;&nbsp;
-    ✅ rAIdarr v2 React component BUILT (Jun 19) — full expansion: Market Pulse tab, Pre-Call Planner modal, Post-Call Debrief modal, ICP Coverage expansion, Partner tab, AI deal inspection chain · Vite preview live at localhost:5173 · Ready for Retool React App Builder import &nbsp;&nbsp;&nbsp;
-    ✅ Amount vs QT Net Impact SETTLED (Jun 19) — QT Net Impact double-counts add/drop pairs · Use Amount for all totals · Documented in Confluence + 5 key pages updated &nbsp;&nbsp;&nbsp;
-    ✅ rAIdarr in great shape (Jun 19) — Claude fixed, AVP filter live, NOCs/Take Rate live, competitors piped, Ben coaching tone added · 2 open bugs remain (Partner KPI filtering, ICP funnel) &nbsp;&nbsp;&nbsp;
-    ✅ ATLAS back online (Jun 19) — Rachel notified, schedule walkthrough week of Jun 23 &nbsp;&nbsp;&nbsp;
-    ✅ Josh Will briefed on all workflows + apps (Jun 19) — he's selling Retool for Expedient now &nbsp;&nbsp;&nbsp;
-    ✅ Tim's Dashboard MVP COMPLETE (Jun 19) — meeting with Tim next week to review and decide next step (Sigma POC vs SF filters) &nbsp;&nbsp;&nbsp;
-    ✅ Sandler Exam COMPLETE — confirm with James &nbsp;&nbsp;&nbsp;
-    ✅ rAIdarr RETOOL DEPLOYMENT FIXED (Jun 17) — unprotected app, merged to main, full deploy succeeded · NO full deployments until @mesi patches source control bug (~Wed Jun 25) &nbsp;&nbsp;&nbsp;
-    ✅ rAIdarr P1: aiDealInspection FIXED (Jun 19) — Retool timeout + max_tokens resolved, working &nbsp;&nbsp;&nbsp;
-    🔒 SF ORG SECURITY: 2 dormant external admins active (last login 2015 / 2022) — deactivate ASAP &nbsp;&nbsp;&nbsp;
-    📊 OKR #2 (Revenue Dashboard): 15% complete — schedule kickoff with Tim/Jim/Daniel &nbsp;&nbsp;&nbsp;
-    📊 OKR: rAIdarr (AVP Exec AI Assistant) at 70% · RPM Dashboard at 50% · Portal VAR 80% &nbsp;&nbsp;&nbsp;
-    🗑 BULK CLOSE: Apex script ready to close pre-2026 SF cases — run it &nbsp;&nbsp;&nbsp;
-    📁 SF Governance: 5 Retool Connected Apps → only 1 needed · Dead apps to decommission: Brainshark, Cloudingo ×4, SalesforceIQ ×2, Mediafly &nbsp;&nbsp;&nbsp;
-    ✅ LISN training complete · Comcast done · Marketecture 100% to George's spec · Retool Opp permissions fixed (Josh Davis unblocked) &nbsp;&nbsp;&nbsp;
-  </span>
-</div>
-
-<!-- ══════════════════════════════ TAB NAV ══════════════════════════════ -->
+<!-- ── TAB NAV ── -->
 <nav class="tab-nav">
-  <button class="tab-btn active" onclick="showTab('tracker', this)">[ TRACKER ]</button>
-  <button class="tab-btn" onclick="showTab('sfadmin', this)">[ SF ADMIN ]</button>
-  <button class="tab-btn" onclick="showTab('buildqueue', this)">[ BUILD QUEUE ]</button>
-  <button class="tab-btn" onclick="showTab('scoping', this)">[ SCOPING ]</button>
-  <button class="tab-btn" onclick="showTab('completed', this)">[ COMPLETED ]</button>
-  <button class="tab-btn" onclick="showTab('about', this)">[ ABOUT NICK ]</button>
+  <button class="tab-btn active" onclick="showTab('tracker', this)">Tracker</button>
+  <button class="tab-btn" onclick="showTab('sfadmin', this)">SF Admin</button>
+  <button class="tab-btn" onclick="showTab('buildqueue', this)">Build Queue</button>
+  <button class="tab-btn" onclick="showTab('scoping', this)">Scoping</button>
+  <button class="tab-btn" onclick="showTab('completed', this)">Completed</button>
+  <button class="tab-btn" onclick="showTab('about', this)">About Nick</button>
 </nav>
 
-<!-- ══════════════════════════════ TAB: TRACKER ══════════════════════════════ -->
-<div id="tab-tracker">
-<div class="main-grid">
+<!-- ── RECENT ACTIVITY STRIP ── -->
+<div class="activity-strip">
+  <div class="activity-strip-label">Recent Activity</div>
+  <div class="activity-cards">
+    <div class="activity-card">
+      <div class="ac-date">Jun 22 · Flow</div>
+      Opp Edit v4 flow fixed — Decision_4 repaired, validated partner lookup gates RPM write, Is_New_MSA branch wired. v28 draft ready to test.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 22 · SF Health</div>
+      jack-in first production run — all 8 health checks firing against expedient-prod. Partner leads, cases, pipeline, dupes, orphans, flows, VoC.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 19 · rAIdarr</div>
+      v2 React component built — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview live.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 19 · Data</div>
+      Amount vs QT Net Impact settled — QT double-counts add/drop pairs. Use Amount for all portfolio totals. Documented in Confluence 3230728241.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 19 · ATLAS</div>
+      ATLAS back online. Rachel notified. Walkthrough scheduled week of Jun 23.
+    </div>
+    <div class="activity-card amber">
+      <div class="ac-date">Jun 17 · Deploy</div>
+      Retool deployment unblocked — merged to main, full deploy succeeded. No full deployments until @mesi patches source control bug ~Jun 25.
+    </div>
+    <div class="activity-card urgent">
+      <div class="ac-date">Security · Ongoing</div>
+      2 dormant external SF admins still active (last login 2015 / 2022) — deactivate ASAP.
+    </div>
+  </div>
+</div>
 
-  <!-- ══ LEFT COLUMN ══ -->
+<!-- ══════════════════════ TAB: TRACKER ══════════════════════ -->
+<div id="tab-tracker">
+<div class="page-body">
+<div class="two-col">
+
+  <!-- LEFT COL -->
   <div class="left-col">
 
-    <!-- ACTIVE PROJECTS -->
     <div class="panel">
       <div class="panel-header">
-        <span class="pulse orange"></span>
-        <span class="panel-title">:: ACTIVE MISSIONS ::</span>
+        <span class="dot dot-amber"></span>
+        <span class="panel-title">Active Missions</span>
       </div>
       <div class="panel-body">
 
-        <div class="section-label">// RETOOL APPS</div>
+        <div class="section-label">Retool Apps</div>
 
         <!-- rAIdarr -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
+            <span class="dot dot-green"></span>
             rAIdarr (AVP Weekly Review)
-            <span class="status-badge badge-active">v2 IN PROGRESS</span>
+            <span class="status-badge badge-active">v2 In Progress</span>
           </div>
-          <div class="project-desc">
-            v1: Retool custom component (deployed, stable). v2: Full React App Builder rewrite — Market Pulse, Pre-Call, Post-Call, ICP Coverage expansion, Partner tab, AI chain. Vite preview live locally. Branch: nicklansberry/avp-exec-build-docs.
-          </div>
-          <div class="project-next">▶ Review v2 React mockup at localhost:5173 → collect feedback → wire to Retool React App Builder</div>
-          <div style="font-size:12px;color:#ff9900;margin-bottom:6px;">⚠ DO NOT run full deployments until @mesi patches source control bug (~Wed Jun 25). After patch: upgrade to latest Retool version.</div>
+          <div class="warn-inline">⚠ No full Retool deployments until @mesi patches source control bug (~Wed Jun 25). After patch: upgrade Retool.</div>
+          <div class="project-desc">v1 deployed and stable. v2: Full React App Builder rewrite — Market Pulse, Pre-Call, Post-Call, ICP Coverage expansion, Partner tab, AI deal inspection chain. Vite preview live at localhost:5173. Branch: nicklansberry/avp-exec-build-docs.</div>
+          <div class="project-next">Review v2 React mockup at localhost:5173 → collect feedback → wire to Retool React App Builder</div>
           <ul class="todo-list">
-            <li class="done"><strong style="color:#555;font-size:12px;">DONE Jun 19</strong> rAIdarr v2 React component built — Market Pulse tab, Pre-Call modal, Post-Call debrief modal, ICP Coverage map, Partner tab, AI deal inspection chain (4-step). Vite preview at localhost:5173.</li>
-            <li class="done"><strong style="color:#555;font-size:12px;">DONE</strong> Retool deployment fixed · Claude broken in Public fixed · AVP filter working · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
-            <li class="done"><strong style="color:#555;font-size:12px;">P1 FIXED Jun 19</strong> aiDealInspection — working. Retool timeout + max_tokens resolved.</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix — each of 5 tiles)</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP Funnel stats (Total New Logo Funnel, ICP New Logo Funnel) — tied to transformerNewLogoStats which reads raw SOQL, not AVP-filtered. Thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> ICP: AVP dropdown + chart click interaction weird — both work independently, conflict when combined</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P2</strong> No loading state during 4-query AI chain in Rep Modal</li>
-            <li><strong style="color:#ff8800;font-size:12px;">P3</strong> Zoom API: check transcript availability before calling — show only meetings with transcripts</li>
-            <li><strong style="color:#aaa;font-size:12px;">P3</strong> SF write-back after Meeting Quality AI (tabled — scope TBD)</li>
-            <li><strong style="color:#666;font-size:12px;">P4</strong> Off-brand chart palettes, CSS vars block, orphaned queries, URL state, chart→tag color matching (super low)</li>
+            <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
+            <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
+            <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
+            <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
+            <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
+            <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
+            <li><strong>P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
+            <li><strong>P2</strong> No loading state during 4-query AI chain in Rep Modal</li>
+            <li><strong>P3</strong> Zoom API: check transcript availability before calling</li>
+            <li>SF write-back after Meeting Quality AI — tabled (scope TBD)</li>
           </ul>
         </div>
 
         <!-- PARTNER ALLIANCES STORY -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
-            Partner Alliances Story (Quick Build — Tim)
-            <span class="status-badge badge-active">MVP DONE — PENDING TIM FEEDBACK</span>
+            <span class="dot dot-green"></span>
+            Partner Alliances Story — Tim Dashboard
+            <span class="status-badge badge-active">MVP Done · Pending Tim</span>
           </div>
-          <div class="project-desc">
-            MVP complete as of Jun 19. SF filters were painful — may need to do the actual Proof of Concept for Sigma in Retool instead. Meeting with Tim next week to review what he likes/doesn't and determine next step. Learnings from this build will scope the full RPM/AVP Dashboard (Phase 2).
-          </div>
-          <div class="project-next">Meet with Tim next week — review MVP, decide: iterate in SF or pivot to Sigma POC in Retool</div>
+          <div class="project-desc">MVP complete as of Jun 19. SF filters were painful — may need to do the Sigma POC in Retool instead. Meeting with Tim next week to review. Learnings scope the full RPM/AVP Dashboard (Phase 2).</div>
+          <div class="project-next">Meet with Tim — review MVP, decide: iterate in SF or pivot to Sigma POC in Retool</div>
           <ul class="todo-list">
             <li class="done">Build Partner Alliances Story MVP — complete Jun 19</li>
             <li>Meeting with Tim next week — review dashboard, collect feedback</li>
-            <li>Decide: SF filters (painful) vs Sigma POC in Retool — Tim's feedback will drive</li>
-            <li class="done"><strong style="color:#555;font-size:12px;">SETTLED Jun 19</strong> Amount vs QT Net Impact — confirmed via live report data. Use Amount for all portfolio totals. QT Net Impact double-counts add/drop pairs. See Confluence 3230728241.</li>
-            <li>Create Active Validated Partners Report for Tim (check if one already exists first)</li>
+            <li>Decide: SF filters vs Sigma POC in Retool</li>
+            <li class="done">Amount vs QT Net Impact settled Jun 19 — use Amount for all totals. See Confluence 3230728241.</li>
+            <li>Create Active Validated Partners Report for Tim</li>
             <li>Use learnings to scope full RPM/AVP Dashboard (Phase 2)</li>
-            <li>Note: Michael Cruz is separately building RPM Activity Dashboard for Ben Gallo + Stacey Osenburg</li>
           </ul>
         </div>
 
-        <!-- TIM'S PARTNER DASHBOARD (FULL BUILD) -->
+        <!-- TIM'S FULL PARTNER DASHBOARD -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
-            Tim's Partner Dashboard (Full Build — Phase 2)
-            <span class="status-badge badge-active">PHASE 2 — AFTER QUICK BUILD</span>
+            <span class="dot dot-green"></span>
+            Tim's Partner Dashboard — Full Build (Phase 2)
+            <span class="status-badge badge-active">Phase 2 · After Quick Build</span>
           </div>
-          <div class="project-desc">
-            Full RPM + AVP dashboards for Tim Cooper's channel team. RPM Dashboard (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type. SF Cases #8 + #10. Scoping will use learnings from Partner Alliances quick build.
-          </div>
-          <div class="project-next">Wait for Partner Alliances quick build learnings before scoping full build</div>
+          <div class="project-desc">Full RPM + AVP dashboards. RPM (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type.</div>
+          <div class="project-next">Wait for Partner Alliances quick build learnings before scoping</div>
           <ul class="todo-list">
-            <li>Part 1 — RPM Dashboard: Leads (all, by status), Forecast (opps by stage, 50%+, past close date), Sales (CW all, by solution type, by TX count, by revenue)</li>
-            <li>Part 2 — Named Partner: partner name, AE owner, tier, leads YTD vs goal, MRR sold YTD vs goal, funnel snapshot, last activity</li>
-            <li>Part 3 — TSD + Alliance: leads YTD by TSD/Alliance, pipeline snapshot 30-day funnel, opps 50%+</li>
-            <li>AVP Dashboard: Leads (all, accepted, DQ, promoted, Known Partners top 5), Pipeline (all open, 30-day new, Known Partners), Sales (QT MRR by partner type + solution type, top 5 partners)</li>
+            <li>Part 1 — RPM Dashboard: Leads by status, Forecast 50%+, Sales by solution type + TX count + revenue</li>
+            <li>Part 2 — Named Partner: AE owner, tier, leads YTD vs goal, MRR sold YTD vs goal, funnel, last activity</li>
+            <li>Part 3 — TSD + Alliance: leads YTD, pipeline snapshot 30-day, opps 50%+</li>
+            <li>AVP Dashboard: Leads, Pipeline, Sales by partner type + solution type</li>
           </ul>
         </div>
 
-        <!-- PRE / POST CALL -->
+        <!-- PRE/POST CALL -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
+            <span class="dot dot-green"></span>
             Pre-Call / Post-Call Planner
-            <span class="status-badge badge-active">✓ LIVE — FEATURE WORK</span>
+            <span class="status-badge badge-active">✓ Live · Feature Work</span>
           </div>
-          <div class="project-desc">
-            Pre/Post in production and running stably every day. Marketecture running 100% and good to George's spec. Jennifer Priddy's Premier Care use case delivered. SF Case #15.
-          </div>
-          <div class="project-next">Phase I feature improvements (SF Case #15) — scope next enhancements</div>
+          <div class="project-desc">Production and stable. Marketecture running 100% to George's spec. Jennifer Priddy Premier Care use case delivered. SF Case #15.</div>
+          <div class="project-next">Phase I feature improvements (SF Case #15)</div>
           <ul class="todo-list">
             <li>Phase I feature improvements (SF Case #15)</li>
-            <li class="done">Jennifer Priddy — Delivery Premier Care Pre/Post summaries — delivered</li>
-            <li class="done">Marketecture additional changes — complete and running to George's spec</li>
+            <li class="done">Jennifer Priddy — Premier Care Pre/Post summaries — delivered</li>
+            <li class="done">Marketecture additional changes — complete</li>
           </ul>
         </div>
 
-        <!-- THE DASHBOARD -->
-        <div class="section-label">// DATA & ANALYTICS</div>
+        <div class="section-label">Data & Analytics</div>
 
-        <div class="project-card status-active">
+        <!-- THE DASHBOARD -->
+        <div class="project-card status-fire">
           <div class="project-name">
-            <span class="pulse orange"></span>
+            <span class="dot dot-amber"></span>
             The Dashboard (Commercial Analytics)
-            <span class="status-badge badge-fire">HIGH PRIORITY</span>
+            <span class="status-badge badge-fire">High Priority</span>
           </div>
-          <div class="project-desc">
-            6-lens Sigma dashboard replacing Anita's 48-sheet EOM xlsx. Lenses: Revenue Health, Sales Engine, Pipeline Integrity, Partner Motion, Marketing Engine, Client Health. Spec v7 (Confluence 3135307797). SF Case 00007236. Working with Michael Cruz to turn on Collaborative Forecasting in sandbox first — test before prod. Nick owns all field creation and data work. Contract Effective Dates = Account Contract Start Date (confirmed). EOM/funnel reports: sum by Amount to include add/drops (QT Net Impact Logic changed).
-          </div>
-          <div class="project-next">Schedule kickoff meeting with Tim/Jim/Daniel — HIGH PRIORITY</div>
+          <div class="project-desc">6-lens Sigma dashboard replacing Anita's 48-sheet EOM xlsx. Lenses: Revenue Health, Sales Engine, Pipeline Integrity, Partner Motion, Marketing Engine, Client Health. Spec v7 (Confluence 3135307797). SF Case 00007236.</div>
+          <div class="project-next">Schedule kickoff with Tim/Jim/Daniel — HIGH PRIORITY</div>
           <ul class="todo-list">
-            <li><strong style="color:#ff8800;font-size:12px;">HIGH</strong> Schedule meeting with Tim/Jim/Daniel to tee up dashboard kickoff</li>
-            <li>Collaborative Forecasting: testing in sandbox with Michael Cruz first → then enable in prod</li>
-            <li>Nick creates Budget_Target__c custom object (~120 records/yr)</li>
-            <li class="done">Contract_Effective_Date_to_Close__c = Account Contract Start Date (confirmed)</li>
+            <li><strong>HIGH</strong> Schedule meeting with Tim/Jim/Daniel — Dashboard kickoff</li>
+            <li>Collaborative Forecasting: sandbox test with Michael Cruz → then prod</li>
+            <li>Create Budget_Target__c custom object (~120 records/yr)</li>
+            <li class="done">Contract_Effective_Date_to_Close__c = Account Contract Start Date — confirmed</li>
             <li>Confirm Tenured__c formula fallback for null Hire_Date__c</li>
             <li>Confirm with Anita: May EOM $308k source (GoTransverse vs SF)</li>
             <li>Phase 1 kickoff with Mike Lessick (Sigma) — Revenue Health lens</li>
-            <li>Funnel reports: sum by Amount (not QT Net Impact) to capture add/drops correctly</li>
           </ul>
         </div>
 
         <!-- MCP SERVER -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
+            <span class="dot dot-green"></span>
             P1 Read Gateway (SF MCP Server)
-            <span class="status-badge badge-active">ACTIVE — NICK OWNS</span>
+            <span class="status-badge badge-active">Active · Nick Owns</span>
           </div>
-          <div class="project-desc">
-            TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf, /expedient-opp-analyzer, /expedient-daily-brief, /expedient-pipeline-review skills. Server code complete. Nick owns the full build — need to work through how users connect, then build the Connected App + MCP config. Files: salesforce/sf-mcp-server/.
-          </div>
-          <div class="project-next">Figure out user auth/connect approach, then build Connected App + MCP server</div>
+          <div class="project-desc">TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf and related skills. Server code complete — need to figure out user auth/connect approach.</div>
+          <div class="project-next">Decide user auth approach → build Connected App + MCP server config</div>
           <ul class="todo-list">
-            <li>Decide on user authentication approach — how will users connect?</li>
-            <li>Build Connected App in SF + configure MCP server around it</li>
+            <li>Decide on user authentication approach</li>
+            <li>Build Connected App in SF + configure MCP server</li>
             <li class="done">Server scaffolded: JWT auth, SELECT-only, object allow-list, fail-loud boot</li>
             <li>Fix: MCP_AUTH_TOKEN — make required (not optional) in prod</li>
             <li>Fix: subquery bypass in run_soql allow-list (validate ALL objects)</li>
             <li>Fix: no max LIMIT — clamp it</li>
-            <li>Skill validation: Confluence page 3191341058 — sections 4-5 + Tim Cooper partner Qs still open</li>
+            <li>Skill validation: Confluence 3191341058 — sections 4-5 + Tim partner Qs still open</li>
           </ul>
         </div>
 
@@ -749,88 +921,71 @@
         <div class="project-card status-tabled">
           <div class="project-name">
             SF Org Security Best Practices
-            <span class="status-badge badge-tabled">HYGIENE — LOW PRIORITY</span>
+            <span class="status-badge badge-tabled">Hygiene · Low Priority</span>
           </div>
-          <div class="project-desc">
-            Best practice security suggestions for the Expedient SF org. Michael Cruz owns most of these as SF Admin. Lower priority — tackle as hygiene when capacity allows. Two companion docs: Security-And-Cleanup-Remediation.md + Salesforce-Org-Audit-2026-06.md.
-          </div>
+          <div class="project-desc">Michael Cruz owns most of these. Two companion docs: Security-And-Cleanup-Remediation.md + Salesforce-Org-Audit-2026-06.md.</div>
           <div class="project-next">Frame hygiene task list for Michael Cruz — handle when capacity allows</div>
           <ul class="todo-list">
             <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in</li>
-            <li>🔴 Deactivate sfdcadmin1@expedient.com (last login 2015) + sfdcadmin2@expedient.com (2022)</li>
-            <li>Move RingLead off System Administrator → Salesforce API Only + scoped PSG</li>
+            <li>🔴 Deactivate sfdcadmin1 (last login 2015) + sfdcadmin2 (2022)</li>
+            <li>Move RingLead off System Administrator → API Only + scoped PSG</li>
             <li>Remove Modify All Data from Expedient Sales Manager profile (14 managers)</li>
             <li>Rename btc-integration@expedient.com → svc_6sense@expedient.com</li>
-            <li>Run bulk case close (pre-2026 cases) — Apex script ready in Confluence page 3188621337</li>
+            <li>Run bulk case close (pre-2026) — Apex script ready, Confluence 3188621337</li>
             <li>Audit + decommission dead Connected Apps: Brainshark · Cloudingo ×4 · SalesforceIQ ×2 · Mediafly</li>
-            <li>Audit 5 Retool Connected Apps — only 1 needed, decommission rest</li>
+            <li>Audit 5 Retool Connected Apps — only 1 needed</li>
             <li>Migrate legacy SF stages: AAE Qualified (52), Business Qualification dup (4), BDR Qualified (1)</li>
           </ul>
         </div>
 
-        <!-- FIX PARTNER -->
-        <div class="section-label">// PARTNER & CHANNEL</div>
+        <div class="section-label">Partner & Channel</div>
 
+        <!-- FIX PARTNER -->
         <div class="project-card status-active">
           <div class="project-name">
-            <span class="pulse"></span>
+            <span class="dot dot-green"></span>
             Fix Partner — Validated Convert Flow
-            <span class="status-badge badge-active">IN PROGRESS</span>
+            <span class="status-badge badge-active">In Progress</span>
           </div>
-          <div class="project-desc">
-            Validated Partner conversion flow needs the "Existing Opportunity" route wired up and fixed. Screenflow for lead submit is complete. Partner portal cleanup is a backlog item.
-          </div>
+          <div class="project-desc">Validated Partner conversion flow needs the "Existing Opportunity" route wired up. Screenflow for lead submit is complete.</div>
           <div class="project-next">Wire "Existing Opportunity" route in Validated Partner conversion flow</div>
           <ul class="todo-list">
-            <li><strong style="color:#ff8800;font-size:12px;">ACTIVE</strong> Wire + fix "Existing Opportunity" route in Validated Partner flow</li>
+            <li><strong>ACTIVE</strong> Wire + fix "Existing Opportunity" route in Validated Partner flow</li>
             <li class="done">Screenflow for lead submit — complete</li>
-            <li>Partner Portal UI cleanup — backlog item</li>
+            <li>Partner Portal UI cleanup — backlog</li>
           </ul>
         </div>
 
-        <!-- SANDLER -->
-        <div class="section-label">// MEETING QUALITY & SANDLER</div>
+        <div class="section-label">Meeting Quality & Sandler</div>
 
+        <!-- SANDLER -->
         <div class="project-card status-tabled">
           <div class="project-name">
             Sandler Meeting Quality Suite
-            <span class="status-badge badge-tabled">SKILLS READY — WRITE-BACK NEXT PHASE</span>
+            <span class="status-badge badge-tabled">Skills Ready · Write-Back Next Phase</span>
           </div>
-          <div class="project-desc">
-            Skills exist on this machine (/expedient-meeting-analyzer, Pre/Post/SBR). Use them now for internal review sessions. SF write-back (11 Event fields: Meeting_AI_Score__c, Meeting_Pain_Level__c, etc.) is a next-phase item — tabled until leadership scopes what to track.
-          </div>
-          <div class="project-blocker">SF write-back tabled — needs scope on what to track before building</div>
+          <div class="project-desc">Skills ready on this machine (/expedient-meeting-analyzer, Pre/Post/SBR). SF write-back (11 Event fields) is next-phase — tabled until leadership scopes what to track.</div>
+          <div class="project-blocker">SF write-back tabled — needs scope on what to track</div>
           <ul class="todo-list">
             <li class="done">Skills ready: /expedient-meeting-analyzer, Pre/Post/SBR — use now for review sessions</li>
-            <li>11 Event fields spec saved (see project_sandler_meeting_fields.md memory)</li>
-            <li>Meeting_Pain_Level__c = most important for AVP coaching (L1/L2/L3 Sandler depth)</li>
-            <li>AI prompt update needed to return structured JSON for write-back parse</li>
+            <li>11 Event fields spec saved (project_sandler_meeting_fields.md memory)</li>
+            <li>Meeting_Pain_Level__c = most important for AVP coaching</li>
+            <li>AI prompt update needed to return structured JSON for write-back</li>
           </ul>
         </div>
 
-        <!-- BLOCKED / TABLED PROJECTS -->
-        <div class="section-label">// TABLED · PARKED</div>
+        <div class="section-label">Tabled · Parked</div>
 
         <div class="project-card status-tabled">
-          <div class="project-name">
-            SF Field Metadata Labeling
-            <span class="status-badge badge-tabled">BACKLOG HYGIENE</span>
-          </div>
-          <div class="project-desc">
-            Add Help Text, Description, Data Owner, Field Usage=Active, Data Sensitivity to all Expedient custom SF fields. Labeling ONLY — no FLS changes. Brief: salesforce/SF-Field-Metadata-Update-Project.md. Pilot = Opportunity object (~30 fields).
-          </div>
+          <div class="project-name">SF Field Metadata Labeling <span class="status-badge badge-tabled">Backlog Hygiene</span></div>
+          <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
           <div class="project-next">Start after Dashboard Phase 1 kickoff. Confirm data owner mapping with Michael Cruz/Allison.</div>
         </div>
 
         <div class="project-card status-tabled">
-          <div class="project-name">
-            ZI / LISN Tool Split
-            <span class="status-badge badge-tabled">TRAINING DONE — MIGRATION TBD</span>
-          </div>
-          <div class="project-desc">
-            ZI stays for enrichment/RingLead automations. LISN replaces ZI for rep daily prospecting. ~$47k savings from Copilot seat reduction. LISN sales training delivered by rep + Ben on a sales call — complete. Migration plan and RingLead Route license expansion still TBD.
-          </div>
-          <div class="project-next">Confirm migration plan with Ben Gallo — training done, execution pending.</div>
+          <div class="project-name">ZI / LISN Tool Split <span class="status-badge badge-tabled">Training Done · Migration TBD</span></div>
+          <div class="project-desc">ZI stays for enrichment/RingLead automations. LISN replaces ZI for rep daily prospecting. ~$47k savings from Copilot seat reduction. Training delivered. Migration plan TBD.</div>
+          <div class="project-next">Confirm migration plan with Ben Gallo.</div>
           <ul class="todo-list">
             <li class="done">LISN sales training — delivered by rep + Ben, complete</li>
             <li>Migration plan finalization with Ben Gallo</li>
@@ -839,172 +994,233 @@
         </div>
 
         <div class="project-card status-parked">
-          <div class="project-name">
-            Rep Calendar / Scheduling Automation
-            <span class="status-badge badge-parked">BACKLOG — FUN FUTURE PROJECT</span>
-          </div>
-          <div class="project-desc">
-            Automate meeting booking for reps. Options: Microsoft Graph API (Expedient is M365, native path), SF Inbox (check license status), Zoom Scheduler API (OAuth already in Retool). No active build — parked for future.
-          </div>
+          <div class="project-name">Rep Calendar / Scheduling Automation <span class="status-badge badge-parked">Backlog · Future</span></div>
+          <div class="project-desc">Options: Microsoft Graph API, SF Inbox, Zoom Scheduler API. No active build — parked.</div>
         </div>
 
       </div>
     </div>
+  </div><!-- end left-col -->
 
-  </div>
-
-  <!-- ══ RIGHT COLUMN ══ -->
+  <!-- RIGHT COL -->
   <div class="right-col">
+
+    <!-- THIS WEEK'S FOCUS -->
+    <div class="panel">
+      <div class="panel-header amber-header">
+        <span class="dot" style="background:rgba(255,255,255,0.6);"></span>
+        <span class="panel-title">This Week's Focus</span>
+      </div>
+      <div class="panel-body">
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ rAIdarr P1: aiDealInspection fixed</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ rAIdarr v2 React mockup built — localhost:5173</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ Opp Edit v4 flow fixed — v28 draft deployed</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-red"></span>
+          <span class="focus-name">🔴 Test Opp Edit v4 v28 → activate if clean</span>
+          <span class="focus-label label-urgent">Tomorrow</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-red"></span>
+          <span class="focus-name">🔴 Deactivate 2 external SF admins</span>
+          <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 rAIdarr v2 → wire to Retool React App Builder</span>
+          <span class="focus-label label-high">Next</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Tim review meeting → decide Sigma POC</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Schedule Atlas walkthrough with Rachel (wk Jun 23)</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Schedule Tim/Jim/Daniel — Dashboard kickoff</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">🟡 Partner KPI .filteredData fix (1-word)</span>
+          <span class="focus-label label-med">Med</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">🟡 ICP funnel stats AVP-aware</span>
+          <span class="focus-label label-med">Med</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">🟡 RPM data source fix</span>
+          <span class="focus-label label-med">Med</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">🔵 SF Field Metadata (backlog hygiene)</span>
+          <span class="focus-label label-queued">Queued</span>
+        </div>
+      </div>
+    </div>
 
     <!-- INTERRUPT LOAD -->
     <div class="panel">
-      <div class="panel-header">
-        <span class="pulse red"></span>
-        <span class="panel-title" style="color:var(--exp-red);text-shadow:0 0 8px var(--exp-red);">:: INTERRUPT LOAD (ALWAYS ON) ::</span>
+      <div class="panel-header alert-header">
+        <span class="dot" style="background:rgba(255,255,255,0.6);"></span>
+        <span class="panel-title">Interrupt Load (Always On)</span>
       </div>
-      <div class="panel-body" style="font-size:12px;">
-        <div style="color:#888;margin-bottom:8px;">~10–15 hrs/week before any project work. Competes with everything below.</div>
-        <div class="priority-row">
-          <span class="prio-name">Support Tickets (reports, merges, missing data)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:80%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">5–8 hrs/wk</span>
+      <div class="panel-body">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">~10–15 hrs/week before any project work.</div>
+        <div class="load-row">
+          <span class="load-name">Support tickets (reports, merges, missing data)</span>
+          <span class="load-hours">5–8 hrs/wk</span>
         </div>
-        <div class="priority-row">
-          <span class="prio-name">Lead Routing Admin (bugs, daily review)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:70%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">5–7 hrs/wk</span>
+        <div class="load-row">
+          <span class="load-name">Lead routing admin (bugs, daily review)</span>
+          <span class="load-hours">5–7 hrs/wk</span>
         </div>
-        <div style="margin-top:8px;color:#666;font-size:11px;">⚠ No SLA = expands to fill capacity. Risk: mis-routed leads = revenue leak + broken attribution.</div>
+        <div style="margin-top:8px;font-size:11px;color:var(--text-muted);">No SLA = expands to fill capacity. Risk: mis-routed leads = revenue leak + broken attribution.</div>
       </div>
     </div>
 
     <!-- OKR TRACKER -->
     <div class="panel">
       <div class="panel-header">
-        <span class="pulse orange"></span>
-        <span class="panel-title">:: 2026 OKRs ::</span>
+        <span class="dot dot-amber"></span>
+        <span class="panel-title">2026 OKRs</span>
       </div>
-      <div class="panel-body" style="font-size:12px;">
+      <div class="panel-body">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Source: 15Five KRs · Jun 17 2026</div>
 
-        <div style="color:#555;font-size:11px;margin-bottom:10px;font-style:italic;">Source: 15Five KRs (Nick's contributions to others' objectives) · Jun 17 2026</div>
-
-        <div style="margin-bottom:14px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">AI-Assisted Workflows <span style="color:#888;font-size:13px;">(Kothe obj · 83%)</span></div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">rAIdar / AVP Exec Assistant</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:70%"></div></div>
-            <span class="prio-label" style="color:var(--neon-orange);">70%</span>
+        <div class="okr-group">
+          <div class="okr-title">AI-Assisted Workflows <span class="okr-meta">(Kothe · 83%)</span></div>
+          <div class="okr-row">
+            <span class="okr-name">rAIdar / AVP Exec Assistant</span>
+            <div class="bar-wrap"><div class="bar-fill amber" style="width:70%"></div></div>
+            <span class="bar-pct">70%</span>
           </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Marketecture → SF integration</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
+          <div class="okr-row">
+            <span class="okr-name">Marketecture → SF integration</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+            <span class="bar-pct">100% ✓</span>
           </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Maintain workflows uptime</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
-            <span class="prio-label" style="color:var(--neon-yellow);">80%</span>
+          <div class="okr-row">
+            <span class="okr-name">Maintain workflows uptime</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:80%"></div></div>
+            <span class="bar-pct">80%</span>
           </div>
         </div>
 
-        <div style="margin-bottom:14px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">Revenue Dashboard <span style="color:#888;font-size:13px;">(Kothe obj · 65%)</span></div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Define + rollout dashboard</span>
-            <div class="prio-bar-wrap"><div class="prio-bar red" style="width:15%"></div></div>
-            <span class="prio-label" style="color:var(--exp-red);">15% MISSED</span>
+        <div class="okr-group">
+          <div class="okr-title">Revenue Dashboard <span class="okr-meta">(Kothe · 65%)</span></div>
+          <div class="okr-row">
+            <span class="okr-name">Define + rollout dashboard</span>
+            <div class="bar-wrap"><div class="bar-fill alert" style="width:15%"></div></div>
+            <span class="bar-pct" style="color:var(--red-alert);">15% ⚠</span>
           </div>
-          <div style="color:#888;font-size:11px;padding:3px 0;">→ Q3 focus: Sigma w/Lessick + Mark B. Stakeholders: Ben, Anita (Financial Leadership), Pam (Finance).</div>
+          <div style="font-size:11px;color:var(--text-muted);padding:2px 0 4px;">→ Q3: Sigma w/Lessick + Mark B. Stakeholders: Ben, Anita, Pam.</div>
         </div>
 
-        <div style="margin-bottom:14px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">RPM Dashboard <span style="color:#888;font-size:13px;">(Cooper obj · 56%)</span></div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Spec → SF implementation</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
-            <span class="prio-label" style="color:var(--neon-orange);">50%</span>
+        <div class="okr-group">
+          <div class="okr-title">RPM Dashboard <span class="okr-meta">(Cooper · 56%)</span></div>
+          <div class="okr-row">
+            <span class="okr-name">Spec → SF implementation</span>
+            <div class="bar-wrap"><div class="bar-fill amber" style="width:50%"></div></div>
+            <span class="bar-pct">50%</span>
           </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Finalize + launch RPM homepage</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
-            <span class="prio-label" style="color:var(--neon-orange);">50%</span>
-          </div>
-        </div>
-
-        <div style="margin-bottom:14px;">
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">VAR Project <span style="color:#888;font-size:13px;">(Cooper obj · 83%)</span></div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">SF report — RPMs + VAR accounts</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
-          </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Routing logic + head/tail popup</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
+          <div class="okr-row">
+            <span class="okr-name">Finalize + launch RPM homepage</span>
+            <div class="bar-wrap"><div class="bar-fill amber" style="width:50%"></div></div>
+            <span class="bar-pct">50%</span>
           </div>
         </div>
 
-        <div>
-          <div style="color:var(--neon-yellow);font-family:'VT323',monospace;font-size:17px;margin-bottom:2px;">SF Experience <span style="color:#888;font-size:13px;">(Kothe obj · 77%)</span></div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">VAR updates + portal changes</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
-            <span class="prio-label" style="color:var(--neon-yellow);">80%</span>
+        <div class="okr-group">
+          <div class="okr-title">VAR Project <span class="okr-meta">(Cooper · 83%)</span></div>
+          <div class="okr-row">
+            <span class="okr-name">SF report — RPMs + VAR accounts</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+            <span class="bar-pct">100% ✓</span>
           </div>
-          <div class="priority-row" style="font-size:11px;">
-            <span class="prio-name">Portal 3.0 scoped (Cooper)</span>
-            <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-            <span class="prio-label" style="color:var(--neon-green);">100% ✓</span>
+          <div class="okr-row">
+            <span class="okr-name">Routing logic + head/tail popup</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+            <span class="bar-pct">100% ✓</span>
+          </div>
+        </div>
+
+        <div class="okr-group">
+          <div class="okr-title">SF Experience <span class="okr-meta">(Kothe · 77%)</span></div>
+          <div class="okr-row">
+            <span class="okr-name">VAR updates + portal changes</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:80%"></div></div>
+            <span class="bar-pct">80%</span>
+          </div>
+          <div class="okr-row">
+            <span class="okr-name">Portal 3.0 scoped (Cooper)</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+            <span class="bar-pct">100% ✓</span>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- BLOCKER BOARD -->
+    <!-- WHO OWES WHAT -->
     <div class="panel">
       <div class="panel-header">
-        <span class="pulse red"></span>
-        <span class="panel-title">:: WHO OWES WHAT ::</span>
+        <span class="dot dot-red"></span>
+        <span class="panel-title">Who Owes What</span>
       </div>
-      <div class="panel-body">
+      <div class="panel-body" style="padding:0;">
         <table class="blocker-table">
-          <thead>
-            <tr>
-              <th>OWNER</th>
-              <th>BLOCKING / OWNS</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Owner</th><th>Blocking / Owns</th></tr></thead>
           <tbody>
             <tr>
-              <td><span class="owner-name">Michael Cruz</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
-              <td class="blocker-items">Collaborative Forecasting sandbox test (co-working with Nick) · Budget_Target__c object · Tenured__c fallback confirm</td>
+              <td><div class="owner-name">Michael Cruz</div><div class="owner-sub">RevOps</div></td>
+              <td>Collaborative Forecasting sandbox test · Budget_Target__c object · Tenured__c fallback confirm</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Anita Osborne</span><br><span style="color:#666;font-size:11px;">Financial Leadership</span></td>
-              <td class="blocker-items">Confirm May $308k EOM figure source (GoTransverse vs SF)</td>
+              <td><div class="owner-name">Anita Osborne</div><div class="owner-sub">Financial</div></td>
+              <td>Confirm May $308k EOM figure source (GoTransverse vs SF)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Mark B</span><br><span style="color:#666;font-size:11px;">Head of IS</span></td>
-              <td class="blocker-items">Finishing Former Client automation edge cases (Ben identified some clients with issues)</td>
+              <td><div class="owner-name">Mark B</div><div class="owner-sub">Head of IS</div></td>
+              <td>Former Client automation edge cases (Ben identified issues)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Mike Lessick</span><br><span style="color:#666;font-size:11px;">BI/IS</span></td>
-              <td class="blocker-items">Sigma Phase 1 kickoff (Revenue Health lens — can start after Tim/Jim/Daniel meeting)</td>
+              <td><div class="owner-name">Mike Lessick</div><div class="owner-sub">BI/IS</div></td>
+              <td>Sigma Phase 1 kickoff — Revenue Health lens (after Tim/Jim/Daniel meeting)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Tim Cooper</span><br><span style="color:#666;font-size:11px;">Partner Ops</span></td>
-              <td class="blocker-items">Partner Alliances Story scope session · Validated Partner review · /expedient-sf skill validation Qs (Confluence 3191341058)</td>
+              <td><div class="owner-name">Tim Cooper</div><div class="owner-sub">Partner Ops</div></td>
+              <td>Partner Alliances Story scope session · Validated Partner review · /expedient-sf skill validation Qs (Confluence 3191341058)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Ben Gallo</span><br><span style="color:#666;font-size:11px;">Rev Acceleration</span></td>
-              <td class="blocker-items">ZI/LISN migration plan finalization (training done)</td>
+              <td><div class="owner-name">Ben Gallo</div><div class="owner-sub">Rev Acceleration</div></td>
+              <td>ZI/LISN migration plan finalization (training done)</td>
             </tr>
             <tr>
-              <td><span class="owner-name">Nick (YOU)</span><br><span style="color:#666;font-size:11px;">RevOps</span></td>
-              <td class="blocker-items">
-                <strong style="color:var(--neon-green);">✓ Sandler Exam complete — confirm with James</strong><br>
+              <td><div class="owner-name">Nick (You)</div><div class="owner-sub">RevOps</div></td>
+              <td style="color:var(--charcoal-mid);">
+                <span style="color:var(--forest);">✓ Sandler Exam complete — confirm with James</span><br>
                 Upload 2026 Quotas (data ready, Nick owns)<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
@@ -1016,405 +1232,246 @@
       </div>
     </div>
 
-    <!-- QUICK STATS -->
+    <!-- SITUATION REPORT -->
     <div class="panel">
-      <div class="panel-header">
-        <span class="pulse"></span>
-        <span class="panel-title">:: SITUATION REPORT ::</span>
+      <div class="panel-header cream-header">
+        <span class="panel-title">Situation Report</span>
       </div>
       <div class="panel-body">
         <div class="fact-row">
           <span class="fact-label">Active Projects</span>
-          <span class="fact-value">7 HOT</span>
+          <span class="fact-value green">7 Hot</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">SF Admin Queue</span>
-          <span class="fact-value" style="color:var(--neon-orange);">5 tasks (see SF ADMIN tab)</span>
+          <span class="fact-value amber">5 tasks (SF Admin tab)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">In Scoping</span>
-          <span class="fact-value" style="color:#9966ff;">2 items</span>
+          <span class="fact-value">2 items</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Hard-Blocked</span>
-          <span class="fact-value" style="color:var(--neon-green);">0 — deployment unblocked ✓</span>
+          <span class="fact-value green">0 — unblocked ✓</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Tabled / Parked</span>
-          <span class="fact-value" style="color:#888;">4</span>
+          <span class="fact-value">4</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">OKR Milestones Missed</span>
-          <span class="fact-value" style="color:var(--exp-red);">2 (Jun dash + Q2 LISN)</span>
+          <span class="fact-value alert">2 (Jun dash + Q2 LISN)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">rAIdarr Branch</span>
-          <span class="fact-value" style="color:var(--neon-blue);font-size:12px;">nicklansberry/avp-exec-build-docs</span>
+          <span class="fact-value" style="font-size:11px;">nicklansberry/avp-exec-build-docs</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Dashboard Spec</span>
-          <span class="fact-value">v7 (Jun 12)</span>
+          <span class="fact-value">v7 · Jun 12</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">MCP Server</span>
-          <span class="fact-value" style="color:var(--neon-orange);">NICK OWNS — IN PROGRESS</span>
+          <span class="fact-value amber">Nick Owns · In Progress</span>
         </div>
         <div class="fact-row">
-          <span class="fact-label">ZI/LISN Migration</span>
-          <span class="fact-value" style="color:var(--neon-orange);">TRAINING DONE — MIGRATION TBD</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Open SF Pipeline Past CloseDate</span>
-          <span class="fact-value" style="color:var(--neon-orange);">350 opps</span>
+          <span class="fact-label">Open Opps Past CloseDate</span>
+          <span class="fact-value amber">350</span>
         </div>
       </div>
     </div>
 
-    <!-- PRIORITY STACK -->
+    <!-- KEY REFERENCES -->
     <div class="panel">
-      <div class="panel-header">
-        <span class="pulse orange"></span>
-        <span class="panel-title">:: THIS WEEK'S FOCUS ::</span>
+      <div class="panel-header cream-header">
+        <span class="panel-title">Key References</span>
       </div>
       <div class="panel-body">
-        <div class="priority-row">
-          <span class="prio-name">✅ rAIdarr P1: aiDealInspection fixed</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">✅ rAIdarr v2 React mockup built — preview at localhost:5173</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">✅ Opp Edit v4 flow fixed — v28 draft deployed (Jun 22)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:100%"></div></div>
-          <span class="prio-label" style="color:var(--neon-green);">DONE ✓</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🔴 Test Opp Edit v4 v28 draft → activate if clean</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:92%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">TOMORROW</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🔴 Deactivate 2 external SF admins</span>
-          <div class="prio-bar-wrap"><div class="prio-bar red" style="width:90%"></div></div>
-          <span class="prio-label" style="color:var(--exp-red);">URGENT</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟠 rAIdarr v2 — review feedback → wire to Retool React App Builder</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
-          <span class="prio-label" style="color:var(--neon-orange);">NEXT</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟠 Tim review meeting this week → decide Sigma POC</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:88%"></div></div>
-          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟠 Schedule Atlas walkthrough with Rachel (wk Jun 23)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:85%"></div></div>
-          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟠 Schedule Tim/Jim/Daniel — Dashboard kickoff</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:80%"></div></div>
-          <span class="prio-label" style="color:var(--neon-orange);">HIGH</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟡 rAIdarr P2 — Partner KPI .filteredData fix (1-word change)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:65%"></div></div>
-          <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟡 rAIdarr P2 — ICP funnel stats AVP-aware</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:60%"></div></div>
-          <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🟡 rAIdarr P2 — RPM data source fix</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:50%"></div></div>
-          <span class="prio-label" style="color:var(--neon-yellow);">MED</span>
-        </div>
-        <div class="priority-row">
-          <span class="prio-name">🔵 SF Field Metadata (backlog hygiene)</span>
-          <div class="prio-bar-wrap"><div class="prio-bar" style="width:15%"></div></div>
-          <span class="prio-label" style="color:#666;">QUEUED</span>
-        </div>
+        <div class="ref-section-head">Confluence</div>
+        <div class="fact-row"><span class="fact-label">Dashboard Spec</span><span class="fact-value">3135307797</span></div>
+        <div class="fact-row"><span class="fact-label">SF Skill Validation</span><span class="fact-value">3191341058</span></div>
+        <div class="fact-row"><span class="fact-label">SF Object Reference v3</span><span class="fact-value">3194126341</span></div>
+        <div class="fact-row"><span class="fact-label">SF Case (Dashboard)</span><span class="fact-value">00007236</span></div>
+        <div class="fact-row"><span class="fact-label">Amount vs QT Net Impact</span><span class="fact-value">3230728241</span></div>
+        <div class="fact-row"><span class="fact-label">Partner Dashboard Build Plan</span><span class="fact-value">3224633356</span></div>
+        <div class="fact-row"><span class="fact-label">SF for the Future</span><span class="fact-value">3188621337</span></div>
+        <div class="fact-row"><span class="fact-label">Project Proposals Index</span><span class="fact-value">3189178381</span></div>
+        <div class="fact-row"><span class="fact-label">Sales Dashboard 2.0</span><span class="fact-value">1766457409</span></div>
+        <div class="fact-row"><span class="fact-label">REV Space ID</span><span class="fact-value">6324228</span></div>
+
+        <div class="ref-section-head">Retool Workflows</div>
+        <div class="fact-row"><span class="fact-label">Account Research</span><span class="fact-value" style="font-size:11px;">eaf8b366-83bb-4946</span></div>
+        <div class="fact-row"><span class="fact-label">SMC Client Lookup</span><span class="fact-value" style="font-size:11px;">480a263a-8999-49ce</span></div>
+        <div class="fact-row"><span class="fact-label">Contact Research</span><span class="fact-value" style="font-size:11px;">a606b12d-f190-4d15</span></div>
+        <div class="fact-row"><span class="fact-label">Pre-Call Planner</span><span class="fact-value" style="font-size:11px;">070e2f4b-69f0-4241</span></div>
+        <div class="fact-row"><span class="fact-label">Post-Call Debrief</span><span class="fact-value" style="font-size:11px;">d4cb11dc-ed91-4c5e</span></div>
+        <div class="fact-row"><span class="fact-label">SBR Generator</span><span class="fact-value" style="font-size:11px;">a84b0f8f-b43a-40ed</span></div>
+
+        <div class="ref-section-head">Retool Apps</div>
+        <div class="fact-row"><span class="fact-label">Marketecture Placemat</span><span class="fact-value" style="font-size:11px;">…/placemat</span></div>
+        <div class="fact-row"><span class="fact-label">rAIdar</span><span class="fact-value" style="font-size:11px;">…/raidar</span></div>
+        <div class="fact-row"><span class="fact-label">ATLAS</span><span class="fact-value" style="font-size:11px;">…/atlas</span></div>
       </div>
     </div>
 
-    <!-- CONFLUENCE / FILE REFS -->
-    <div class="panel">
-      <div class="panel-header">
-        <span class="panel-title">:: KEY REFERENCES ::</span>
-      </div>
-      <div class="panel-body" style="font-size:11px;">
-        <div class="fact-row">
-          <span class="fact-label">Dashboard Spec</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3135307797</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SF Skill Validation</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3191341058</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SF Object Reference (v3)</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3194126341</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SF Case (Dashboard)</span>
-          <span class="fact-value" style="font-size:12px;">00007236</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">MCP Server Files</span>
-          <span class="fact-value" style="font-size:12px;">salesforce/sf-mcp-server/</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Security Docs</span>
-          <span class="fact-value" style="font-size:12px;">Security-And-Cleanup-Remediation.md</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Budget Data</span>
-          <span class="fact-value" style="font-size:12px;">2026-Budget-Data.md</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Field Metadata Brief</span>
-          <span class="fact-value" style="font-size:12px;">salesforce/SF-Field-Metadata-Update-Project.md</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SF for the Future</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3188621337</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Project Proposals Index</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3189178381</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Sales Dashboard 2.0 Blueprint</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 1766457409</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Amount vs QT Net Impact Standard</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3230728241</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Partner Dashboard Build Plan</span>
-          <span class="fact-value" style="font-size:12px;">Confluence 3224633356</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">REV Confluence Space</span>
-          <span class="fact-value" style="font-size:12px;">Space ID: 6324228</span>
-        </div>
-        <div style="margin-top:10px;padding-top:8px;border-top:1px solid #003366;color:var(--neon-pink);font-family:'VT323',monospace;font-size:15px;letter-spacing:1px;">// RETOOL WORKFLOWS</div>
-        <div class="fact-row">
-          <span class="fact-label">Account Research</span>
-          <span class="fact-value" style="font-size:11px;">eaf8b366-83bb-4946</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SMC Client Lookup</span>
-          <span class="fact-value" style="font-size:11px;">480a263a-8999-49ce</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Contact Research</span>
-          <span class="fact-value" style="font-size:11px;">a606b12d-f190-4d15</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Personalized Email Voice</span>
-          <span class="fact-value" style="font-size:11px;">9bf30c01-3155-45d9</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Pre-Call Planner</span>
-          <span class="fact-value" style="font-size:11px;">070e2f4b-69f0-4241</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Post-Call Debrief</span>
-          <span class="fact-value" style="font-size:11px;">d4cb11dc-ed91-4c5e</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">SBR Generator</span>
-          <span class="fact-value" style="font-size:11px;">a84b0f8f-b43a-40ed</span>
-        </div>
-        <div style="margin-top:10px;padding-top:8px;border-top:1px solid #003366;color:var(--neon-pink);font-family:'VT323',monospace;font-size:15px;letter-spacing:1px;">// RETOOL APPS</div>
-        <div class="fact-row">
-          <span class="fact-label">Marketecture Placemat</span>
-          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/…/placemat</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">rAIdar</span>
-          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/app/raidar</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">ATLAS</span>
-          <span class="fact-value" style="font-size:11px;">public.retool.expedient.cloud/app/atlas</span>
-        </div>
-      </div>
-    </div>
+  </div><!-- end right-col -->
 
-  </div>
+</div><!-- end two-col -->
 </div>
 </div><!-- end tab-tracker -->
 
+
 <!-- ══════════════════════════════ TAB: SF ADMIN ══════════════════════════════ -->
 <div id="tab-sfadmin" style="display:none;">
+<div class="page-body">
 <div class="single-col-tab">
 
   <div class="panel">
     <div class="panel-header">
-      <span class="pulse"></span>
-      <span class="panel-title">:: SF ADMIN QUEUE ::</span>
+      <span class="dot dot-amber"></span>
+      <span class="panel-title">SF Admin Queue</span>
     </div>
     <div class="panel-body">
 
       <div class="project-card status-active">
-        <div class="project-name">Enable Collaborative Forecasting
-          <span class="status-badge badge-active">IN PROGRESS</span>
-        </div>
-        <div class="project-desc">Working with Michael Cruz — testing in sandbox first to confirm nothing breaks (Opportunity Splits included). Once sandbox validated, enable in prod. Required prereq for ForecastingQuota object (Dashboard Phase 1).</div>
+        <div class="project-name">Enable Collaborative Forecasting <span class="status-badge badge-active">In Progress</span></div>
+        <div class="project-desc">Working with Michael Cruz — sandbox test first (Opportunity Splits included). Required prereq for ForecastingQuota object (Dashboard Phase 1).</div>
         <div class="project-next">Validate in sandbox with Michael → then enable in prod</div>
       </div>
 
       <div class="project-card status-active">
-        <div class="project-name">Upload 2026 Quotas
-          <span class="status-badge badge-active">NICK OWNS — READY TO GO</span>
-        </div>
-        <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Nick has the data. Nick will do this — not Michael Cruz. Blocked on Collaborative Forecasting being enabled first.</div>
-        <div class="project-next">Wait for Collab Forecasting → then prep CSV + run Data Loader job</div>
+        <div class="project-name">Upload 2026 Quotas <span class="status-badge badge-active">Nick Owns · Ready</span></div>
+        <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Nick has the data. Blocked on Collaborative Forecasting being enabled first.</div>
+        <div class="project-next">Wait for Collab Forecasting → prep CSV + run Data Loader</div>
       </div>
 
-      <div class="project-card status-active">
-        <div class="project-name">Update Fields — Description, Help Text, Owners
-          <span class="status-badge badge-tabled">BACKLOG HYGIENE</span>
-        </div>
-        <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage=Active, and Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields). Brief: salesforce/SF-Field-Metadata-Update-Project.md.</div>
-        <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick before/after → deploy → next object</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Update Fields — Description, Help Text, Owners <span class="status-badge badge-tabled">Backlog Hygiene</span></div>
+        <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
+        <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick → deploy → next object</div>
         <div class="project-blocker">Confirm which L1 Pain field is being deprecated + data owner mapping</div>
       </div>
 
       <div class="project-card status-active">
-        <div class="project-name">Expire Old Cases — Nick Owns
-          <span class="status-badge badge-active">REVIEW NEEDED</span>
-        </div>
-        <div class="project-desc">Nick will run through the queue. Lots of old Marketing cases that can probably just be closed. Open tickets we have that are probably done. Run the Apex bulk close script for pre-2026 cases (Confluence 3188621337).</div>
-        <div class="project-next">Review each open case → candidates: #3, #5, #9, #12 + old Marketing cases</div>
+        <div class="project-name">Expire Old Cases — Nick Owns <span class="status-badge badge-active">Review Needed</span></div>
+        <div class="project-desc">Run through the queue. Old Marketing cases can probably be closed. Run Apex bulk close script for pre-2026 cases (Confluence 3188621337).</div>
+        <div class="project-next">Review each open case → candidates: #3, #5, #9, #13 + old Marketing cases</div>
         <ul class="todo-list">
           <li>#3 OKR – Former Client/Inactive Client (On Hold, Jim Kothe) — still pending IS</li>
-          <li>#5 SF &amp; Sigma Updates (On Hold, Peggy H.) — check if still needed</li>
+          <li>#5 SF & Sigma Updates (On Hold, Peggy H.) — check if still needed</li>
           <li>#9 Tagging Leads to Nutanix from .NEXT (Catherine Rudolph) — conference was spring, likely done</li>
-          <li class="done">#12 Retool Edit Opportunity Permissions (Josh Davis) — RESOLVED Jun 17: added Modify All Records to Integration Access permission set</li>
+          <li class="done">#12 Retool Edit Opportunity Permissions (Josh Davis) — RESOLVED Jun 17</li>
           <li>#13 Activity emails/meetings not tracking (Kim Kosar) — may be SF Inbox config issue</li>
           <li>Run Apex bulk close script for pre-2026 Marketing cases</li>
         </ul>
       </div>
 
       <div class="project-card status-active">
-        <div class="project-name">Help Tim Review Active Validated Partners
-          <span class="status-badge badge-active">COORDINATE</span>
-        </div>
-        <div class="project-desc">Walk through Active Validated Partners (Related_Partners__c) with Tim Cooper — surface which have open opps vs which are dormant. 4,334 Active + 256 Expired. Ties into Partner Alliances quick build.</div>
-        <div class="project-next">Pull Active Validated Partners via /expedient-sf or SF MCP — filter by no open opp in last 90 days</div>
+        <div class="project-name">Help Tim Review Active Validated Partners <span class="status-badge badge-active">Coordinate</span></div>
+        <div class="project-desc">Walk through Active Validated Partners (Related_Partners__c) with Tim Cooper — surface which have open opps vs dormant. 4,334 Active + 256 Expired.</div>
+        <div class="project-next">Pull Active Validated Partners via /expedient-sf — filter by no open opp in last 90 days</div>
       </div>
 
     </div>
   </div>
 
 </div>
-</div><!-- end tab-sfadmin -->
+</div>
+</div>
+
 
 <!-- ══════════════════════════════ TAB: BUILD QUEUE ══════════════════════════════ -->
 <div id="tab-buildqueue" style="display:none;">
+<div class="page-body">
 <div class="single-col-tab">
 
   <div class="panel">
-    <div class="panel-header">
-      <span class="pulse" style="background:#00aaff;box-shadow:0 0 6px #00aaff;"></span>
-      <span class="panel-title" style="color:#00aaff;text-shadow:0 0 8px #00aaff;">:: BUILD QUEUE (NEXT UP) ::</span>
+    <div class="panel-header" style="background:var(--forest-mid);">
+      <span class="dot" style="background:var(--cream);opacity:0.7;"></span>
+      <span class="panel-title">Build Queue — Next Up</span>
     </div>
     <div class="panel-body">
-      <div style="color:#888;font-size:12px;margin-bottom:10px;">Scoped, not yet started. Ordered roughly by urgency.</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Scoped, not yet started. Ordered roughly by urgency.</div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Duplicate Opp Merge Screen Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-        <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map all downstream relationships before building.</div>
+      <div class="project-card status-active">
+        <div class="project-name">Duplicate Opp Merge Screen Flow <span class="status-badge badge-active">2–3 Wks</span></div>
+        <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map downstream relationships before building.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">RPM Head/Tail Attribution Flow <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-        <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Need to audit current Lead conversion rules first.</div>
+      <div class="project-card status-active">
+        <div class="project-name">RPM Head/Tail Attribution Flow <span class="status-badge badge-active">2–3 Wks</span></div>
+        <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Audit current Lead conversion rules first.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">AI Notes Ingestion → Opp Pain Points <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-        <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Could also ingest call transcripts and account notes. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
+      <div class="project-card status-active">
+        <div class="project-name">AI Notes Ingestion → Opp Pain Points <span class="status-badge badge-active">2–3 Wks</span></div>
+        <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Win Review Assembly Button <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">2–3 WKS</span></div>
-        <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow (George Hamm). Need field enforcement before button fires — incomplete Opp fields = bad output.</div>
+      <div class="project-card status-active">
+        <div class="project-name">Win Review Assembly Button <span class="status-badge badge-active">2–3 Wks</span></div>
+        <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow. Need field enforcement before button fires.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Partner Account List + 6sense Tagging Tool <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–5 WKS</span></div>
-        <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Could absorb Alliance partner tagging and Leaf's manual 6sense lookups. Hard part: fuzzy account name matching with confidence thresholds.</div>
+      <div class="project-card status-active">
+        <div class="project-name">Partner Account List + 6sense Tagging Tool <span class="status-badge badge-active">3–5 Wks</span></div>
+        <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Hard part: fuzzy account name matching with confidence thresholds.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">AI Team Reporting Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">3–4 WKS · MICHAEL</span></div>
-        <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Leadership can't manage what they can't see. Risk: building on a moving target — confirm Robbie's structure is finalized before starting.</div>
+      <div class="project-card status-active">
+        <div class="project-name">AI Team Reporting Rebuild <span class="status-badge badge-active">3–4 Wks · Michael</span></div>
+        <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Confirm structure is finalized before starting.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Event / Partner IRB Approval Overhaul <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">~10% · WAITING MKTG</span></div>
-        <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction. Need tight phasing to contain scope creep.</div>
+      <div class="project-card status-active">
+        <div class="project-name">Event / Partner IRB Approval Overhaul <span class="status-badge badge-tabled">~10% · Waiting Mktg</span></div>
+        <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Partner Portal 3.0 Rebuild <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">6–10 WKS · TIM + MC + NL</span></div>
+      <div class="project-card status-active">
+        <div class="project-name">Partner Portal 3.0 Rebuild <span class="status-badge badge-active">6–10 Wks · Tim + MC + NL</span></div>
         <div class="project-desc">Portal is 7 years old. Full rebuild: clean terminology, modern architecture, tighter permissioning, self-serve lead status, routing/escalation workflows, individual logins, reporting, CMS backend. Requirements scoped (Tim, 100% KR). Needs exec sponsorship + phased delivery.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">QT Feature Requests <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">KOTHE</span></div>
-        <div class="project-desc">4 QT enhancements: Validated Partner lookup in QT · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (on mat leave). Target: migrate off QT within 18 months.</div>
+      <div class="project-card status-active">
+        <div class="project-name">QT Feature Requests <span class="status-badge badge-tabled">Kothe</span></div>
+        <div class="project-desc">4 QT enhancements: Validated Partner lookup · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (mat leave). Target: migrate off QT within 18 months.</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">90-Day-Touch → Outlook Calendar Auto-Scheduler <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">LOW · MONTY</span></div>
-        <div class="project-desc">Monty Gents request: run SF 90-day-touch report → auto-schedule 15-min Outlook self-appointments for each client on the list, spread randomly across weekday 9–5 slots within the next 90 days, max 2/day, no client email needed. Re-running the report only schedules net-new clients. Mechanism: Retool workflow + Microsoft Graph API (/getSchedule + POST /me/events). No SF Scheduler license needed. Feasibility: HIGH. Est. 1–2 days once Graph OAuth is wired.</div>
-        <div class="project-next">Wire Microsoft Graph OAuth in Retool · Confirm Monty's UPN · Pull 90-day-touch SOQL or report ID</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">90-Day-Touch → Outlook Calendar Auto-Scheduler <span class="status-badge badge-parked">Low · Monty</span></div>
+        <div class="project-desc">Run SF 90-day-touch report → auto-schedule 15-min Outlook self-appointments for each client, spread randomly across weekday 9–5, max 2/day. Retool workflow + Microsoft Graph API. No SF Scheduler license needed. Est. 1–2 days once Graph OAuth wired.</div>
+        <div class="project-next">Wire Microsoft Graph OAuth in Retool · Confirm Monty's UPN · Pull 90-day-touch SOQL</div>
       </div>
 
-      <div class="project-card" style="border-left-color:#00aaff;">
-        <div class="project-name" style="color:#66ccff;">Pre-Call / Post-Call Planner — Phase 2 Enhancements <span class="status-badge" style="background:#001133;color:#00aaff;border:1px solid #00aaff;font-size:11px;">NEXT PHASE</span></div>
-        <div class="project-desc">Core workflow is in production and running for Sales + Jennifer Priddy (Premier Care). Next phase: identify enhancement requests, expand output coverage, improve AI field schema alignment, and evaluate additional use cases (e.g. renewal prep, expansion plays).</div>
+      <div class="project-card status-active">
+        <div class="project-name">Pre-Call / Post-Call Planner — Phase 2 <span class="status-badge badge-active">Next Phase</span></div>
+        <div class="project-desc">Core workflow in production. Next phase: identify enhancement requests, expand output coverage, improve AI field schema alignment, evaluate additional use cases (renewal prep, expansion plays).</div>
       </div>
 
     </div>
   </div>
 
 </div>
-</div><!-- end tab-buildqueue -->
+</div>
+</div>
+
 
 <!-- ══════════════════════════════ TAB: SCOPING ══════════════════════════════ -->
 <div id="tab-scoping" style="display:none;">
+<div class="page-body">
 <div class="single-col-tab">
 
   <div class="panel">
-    <div class="panel-header">
-      <span class="pulse" style="background:#9966ff;box-shadow:0 0 6px #9966ff;"></span>
-      <span class="panel-title" style="color:#9966ff;text-shadow:0 0 8px #9966ff;">:: IN SCOPING ::</span>
+    <div class="panel-header cream-header">
+      <span class="panel-title">In Scoping</span>
     </div>
     <div class="panel-body">
-      <div style="color:#555;font-size:12px;margin-bottom:14px;">Being defined. Not yet ready to build.</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Being defined. Not yet ready to build.</div>
 
-      <div class="project-card" style="border-left-color:#9966ff;">
-        <div class="project-name" style="color:#cc99ff;">Dashboards &amp; Reporting Strategy
-          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
-        </div>
-        <div class="project-desc">
-          Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap (CSM Dashboard / Retention Radar, 2026 Sales Leaderboard, Homepage Dashboard), and handoff between RevOps-owned vs IS-owned reports.
-        </div>
+      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
+        <div class="project-name">Dashboards & Reporting Strategy <span class="status-badge badge-tabled">Scoping</span></div>
+        <div class="project-desc">Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap, handoff between RevOps-owned vs IS-owned reports.</div>
         <ul class="todo-list">
           <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
           <li>2026 Sales Leaderboard (SF Case #16, Jim Kothe, New)</li>
@@ -1423,109 +1480,92 @@
         </ul>
       </div>
 
-      <div class="project-card" style="border-left-color:#9966ff;">
-        <div class="project-name" style="color:#cc99ff;">How To Use AI As Admin
-          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">SCOPING</span>
-        </div>
-        <div class="project-desc">
-          Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow — Claude, Retool AI queries, SF Einstein features. Format TBD: Confluence SOP, live demo, or recorded walkthrough.
-        </div>
+      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
+        <div class="project-name">How To Use AI As Admin <span class="status-badge badge-tabled">Scoping</span></div>
+        <div class="project-desc">Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow. Format TBD: Confluence SOP, live demo, or recorded walkthrough.</div>
         <div class="project-next">Define audience + format before scoping content</div>
       </div>
 
-
-      <div class="project-card" style="border-left-color:#9966ff;">
-        <div class="project-name" style="color:#cc99ff;">BigTinCan → AI CTRL Integration
-          <span class="status-badge" style="background:#110022;color:#9966ff;border:1px solid #9966ff;">BACKLOG — BLOCKED</span>
-        </div>
-        <div class="project-desc">
-          Add BigTinCan as a content library in ai.expedient.cloud (AI CTRL), similar to Echo. Use case: reps want to access BTC Stories and sales content directly from AI CTRL without downloading + uploading. Nick already connected BTC to Retool (pubapi.bigtincan.com). AS_USER delegation question raised. Ben Gallo owns platform. Caleb Hills owns AI CTRL side.
-        </div>
+      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
+        <div class="project-name">BigTinCan → AI CTRL Integration <span class="status-badge badge-blocked">Backlog · Blocked</span></div>
+        <div class="project-desc">Add BigTinCan as a content library in ai.expedient.cloud (AI CTRL). Nick already connected BTC to Retool (pubapi.bigtincan.com). Ben Gallo owns platform. Caleb Hills owns AI CTRL side.</div>
         <ul class="todo-list">
           <li>Confirm API access tier — BTC API requires enterprise plan bolt-on (Helpdesk owns licensing)</li>
-          <li>Get OAuth credentials: Client ID, Client Secret, Access Token (Helpdesk creates)</li>
+          <li>Get OAuth credentials: Client ID, Client Secret, Access Token</li>
           <li>Confirm AS_USER support for per-rep permission inheritance</li>
           <li>Scope ingestion: Stories, Files, Search, Channels/Tabs</li>
         </ul>
-        <div class="project-next">Blocked on Helpdesk confirming API license. Ben Gallo + Caleb Hills + Peter Shelly to coordinate.</div>
+        <div class="project-next">Blocked on Helpdesk confirming API license. Ben + Caleb Hills + Peter Shelly to coordinate.</div>
       </div>
 
     </div>
   </div>
 
 </div>
-</div><!-- end tab-scoping -->
+</div>
+</div>
+
 
 <!-- ══════════════════════════════ TAB: COMPLETED ══════════════════════════════ -->
 <div id="tab-completed" style="display:none;">
+<div class="page-body">
 <div class="single-col-tab">
 
   <div class="panel">
     <div class="panel-header">
-      <span class="pulse" style="background:var(--neon-green);box-shadow:0 0 6px var(--neon-green);"></span>
-      <span class="panel-title" style="color:var(--neon-green);text-shadow:0 0 8px var(--neon-green);">:: COMPLETED WORK ::</span>
+      <span class="dot dot-green"></span>
+      <span class="panel-title">Completed Work</span>
     </div>
     <div class="panel-body">
-      <div style="color:#555;font-size:12px;margin-bottom:14px;">Done is done. Archived here so the tracker stays clean.</div>
 
-      <div class="section-label">// JUN 19 2026 — TODAY'S WINS</div>
+      <div class="section-label">Jun 22 2026</div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          Amount vs QT Net Impact — Debate Settled
-          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
-        </div>
-        <div class="project-desc">Confirmed via live SF report data (Partner YTD Closed Won, Jan 2026 add/drop pair): QT Net Impact is stamped identically on both the ADD and DROP opp in add/drop PCR pairs — summing it double-counts. Use Amount for all portfolio-level totals. QT Net Impact is only valid for single-deal conversations. Documented: new Confluence reference page (3230728241), footer comments on SF Object Reference Guide + The Dashboard, warning panels on Sales Dashboard 2.0 + Partner Dashboard, local context/SF-Reporting-Field-Standards.md, and skills/pipeline/SKILL.md guardrails.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">jack-in Morning Brief — First Production Run <span class="status-badge badge-active">✓ Done · Jun 22</span></div>
+        <div class="project-desc">All 8 SF health checks firing against expedient-prod. Partner leads, cases, pipeline, marketing leads, dupes, orphan contacts, flow errors, VoC. Baseline established. SOQL field patches queued for next run.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          rAIdarr Session Improvements + Code Audit
-          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
-        </div>
-        <div class="project-desc">Fixed Claude broken in Retool Public. Code audit from git confirmed: AVP filter working, NOCs + Take Rate live (newOppsLookup + newOppsTeamLookup wired), competitors piped at account level via zipMap.js, Ben coaching tone added to transformerICPPrompt.js. Identified two specific remaining bugs: Partner KPI tiles use .data not .filteredData (1-word fix per tile), ICP funnel stats (transformerNewLogoStats) not AVP-aware. Business rule compliance check: app is clean — uses Amount/QT_MRR, not QT_Net_Impact for aggregation.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Opp Edit v4 Flow Fixed — v28 Draft Deployed <span class="status-badge badge-active">✓ Done · Jun 22</span></div>
+        <div class="project-desc">Two root causes fixed: (1) Decision_4 broken condition (EqualTo with no rightValue) → replaced with getValidatedPartner IsNull = false check. (2) getValidatedPartner was returning a collection — changed getFirstRecordOnly to true. Is_New_MSA stub wired in (New_Logo__c OR Contract_Type = MSA). Active v26 untouched. v28 ready to test.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          ATLAS Back Online
-          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
-        </div>
-        <div class="project-desc">ATLAS Retool app is working again. Rachel notified. Next: schedule walkthrough session with Rachel week of Jun 23.</div>
+      <div class="section-label">Jun 19 2026</div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Amount vs QT Net Impact — Debate Settled <span class="status-badge badge-active">✓ Done · Jun 19</span></div>
+        <div class="project-desc">Confirmed via live SF report data: QT Net Impact stamps identically on ADD and DROP opp in add/drop PCR pairs — summing it double-counts. Use Amount for all portfolio-level totals. Documented: Confluence 3230728241, SF Object Reference, Sales Dashboard 2.0, Partner Dashboard, local context/SF-Reporting-Field-Standards.md, and skills/pipeline/SKILL.md guardrails.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          Josh Will Briefed on AI Stack
-          <span class="status-badge badge-active">✓ DONE — Jun 19</span>
-        </div>
-        <div class="project-desc">Sent Josh Will examples of all Retool workflows and apps since he's now selling Retool solutions for Expedient customers.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">rAIdarr Session Improvements + Code Audit <span class="status-badge badge-active">✓ Done · Jun 19</span></div>
+        <div class="project-desc">Fixed Claude broken in Retool Public. Confirmed: AVP filter working, NOCs + Take Rate live, competitors piped at account level via zipMap.js, Ben coaching tone added. Identified two remaining bugs: Partner KPI .filteredData and ICP funnel stats not AVP-aware.</div>
       </div>
 
-      <div class="section-label">// JUN 17 2026 — TODAY'S WINS</div>
-
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          Retool Deployment Unblocked
-          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
-        </div>
-        <div class="project-desc">rAIdarr P1 deployment blocker resolved. Root cause: Retool source control bug that tries to remove releases on full deployment even with multi-instance releases feature flag off. Fix: removed branch protection in GitHub, merged to main, ran full deployment — succeeded. Bug patch expected from @mesi ~Wed Jun 25. Until then: app re-protected, no full deployments. After patch: upgrade to latest Retool version.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">ATLAS Back Online <span class="status-badge badge-active">✓ Done · Jun 19</span></div>
+        <div class="project-desc">ATLAS Retool app working again. Rachel notified. Walkthrough session scheduled week of Jun 23.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          Retool Integration User — Opp Write Permissions Fixed
-          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
-        </div>
-        <div class="project-desc">Case #00007623 — Josh Davis getting INSUFFICIENT_ACCESS_OR_READONLY on all Opportunity fields via Retool. Diagnosed: Integration Access permission set had Edit but not Modify All on Opportunity (user on Minimum Access profile = no implicit sharing). Fix: added Modify All Records to Opportunity in Integration Access permission set. Josh unblocked.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Josh Will Briefed on AI Stack <span class="status-badge badge-active">✓ Done · Jun 19</span></div>
+        <div class="project-desc">Sent Josh Will examples of all Retool workflows and apps — he's selling Retool solutions for Expedient customers.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.85;">
-        <div class="project-name">
-          SF Case Queue Cleanup — 6 Closed
-          <span class="status-badge badge-active">✓ DONE — Jun 17</span>
-        </div>
-        <div class="project-desc">Closed 6 open SF cases today.</div>
+      <div class="section-label">Jun 17 2026</div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Retool Deployment Unblocked <span class="status-badge badge-active">✓ Done · Jun 17</span></div>
+        <div class="project-desc">Root cause: Retool source control bug tries to remove releases on full deployment. Fix: removed branch protection in GitHub, merged to main, full deploy succeeded. Bug patch expected ~Jun 25 from @mesi. Until then: no full deployments.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Retool Integration User — Opp Write Permissions Fixed <span class="status-badge badge-active">✓ Done · Jun 17</span></div>
+        <div class="project-desc">Case #00007623 — Josh Davis getting INSUFFICIENT_ACCESS on Opportunity fields via Retool. Fix: added Modify All Records to Opportunity in Integration Access permission set.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">SF Case Queue Cleanup — 6 Closed <span class="status-badge badge-active">✓ Done · Jun 17</span></div>
         <ul class="todo-list">
           <li class="done">#00007594 — List of Campaigns where Leads have not Converted</li>
           <li class="done">#00007705 — Remove RevOps Access - Exiting Employee</li>
@@ -1536,79 +1576,41 @@
         </ul>
       </div>
 
-      <div class="section-label">// RETOOL APPS</div>
+      <div class="section-label">Retool Apps</div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          Comcast Lead Submission Flow Fix
-          <span class="status-badge badge-active">✓ DONE</span>
-        </div>
-        <div class="project-desc">Lead submission flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.</div>
-        <ul class="todo-list">
-          <li class="done">Pull Comcast lead submission error logs from SF</li>
-          <li class="done">Fix solution data population issue</li>
-          <li class="done">Comcast dashboard: funnel + leads accuracy, naming scheme in SF + QT</li>
-          <li class="done">Operationalize Comcast Rebill partnership (Pilot → General Release → Sales/Delivery/Billing/Support)</li>
-        </ul>
+      <div class="project-card status-tabled">
+        <div class="project-name">Comcast Lead Submission Flow Fix <span class="status-badge badge-active">✓ Done</span></div>
+        <div class="project-desc">Flow fixed. Solution data population resolved. Dashboard updates complete. Comcast Rebill partnership operationalized.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          Marketecture → SF Integration
-          <span class="status-badge badge-active">✓ DONE — 100% TO GEORGE'S SPEC</span>
-        </div>
-        <div class="project-desc">Running 100% in production to George Hamm's spec. No further action needed.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Marketecture → SF Integration <span class="status-badge badge-active">✓ Done · 100% to George's Spec</span></div>
+        <div class="project-desc">Running 100% in production. No further action needed.</div>
       </div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          Pre-Call / Post-Call — Jennifer Priddy Premier Care Use Case
-          <span class="status-badge badge-active">✓ DONE</span>
-        </div>
-        <div class="project-desc">Delivered what Jennifer needed for her Delivery / Premier Care use cases. Pre/Post workflow extended to cover this output.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Pre-Call / Post-Call — Jennifer Priddy Premier Care <span class="status-badge badge-active">✓ Done</span></div>
+        <div class="project-desc">Delivered Jennifer's Delivery / Premier Care use case. Pre/Post extended to cover this output.</div>
       </div>
 
-      <div class="section-label">// SALESFORCE</div>
+      <div class="section-label">Salesforce</div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          SF Account Type: Former Client Automation
-          <span class="status-badge badge-active">✓ DONE — FINISHING TOUCHES WITH MARK B</span>
-        </div>
-        <div class="project-desc">Nick's side complete. Logic confirmed. Mark B (Head of IS) finishing edge cases Ben identified. On standby if they need anything.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">SF Account Type: Former Client Automation <span class="status-badge badge-active">✓ Done · Finishing Touches with Mark B</span></div>
+        <div class="project-desc">Nick's side complete. Logic confirmed. Mark B finishing edge cases Ben identified.</div>
       </div>
 
-      <div class="section-label">// PARTNER & CHANNEL</div>
+      <div class="section-label">Partner & Channel</div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          Partner Portal Rebuild (VAR / Lead Submit Screenflow)
-          <span class="status-badge badge-active">✓ DONE</span>
-        </div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Partner Portal Rebuild (VAR / Lead Submit Screenflow) <span class="status-badge badge-active">✓ Done</span></div>
         <div class="project-desc">Screenflow for lead submit complete. VAR routing logic 100%. Head/tail popup 100%. Portal 3.0 full rebuild is a future build queue item.</div>
-        <ul class="todo-list">
-          <li class="done">VAR routing logic + head/tail popup</li>
-          <li class="done">Lead submit screenflow</li>
-          <li class="done">SF report — RPMs + VAR accounts</li>
-        </ul>
       </div>
 
-      <div class="section-label">// AI WORKFLOWS + TOOLS</div>
+      <div class="section-label">rAIdarr — Session 2026-06-15</div>
 
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          ZI / LISN Tool Split — Complete
-          <span class="status-badge badge-active">✓ DONE — Jun 2026</span>
-        </div>
-        <div class="project-desc">Reps using LISN for daily prospecting. RingLead enriches everything from SF per spec. ZI Copilot seats cut. ~$47K savings realized. ZI stays for background enrichment only via RingLead automation. No further action needed.</div>
-      </div>
-
-      <div class="project-card status-tabled" style="opacity:0.75;">
-        <div class="project-name">
-          rAIdarr — Session 2026-06-15 Improvements
-          <span class="status-badge badge-active">✓ COMMITTED</span>
-        </div>
-        <div class="project-desc">Batch of fixes committed (commits dceb374d–ff8a1da9). Includes: AVP filter static mode fix, funnel chart click-to-filter, opp stat tooltips, event calendar fixes, territory/region columns, ICP coverage label fix, AI hidden binding fix, territory competitor rollup, NOC count + take rate columns, payload slim for aiDealInspection.</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">rAIdarr Session Improvements — Committed <span class="status-badge badge-active">✓ Done</span></div>
         <ul class="todo-list">
           <li class="done">selectAVP: switched to static itemMode with hardcoded AVP options</li>
           <li class="done">funnelChartMonth click-to-filter + title</li>
@@ -1627,45 +1629,44 @@
   </div>
 
 </div>
-</div><!-- end tab-completed -->
+</div>
+</div>
+
 
 <!-- ══════════════════════════════ TAB: ABOUT NICK ══════════════════════════════ -->
 <div id="tab-about" style="display:none;">
+<div class="page-body">
 <div class="about-grid">
 
-  <!-- HERO ROW -->
+  <!-- HERO -->
   <div class="panel about-hero">
     <div class="panel-header">
-      <span class="pulse orange"></span>
-      <span class="panel-title" style="color:var(--neon-pink);text-shadow:0 0 8px var(--neon-pink);">:: PERSONNEL FILE :: NICK LANSBERRY ::</span>
+      <span class="dot dot-amber"></span>
+      <span class="panel-title">Personnel File · Nick Lansberry</span>
     </div>
     <div class="panel-body">
-      <div style="display:flex;gap:24px;align-items:flex-start;">
-        <div style="flex:1;">
-          <div style="font-family:'VT323',monospace;font-size:30px;color:var(--neon-yellow);margin-bottom:4px;text-shadow:0 0 8px var(--neon-yellow);">REVENUE ANALYTICS MANAGER</div>
-          <div style="font-size:13px;color:#bbb;line-height:1.7;margin-bottom:14px;">
-            The person who makes the GTM engine run at Expedient. When reps need clean pipeline data, when leadership needs a dashboard that isn't 48 Excel tabs, when a partner deal needs proper attribution, when AI could save 45 minutes of manual prep before every call — that's Nick's territory.
-            <br><br>
-            10 years at Expedient. Revenue Analytics Manager (April 2025–present). Go-to-Market Operations Manager before that (2022–2025). Built the partner program from scratch. Built the attribution model from scratch. Built the AI workflow stack from scratch. MBA from Katz (Pitt, 2024), Salesforce certified, and deep enough in Retool + Claude that it's become a competitive advantage for the org.
-          </div>
-          <div class="impact-box">
-            <div class="impact-stat">
-              <span class="impact-number">$453K</span>
-              <span class="impact-label">Partner-Influenced MRR (cumulative, 338 opps)</span>
-            </div>
-            <div class="impact-stat">
-              <span class="impact-number">$177K</span>
-              <span class="impact-label">New Logo MRR influenced in 2025 (14 net-new logos)</span>
-            </div>
-            <div class="impact-stat">
-              <span class="impact-number">$148K</span>
-              <span class="impact-label">4-Year Cost Savings (RingLead consolidation)</span>
-            </div>
-            <div class="impact-stat">
-              <span class="impact-number">50+ hrs</span>
-              <span class="impact-label">Returned to reps per quarter (AI tools alone)</span>
-            </div>
-          </div>
+      <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--forest);margin-bottom:6px;">Revenue Analytics Manager</div>
+      <div style="font-size:13px;color:var(--charcoal-mid);line-height:1.8;margin-bottom:16px;">
+        The person who makes the GTM engine run at Expedient. When reps need clean pipeline data, when leadership needs a dashboard that isn't 48 Excel tabs, when a partner deal needs proper attribution, when AI could save 45 minutes of manual prep before every call — that's Nick's territory.
+        <br><br>
+        10 years at Expedient. Revenue Analytics Manager (April 2025–present). Go-to-Market Operations Manager before that (2022–2025). Built the partner program from scratch. Built the attribution model from scratch. Built the AI workflow stack from scratch. MBA from Katz (Pitt, 2024), Salesforce certified, deep in Retool + Claude.
+      </div>
+      <div class="impact-row">
+        <div class="impact-stat">
+          <span class="impact-number">$453K</span>
+          <span class="impact-label">Partner-Influenced MRR (cumulative, 338 opps)</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-number">$177K</span>
+          <span class="impact-label">New Logo MRR influenced in 2025 (14 net-new logos)</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-number">$148K</span>
+          <span class="impact-label">4-Year Cost Savings (RingLead consolidation)</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-number">50+ hrs</span>
+          <span class="impact-label">Returned to reps per quarter (AI tools alone)</span>
         </div>
       </div>
     </div>
@@ -1673,31 +1674,30 @@
 
   <!-- LEFT: ACCOMPLISHMENTS -->
   <div class="panel">
-    <div class="panel-header">
-      <span class="pulse"></span>
-      <span class="panel-title">:: ACCOMPLISHMENTS ::</span>
+    <div class="panel-header cream-header">
+      <span class="panel-title">Accomplishments</span>
     </div>
     <div class="panel-body">
-      <div class="section-label">// BUILT THINGS THAT WORK</div>
+      <div class="section-label">Built Things That Work</div>
       <ul class="accolade-list">
-        <li><strong>3 production AI workflows</strong> running daily — SBR Generator, Pre-Meeting Planner, Post-Meeting Follow-Up. Pre-call research: 30–45 min → under 3 min. George Hamm says the SBR saves him ~1 hour per review.</li>
+        <li><strong>3 production AI workflows</strong> running daily — SBR Generator, Pre-Meeting Planner, Post-Meeting Follow-Up. Pre-call research: 30–45 min → under 3 min.</li>
         <li><strong>Complete Partner Portal rebuild</strong> — differentiated submission + routing flows for Named, ReBill, and Referral partner types. Live January 2026. 170+ active partners across 7 markets.</li>
-        <li><strong>rAIdarr (AVP Executive Review)</strong> — custom Retool React tool surfacing rep activity, pipeline health, Sandler meeting quality, ICP coverage, and partner contribution for weekly AVP review. Turned reporting sessions into decision sessions.</li>
-        <li><strong>ATAC automation framework</strong> — Salesforce flows, 6sense integrations, ICP scoring, meeting routing. The infrastructure behind $177K new logo MRR in 2025.</li>
+        <li><strong>rAIdarr (AVP Executive Review)</strong> — custom Retool React tool surfacing rep activity, pipeline health, Sandler meeting quality, ICP coverage, and partner contribution. Turned reporting sessions into decision sessions.</li>
+        <li><strong>ATAC automation framework</strong> — Salesforce flows, 6sense integrations, ICP scoring, meeting routing. Infrastructure behind $177K new logo MRR in 2025.</li>
         <li><strong>Magellan attribution platform</strong> — first partner contribution model in company history. Adopted company-wide as the standard for revenue reporting.</li>
         <li><strong>12 cross-functional demand programs</strong> — 2,976 unique prospects engaged, $461,684 in won MRR within 120 days.</li>
-        <li><strong>ICP tier auto-classification</strong> across 90,000+ accounts. ZoomInfo enrichment pipelines. RingLead deduplication. "The data is garbage" complaints: gone.</li>
+        <li><strong>ICP tier auto-classification</strong> across 90,000+ accounts. ZoomInfo enrichment pipelines. RingLead deduplication. The data quality complaints: gone.</li>
       </ul>
 
-      <div class="section-label" style="margin-top:14px;">// SAVED MONEY AND CLEANED HOUSE</div>
+      <div class="section-label">Saved Money and Cleaned House</div>
       <ul class="accolade-list">
-        <li><strong>$148,378 saved over 4 years</strong> — identified 3-tool overlap (ZoomInfo + LeanData + Cloudingo running at ~$164K/yr), built the business case, mapped 60+ routing rules to the new platform, executed zero-disruption migration to RingLead.</li>
+        <li><strong>$148,378 saved over 4 years</strong> — identified 3-tool overlap (ZoomInfo + LeanData + Cloudingo at ~$164K/yr), built the business case, mapped 60+ routing rules to the new platform, zero-disruption migration to RingLead.</li>
         <li><strong>GTM stack rationalization</strong> — migrated from Outreach to Salesforce Sales Engagement, reducing tool sprawl and cost.</li>
       </ul>
 
-      <div class="section-label" style="margin-top:14px;">// AWARDS + RECOGNITION</div>
+      <div class="section-label">Awards & Recognition</div>
       <ul class="accolade-list">
-        <li><strong>LeanData Ops Star Account of the Year</strong> — national award. Featured case study presenter at LeanData's national Sales Kickoff. Redesigned 6QA Auto-Cadence into a scalable end-to-end process.</li>
+        <li><strong>LeanData Ops Star Account of the Year</strong> — national award. Featured case study presenter at LeanData's national Sales Kickoff.</li>
         <li><strong>Expedient Expy Award</strong> — Most Helpful Employee. Stepped into SF Administrator role during staffing gap, maintained platform continuity, contributed to full re-implementation.</li>
         <li><strong>Expedient Leadership Cohort</strong> (2025–2026) — selected by leadership, completed all requirements.</li>
         <li><strong>MBA, Katz School of Business (Pitt)</strong> — December 2024. Completed while working full-time in a cross-functional GTM ops leadership role.</li>
@@ -1705,34 +1705,30 @@
     </div>
   </div>
 
-  <!-- RIGHT: WHAT NICK DOES + MANAGER QUOTES -->
-  <div style="display:flex;flex-direction:column;gap:16px;">
+  <!-- RIGHT: ROLE + QUOTES + CERTS -->
+  <div style="display:flex;flex-direction:column;gap:14px;">
 
     <div class="panel">
-      <div class="panel-header">
-        <span class="pulse orange"></span>
-        <span class="panel-title">:: WHAT THIS ROLE ACTUALLY IS ::</span>
+      <div class="panel-header cream-header">
+        <span class="panel-title">What This Role Actually Is</span>
       </div>
       <div class="panel-body">
-        <div style="font-size:13px;color:#ccc;line-height:1.7;margin-bottom:12px;">
-          Revenue Analytics Manager is the title. The job is: own every system, data source, and automation that makes commercial decisions possible at Expedient — and then make it better.
-        </div>
+        <div style="font-size:13px;color:var(--charcoal-mid);line-height:1.7;margin-bottom:12px;">Revenue Analytics Manager is the title. The job is: own every system, data source, and automation that makes commercial decisions possible at Expedient — and then make it better.</div>
         <ul class="accolade-list">
-          <li><strong>GTM Strategy &amp; Architecture</strong> — partner program infrastructure, attribution modeling, ICP strategy, pipeline analytics across Sales, Marketing, Partner, and Finance</li>
+          <li><strong>GTM Strategy & Architecture</strong> — partner program infrastructure, attribution modeling, ICP strategy, pipeline analytics across Sales, Marketing, Partner, and Finance</li>
           <li><strong>Salesforce Administration</strong> — flows, data architecture, object design, security model, reporting, connected apps, integrations</li>
-          <li><strong>6sense Instance Ownership</strong> — intent scoring, campaign automation, buying group configuration, sales training, full platform migration</li>
+          <li><strong>6sense Instance Ownership</strong> — intent scoring, campaign automation, buying group config, sales training, full platform migration</li>
           <li><strong>AI/Automation Development</strong> — Retool + Claude API workflow design, production deployment, adoption measurement</li>
-          <li><strong>Revenue Analytics</strong> — Sigma dashboards, pipeline/forecast modeling, partner contribution analytics, self-service enablement</li>
+          <li><strong>Revenue Analytics</strong> — Sigma dashboards, pipeline/forecast modeling, partner contribution analytics</li>
           <li><strong>Operating Rhythm</strong> — QBR and pipeline review infrastructure, AVP exec tooling, forecast cadence design</li>
         </ul>
-        <div style="margin-top:12px;font-size:12px;color:#888;">Stack: Salesforce · 6sense · Retool · Sigma · RingLead · ZoomInfo · Pardot/Marketing Cloud · Claude API · MuleSoft (stakeholder)</div>
+        <div style="margin-top:12px;font-size:11px;color:var(--text-muted);">Stack: Salesforce · 6sense · Retool · Sigma · RingLead · ZoomInfo · Pardot/Marketing Cloud · Claude API · MuleSoft (stakeholder)</div>
       </div>
     </div>
 
     <div class="panel">
-      <div class="panel-header">
-        <span class="pulse" style="background:var(--neon-pink);box-shadow:0 0 6px var(--neon-pink);"></span>
-        <span class="panel-title" style="color:var(--neon-pink);text-shadow:0 0 8px var(--neon-pink);">:: WHAT OTHERS SAY ::</span>
+      <div class="panel-header amber-header">
+        <span class="panel-title">What Others Say</span>
       </div>
       <div class="panel-body">
         <div class="quote-block">
@@ -1740,11 +1736,11 @@
           <cite>— Jim Kothe, VP Revenue (Best Self Review 2026)</cite>
         </div>
         <div class="quote-block">
-          "The vendor consolidation to a single platform with ZI/RingLead is a standout achievement. You identified an opportunity, built the business case, and executed flawlessly, delivering significant, multi-year cost savings ($148K). This demonstrates a level of financial discipline and strategic thinking that has been needed in RevOps."
+          "The vendor consolidation to a single platform with ZI/RingLead is a standout achievement. You identified an opportunity, built the business case, and executed flawlessly, delivering significant, multi-year cost savings ($148K). This demonstrates financial discipline and strategic thinking that has been needed in RevOps."
           <cite>— Jim Kothe</cite>
         </div>
         <div class="quote-block">
-          "You seamlessly transitioned from Marketing to the RevOps team and were instrumental in providing new growth opportunities. The old cliché 'all ships rise' absolutely applies to the results of the team under your daily leadership."
+          "You seamlessly transitioned from Marketing to the RevOps team and were instrumental in providing new growth opportunities. The old cliché 'all ships rise' absolutely applies."
           <cite>— Jim Kothe</cite>
         </div>
         <div class="quote-block">
@@ -1755,50 +1751,43 @@
     </div>
 
     <div class="panel">
-      <div class="panel-header">
-        <span class="panel-title">:: CERTIFICATIONS &amp; EDUCATION ::</span>
+      <div class="panel-header cream-header">
+        <span class="panel-title">Certifications & Education</span>
       </div>
       <div class="panel-body">
-        <span class="cert-badge">Salesforce Administrator (Feb 2022)</span>
-        <span class="cert-badge">Scrum Master Certified (Mar 2021)</span>
-        <span class="cert-badge">Lean Six Sigma White Belt</span>
-        <span class="cert-badge">LeanData Ops Star (National Award)</span>
-        <div style="margin-top:10px;font-size:12px;color:#aaa;line-height:1.7;">
-          <div><span style="color:var(--neon-yellow);">MBA</span> — Katz School of Business, University of Pittsburgh · Dec 2024</div>
-          <div><span style="color:var(--neon-yellow);">B.S. Business Administration</span> — Franklin University · Dec 2019</div>
-          <div style="margin-top:8px;color:#666;font-size:11px;">Pittsburgh, PA · linkedin.com/in/nlansberry · trailblazer.me/id/nlansberry</div>
+        <div style="margin-bottom:10px;">
+          <span class="cert-badge">Salesforce Administrator (Feb 2022)</span>
+          <span class="cert-badge">Scrum Master Certified (Mar 2021)</span>
+          <span class="cert-badge">Lean Six Sigma White Belt</span>
+          <span class="cert-badge">LeanData Ops Star (National)</span>
+        </div>
+        <div style="font-size:13px;color:var(--charcoal-mid);line-height:1.8;">
+          <div><strong>MBA</strong> — Katz School of Business, University of Pittsburgh · Dec 2024</div>
+          <div><strong>B.S. Business Administration</strong> — Franklin University · Dec 2019</div>
+          <div style="margin-top:8px;font-size:11px;color:var(--text-muted);">Pittsburgh, PA · linkedin.com/in/nlansberry · trailblazer.me/id/nlansberry</div>
         </div>
       </div>
     </div>
 
-  </div><!-- end right col -->
+  </div>
 
-</div><!-- end about-grid -->
-</div><!-- end tab-about -->
+</div>
+</div>
+</div>
 
-<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
-<div class="footer-rainbow"></div>
+
+<!-- ── FOOTER ── -->
 <footer class="site-footer">
-  <div>
-    <span class="under-construction">🚧 PERPETUALLY UNDER CONSTRUCTION 🚧</span>
-  </div>
-  <div style="margin-top:10px;">
-    Last updated: <span style="color:var(--neon-green);">June 22, 2026 v10</span>
-    &nbsp;|&nbsp;
-    Powered by: <span style="color:var(--neon-blue);">LANSBERRY.EXE™</span>
-    &nbsp;|&nbsp;
-    <span style="color:#777;">nick@expedient.cloud</span>
-  </div>
-  <div class="badge-strip" style="margin-top:10px;">
-    <span class="retro-badge">SALESFORCE ENABLED</span>
-    <span class="retro-badge">RETOOL POWERED</span>
-    <span class="retro-badge">CLAUDE CLAUDE CLAUDE</span>
-    <span class="retro-badge">SIGMA COMING SOON</span>
-    <span class="retro-badge">NO COOKIES TRACKED</span>
-    <span class="retro-badge">SANDLER CERTIFIED</span>
-  </div>
-  <div style="margin-top:16px;color:#222;font-size:12px;">
-    LANSBERRY.EXE · v1.0 · © 2026 NICK LANSBERRY PRODUCTIONS · ALL RIGHTS RESERVED
+  <div class="footer-name">lans.cloud</div>
+  <div>Nick Lansberry · Pittsburgh, PA · Revenue Technology Architect</div>
+  <div style="margin-top:4px;font-size:11px;">Updated June 22, 2026 · v11</div>
+  <div class="footer-badges">
+    <span class="footer-badge">Salesforce</span>
+    <span class="footer-badge">Retool</span>
+    <span class="footer-badge">Claude</span>
+    <span class="footer-badge">Sigma</span>
+    <span class="footer-badge">No Cookies</span>
+    <span class="footer-badge">Sandler Certified</span>
   </div>
 </footer>
 

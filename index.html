@@ -733,7 +733,7 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 06.23.2026 v12
+    Updated 06.24.2026 v13
   </div>
 </header>
 
@@ -752,6 +752,14 @@
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
     <div class="activity-card">
+      <div class="ac-date">Jun 24 · SF of the Future</div>
+      5 AI features assigned to Nick (pilot): Account Plans, Sales Workspace, EAC v2, Agentforce Coworker, Prompt Templates. Einstein Email + Call Insights rebuilt with Sandler keywords. Pipeline Inspection Sandler settings enabled. 14 skills registered as slash commands.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 24 · Data Hygiene</div>
+      238 remaining orphan contacts updated — LeadSource = "Missing Source" + Needs_Enriched__c = true. Now in RingLead enrichment queue. Pardot migration discovery: org is on legacy pi.com interface, SF-native Lightning migration needed.
+    </div>
+    <div class="activity-card">
       <div class="ac-date">Jun 23 · SF Data</div>
       Oppty Edit v4 locked — Commissionable Partner field locked (QT/Tim only). RPM write-back active. Account Team copied to Opp. 253 Opps assigned Assigned_RPM__c via bulk update.
     </div>
@@ -762,14 +770,6 @@
     <div class="activity-card">
       <div class="ac-date">Jun 23 · Q3 OKRs</div>
       Q3 OKRs established: The Dashboard (#1), Salesforce of the Future, rAIdarr v2 + AI Workflows. Governance target: end of August.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 22 · Flow</div>
-      Opp Edit v4 flow fixed — Decision_4 repaired, validated partner lookup gates RPM write, Is_New_MSA branch wired. v28 deployed.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 22 · SF Health</div>
-      jack-in first production run — all 8 health checks firing against expedient-prod.
     </div>
     <div class="activity-card">
       <div class="ac-date">Jun 19 · rAIdarr</div>
@@ -813,12 +813,13 @@
             <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
             <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
+            <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
             <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
             <li><strong>P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
-            <li><strong>P2</strong> No loading state during 4-query AI chain in Rep Modal</li>
-            <li><strong>P3</strong> Zoom API: check transcript availability before calling</li>
+            <li><strong>P2</strong> Zoom API: check transcript availability before calling (before making Zoom API call in Rep Modal)</li>
+            <li><strong>P2</strong> Update SF Meeting with Rating/notes write-back after AI analysis</li>
             <li>SF write-back after Meeting Quality AI — tabled (scope TBD)</li>
           </ul>
         </div>
@@ -870,6 +871,7 @@
           <ul class="todo-list">
             <li class="done">Jennifer Priddy — Premier Care Pre/Post summaries — delivered</li>
             <li class="done">Marketecture additional changes — complete</li>
+            <li><strong>Backlog</strong> Add 6sense data to Pre-Call, Post-Call, and SBR (intent signals, keyword topics, engagement tier)</li>
             <li><strong>Backlog</strong> Ensure RPMs + SAs on a meeting get pre/post emails (not just primary rep)</li>
             <li><strong>Backlog</strong> Filter known partner domains in pre-meeting agent — surface real end-client domain</li>
           </ul>
@@ -925,7 +927,7 @@
             <span class="status-badge badge-active">Pilot Live · Jun 24</span>
           </div>
           <div class="project-desc">Activating licensed-but-unused AI and Agentforce features already in the org. Tier 1 (zero Flex Credit cost) assigned to Nick as solo pilot — validate, then roll to full org. Tier 0 (EAC + Pipeline Inspection gaps) to expand to remaining reps separately. Tier 2 (Agentforce Sales Coach, Einstein Conversation Insights) needs call recording source confirmed first. Full brief: salesforce/sf-ai-activation-brief.md.</div>
-          <div class="project-next">Validate new features in prod → confirm call recording source for ECI → expand Tier 0 to remaining reps</div>
+          <div class="project-next">Enter ECI + Email Insights in SF UI → confirm where Pipeline Inspection Sandler data saves → Pardot Lightning migration → expand Tier 0</div>
           <ul class="todo-list">
             <li class="done">Account Plans — assigned to Nick (0% → pilot)</li>
             <li class="done">Sales Workspace — assigned to Nick (0% → pilot)</li>
@@ -933,6 +935,15 @@
             <li class="done">Agentforce Coworker User — assigned to Nick (0% → pilot)</li>
             <li class="done">Prompt Template User — assigned to Nick (0% → pilot)</li>
             <li class="done">238 orphan contacts — LeadSource set to "Missing Source" + Needs_Enriched__c = true → in RingLead queue</li>
+            <li class="done">Einstein Email Custom Insights — Sandler rebuild designed (10 insights, keyword lists) → enter in SF UI</li>
+            <li class="done">Einstein Conversation Insights (call) — Sandler rebuild designed (10 configurable slots, 25 keywords each, Said By mapped) → enter in SF UI</li>
+            <li class="done">In-App Guidance — 3 walkthroughs planned (Account Plans Intro, Opportunity Health Nudge, Pipeline Inspection Tour)</li>
+            <li class="done">Pipeline Inspection Sandler methodology settings enabled</li>
+            <li><strong>⚡ Investigate</strong> Where does Pipeline Inspection Sandler data actually save? Confirm field mapping before assuming it's writing correctly</li>
+            <li><strong>⚡ Pardot</strong> Migrate team off legacy pi.com interface → Salesforce-native Lightning experience (change management, not technical)</li>
+            <li><strong>⚡ Investigate</strong> Account Scoring via Unified Identities — has Identity Resolution / Data Cloud gotchas, understand before touching</li>
+            <li><strong>Investigate</strong> service-cloud-feedback-management — unknown feature in Setup, understand what it does</li>
+            <li><strong>Evaluate</strong> Enablement Lite (15 seats, 2 assigned) — potential fit for new hire onboarding programs</li>
             <li><strong>Tier 0</strong> Assign EAC (v1 + v2) to remaining ~71 reps who have neither</li>
             <li><strong>Tier 0</strong> Assign Pipeline Inspection to remaining 70 reps (47% → 100%)</li>
             <li><strong>Tier 0</strong> Assign Sales Console to remaining 44 reps</li>
@@ -1072,6 +1083,16 @@
           <span class="focus-label label-done">Done ✓</span>
         </div>
         <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ SF of the Future — AI feature pilot live (Jun 24), Sandler ECI + Email Insights designed</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ 238 orphan contacts updated — Missing Source + Needs Enriched → RingLead queue</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
           <span class="dot dot-red"></span>
           <span class="focus-name">🔴 Deactivate 2 external SF admins (2015 / 2022)</span>
           <span class="focus-label label-urgent">Urgent</span>
@@ -1083,12 +1104,17 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 SF Release Review — top 5 features for users (free, in org)</span>
+          <span class="focus-name">🟠 Enter ECI + Email Insights keywords in SF UI (docs ready, manual config step)</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Pardot — migrate team to SF Lightning interface (off pi.com)</span>
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-gray"></span>
-          <span class="focus-name">⏸ rAIdarr v2 P2 fixes — HOLD until after Wed Jun 25</span>
+          <span class="focus-name">⏸ rAIdarr v2 P2 fixes — HOLD until after Thu Jun 25 (@mesi patch)</span>
           <span class="focus-label label-queued">Hold</span>
         </div>
         <div class="focus-row">
@@ -1240,8 +1266,11 @@
             <tr>
               <td><div class="owner-name">Nick (You)</div><div class="owner-sub">RevOps</div></td>
               <td style="color:var(--charcoal-mid);">
-                SF Release Review — top 5 features for users (free, in org now)<br>
-                Upload 2026 Quotas (data ready, Nick owns — after Collab Forecasting is on)<br>
+                ✓ SF of the Future pilot live — AI features activated (Jun 24)<br>
+                Enter ECI + Email Insights Sandler keywords in SF UI (docs ready)<br>
+                Migrate Pardot users off pi.com → SF Lightning interface<br>
+                Investigate Pipeline Inspection Sandler data write path<br>
+                Upload 2026 Quotas (data ready — after Collab Forecasting is on)<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
                 Rotate .envrc ES_API_KEY
@@ -1280,7 +1309,7 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">Q3 OKR Status</span>
-          <span class="fact-value alert">Dashboard 0% · SF Future 15% · rAIdarr 65%</span>
+          <span class="fact-value alert">Dashboard 0% · SF Future 30% · rAIdarr 65%</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">rAIdarr Branch</span>
@@ -1300,7 +1329,7 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">Orphan Contacts</span>
-          <span class="fact-value green">✓ 6,531 deleted · Jun 23</span>
+          <span class="fact-value green">✓ 6,531 deleted Jun 23 · 238 enriched Jun 24</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">RPM Backlog</span>
@@ -1544,6 +1573,33 @@
       <span class="panel-title">Completed Work</span>
     </div>
     <div class="panel-body">
+
+      <div class="section-label">Jun 24 2026</div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">SF of the Future — AI Feature Pilot Live <span class="status-badge badge-active">✓ Done · Jun 24</span></div>
+        <div class="project-desc">5 licensed-but-unused AI features assigned to Nick as solo pilot: Account Plans, Sales Workspace, EAC v2 (StandardEinsteinActivityCapture2Psl), Agentforce Coworker User, Prompt Template User. Full brief in salesforce/sf-ai-activation-brief.md. Tier 0 (EAC + Pipeline Inspection expansion) and Tier 2 (Agentforce Sales Coach) remain queued pending call recording source confirmation.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">238 Orphan Contacts Updated <span class="status-badge badge-active">✓ Done · Jun 24</span></div>
+        <div class="project-desc">238 remaining orphan contacts (AccountId = null) updated via anonymous Apex: LeadSource set to "Missing Source", Needs_Enriched__c = true. Now in RingLead enrichment queue for account matching and cleanup. Partner Community leads were excluded per standard rule.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Einstein Email Insights — Sandler Rebuild Designed <span class="status-badge badge-active">✓ Done · Jun 24</span></div>
+        <div class="project-desc">10 Sandler-focused Einstein Email Custom Insights designed with 10-keyword sets each: Pain Surfaced, Investment Discussed, Decision Process, Timeline Qualified, Compelling Event, Next Step Committed, Stakeholder Mapping, Competition in Play, Deal Cooling, Contract Stage. Reference doc: salesforce/einstein-insights-sandler.md. Manual config step: deactivate existing 10 in SF UI, enter new ones.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Einstein Conversation Insights — Sandler Rebuild Designed <span class="status-badge badge-active">✓ Done · Jun 24</span></div>
+        <div class="project-desc">10 configurable ECI call insights designed with 25 keywords each, Said By field mapped (Rep vs Customer): Competitor Mentioned, Pain—Customer Voice, Decision Process, Timeline/Urgency, Compelling Event, Executive Mentioned, Premature Solutioning (Rep flag), Buying Signal, Dissatisfied with Current Vendor, Expansion Signal. Automatic tab coverage documented — avoids duplication with included Next Steps, Pricing, Objections. Reference doc: salesforce/eci-call-insights-sandler.md.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">14 Claude Code Skills Registered as Slash Commands <span class="status-badge badge-active">✓ Done · Jun 24</span></div>
+        <div class="project-desc">All 14 custom skills now surface in / autocomplete in Claude Code. Created .claude/commands/*.md files for: jack-in, wrap-up, sf-cases, pipeline, accounts, expedient-sf, expedient-opp-analyzer, expedient-daily-brief, expedient-pipeline-review, expedient-meeting-analyzer, expedient-content-writer, expedient-consulting-press, brand-audit, and gsd commands.</div>
+      </div>
 
       <div class="section-label">Jun 23 2026</div>
 
@@ -1839,7 +1895,7 @@
 <footer class="site-footer">
   <div class="footer-name">lans.cloud</div>
   <div>Nick Lansberry · Pittsburgh, PA · Revenue Technology Architect</div>
-  <div style="margin-top:4px;font-size:11px;">Updated June 22, 2026 · v11</div>
+  <div style="margin-top:4px;font-size:11px;">Updated June 24, 2026 · v13</div>
   <div class="footer-badges">
     <span class="footer-badge">Salesforce</span>
     <span class="footer-badge">Retool</span>

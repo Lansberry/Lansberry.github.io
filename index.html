@@ -733,7 +733,7 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 06.24.2026 v13
+    Updated 06.25.2026 v14
   </div>
 </header>
 
@@ -742,7 +742,6 @@
   <button class="tab-btn active" onclick="showTab('tracker', this)">Tracker</button>
   <button class="tab-btn" onclick="showTab('sfadmin', this)">SF Admin</button>
   <button class="tab-btn" onclick="showTab('buildqueue', this)">Build Queue</button>
-  <button class="tab-btn" onclick="showTab('scoping', this)">Scoping</button>
   <button class="tab-btn" onclick="showTab('completed', this)">Completed</button>
   <button class="tab-btn" onclick="showTab('about', this)">About Nick</button>
 </nav>
@@ -751,6 +750,14 @@
 <div class="activity-strip">
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
+    <div class="activity-card amber">
+      <div class="ac-date">Jun 25 · rAIdarr Expansion</div>
+      Tim approved RPM Dashboard → folded into rAIdarr. Partner Scorecard becomes AI-driven program/rep/partner overview. Dashboard lives in Retool as rAIdarr until Sigma cutover. Partner Alliances Story + Sandler MQ Suite + Quota upload all merged in.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 25 · Project Cleanup</div>
+      Cleared: Win Review Button (Nick Leaf), AI Team Reporting (Michael), Event IRB (Michael), QT Features (IS), RPM Head/Tail Flow (✓ done), Partner Account List (ATLAS → Rachel). Scoping section removed. BTC + Rep Scheduling moved to Build Queue. ECI + Email Insights keywords entered and live.
+    </div>
     <div class="activity-card">
       <div class="ac-date">Jun 24 · SF of the Future</div>
       5 AI features assigned to Nick (pilot): Account Plans, Sales Workspace, EAC v2, Agentforce Coworker, Prompt Templates. Einstein Email + Call Insights rebuilt with Sandler keywords. Pipeline Inspection Sandler settings enabled. 14 skills registered as slash commands.
@@ -803,59 +810,30 @@
         <div class="project-card status-active">
           <div class="project-name">
             <span class="dot dot-green"></span>
-            rAIdarr (AVP Weekly Review)
-            <span class="status-badge badge-active">v2 Built · Fixes Queued After Wed</span>
+            rAIdarr — AVP Review + Partner Scorecard + RPM + Dashboard
+            <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
           </div>
-          <div class="warn-inline">⚠ HOLD all changes until after Wed Jun 25 (@mesi source control patch). After patch: fix 4 P2 bugs → wire v2 to Retool React App Builder.</div>
-          <div class="project-desc">v1 deployed and stable. v2 React App Builder rewrite built Jun 19 — Market Pulse, Pre-Call, Post-Call, ICP Coverage, Partner tab, AI deal inspection chain. 4 P2 bugs queued. Vite preview at localhost:5173.</div>
-          <div class="project-next">⏸ HOLD until after Wed Jun 25 → fix 4 P2 bugs → wire v2 to Retool React App Builder</div>
+          <div class="warn-inline">⚠ Retool changes via GUI only (no git push) — @mesi source control patch pending. After patch: fix 4 P2 bugs → wire v2 to React App Builder.</div>
+          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. SF-native Partner Dashboard built in SF already models the data structure.</div>
+          <div class="project-next">After @mesi patch: fix 4 P2 bugs → wire v2 → rebuild Partner Scorecard as AI overview → get Quota numbers from Tim → formalize Q3 OKRs for Jim</div>
           <ul class="todo-list">
             <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
             <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
             <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
+            <li class="done">Partner Alliances Story MVP delivered Jun 19 — merged into rAIdarr scope (Jun 25)</li>
+            <li class="done">RPM Scorecard in v1 — Tim approved folding full RPM Dashboard request into rAIdarr (Jun 25)</li>
+            <li class="done">Sandler Meeting Quality Suite — skills ready, folded into rAIdarr next-phase work</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
             <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
             <li><strong>P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
             <li><strong>P2</strong> Zoom API: check transcript availability before calling (before making Zoom API call in Rep Modal)</li>
-            <li><strong>P2</strong> Update SF Meeting with Rating/notes write-back after AI analysis</li>
-            <li>SF write-back after Meeting Quality AI — tabled (scope TBD)</li>
-          </ul>
-        </div>
-
-        <!-- PARTNER ALLIANCES STORY -->
-        <div class="project-card status-active">
-          <div class="project-name">
-            <span class="dot dot-green"></span>
-            Partner Alliances Story + RPM Dashboard (Tim)
-            <span class="status-badge badge-active">MVP Done · Retool Next</span>
-          </div>
-          <div class="project-desc">SF-native MVP delivered Jun 19. Active Validated Partner Report created Jun 23. SF filters too painful for long-term — moving to Retool for POC, eventually Sigma/BI.</div>
-          <div class="project-next">Scope Retool POC for Partner Alliances Story — learnings will drive RPM/AVP Dashboard Phase 2</div>
-          <ul class="todo-list">
-            <li class="done">Build Partner Alliances Story MVP — complete Jun 19</li>
-            <li class="done">Active Validated Partner Report created Jun 23 — live in dashboard, in Tim's weekly review</li>
-            <li class="done">Amount vs QT Net Impact settled Jun 19 — use Amount for all totals. Confluence 3230728241.</li>
-            <li>Scope Retool POC for Partner Alliances Story (SF too limited long-term)</li>
-            <li>Use learnings to scope full RPM/AVP Dashboard (Phase 2)</li>
-          </ul>
-        </div>
-
-        <!-- TIM'S FULL PARTNER DASHBOARD -->
-        <div class="project-card status-active">
-          <div class="project-name">
-            <span class="dot dot-green"></span>
-            Tim's Partner Dashboard — Full Build (Phase 2)
-            <span class="status-badge badge-active">Phase 2 · After Quick Build</span>
-          </div>
-          <div class="project-desc">Full RPM + AVP dashboards. RPM (3 parts): current pipeline/leads/sales, Named Partner deep dive, TSD + Alliance breakout. AVP Dashboard: leads MTD/QTD/YTD, pipeline snapshot, sales by partner type + solution type.</div>
-          <div class="project-next">Wait for Partner Alliances quick build learnings before scoping</div>
-          <ul class="todo-list">
-            <li>Part 1 — RPM Dashboard: Leads by status, Forecast 50%+, Sales by solution type + TX count + revenue</li>
-            <li>Part 2 — Named Partner: AE owner, tier, leads YTD vs goal, MRR sold YTD vs goal, funnel, last activity</li>
-            <li>Part 3 — TSD + Alliance: leads YTD, pipeline snapshot 30-day, opps 50%+</li>
-            <li>AVP Dashboard: Leads, Pipeline, Sales by partner type + solution type</li>
+            <li><strong>P2</strong> Meeting write-back — SF Event fields after AI analysis (scope TBD, tabled)</li>
+            <li><strong>NEW</strong> Rebuild Partner Scorecard as AI overview — program-wide, per-rep, per-partner drill (RPM view from scorecard moves here)</li>
+            <li><strong>NEW</strong> Get 2026 Quota numbers from Tim → upload to rAIdarr/SF (after Collab Forecasting on)</li>
+            <li><strong>NEW</strong> Embed commercial analytics lenses (Dashboard) into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
+            <li><strong>OKR</strong> Formalize Q3 OKRs and present to Jim/team</li>
           </ul>
         </div>
 
@@ -926,8 +904,8 @@
             Salesforce of the Future — AI Feature Activation
             <span class="status-badge badge-active">Pilot Live · Jun 24</span>
           </div>
-          <div class="project-desc">Activating licensed-but-unused AI and Agentforce features already in the org. Tier 1 (zero Flex Credit cost) assigned to Nick as solo pilot — validate, then roll to full org. Tier 0 (EAC + Pipeline Inspection gaps) to expand to remaining reps separately. Tier 2 (Agentforce Sales Coach, Einstein Conversation Insights) needs call recording source confirmed first. Full brief: salesforce/sf-ai-activation-brief.md.</div>
-          <div class="project-next">Enter ECI + Email Insights in SF UI → confirm where Pipeline Inspection Sandler data saves → Pardot Lightning migration → expand Tier 0</div>
+          <div class="project-desc">Activating licensed-but-unused AI and Agentforce features already in the org. Tier 1 (zero Flex Credit cost) assigned to Nick as solo pilot — validate, then roll to full org. Tier 0 (EAC + Pipeline Inspection gaps) to expand to remaining reps separately. Tier 2 (Agentforce Sales Coach, Einstein Conversation Insights) needs call recording source confirmed first. Full brief: salesforce/sf-ai-activation-brief.md. Also owns: SF Org Security Best Practices, SF Field Metadata Labeling, How To Use AI As Admin guide.</div>
+          <div class="project-next">Pardot Lightning migration → Pipeline Inspection Sandler data write path → expand Tier 0 to remaining reps</div>
           <ul class="todo-list">
             <li class="done">Account Plans — assigned to Nick (0% → pilot)</li>
             <li class="done">Sales Workspace — assigned to Nick (0% → pilot)</li>
@@ -935,10 +913,11 @@
             <li class="done">Agentforce Coworker User — assigned to Nick (0% → pilot)</li>
             <li class="done">Prompt Template User — assigned to Nick (0% → pilot)</li>
             <li class="done">238 orphan contacts — LeadSource set to "Missing Source" + Needs_Enriched__c = true → in RingLead queue</li>
-            <li class="done">Einstein Email Custom Insights — Sandler rebuild designed (10 insights, keyword lists) → enter in SF UI</li>
-            <li class="done">Einstein Conversation Insights (call) — Sandler rebuild designed (10 configurable slots, 25 keywords each, Said By mapped) → enter in SF UI</li>
+            <li class="done">Einstein Email Custom Insights — Sandler rebuild designed + entered in SF UI (Jun 25) — live</li>
+            <li class="done">Einstein Conversation Insights (call) — Sandler rebuild designed + entered in SF UI (Jun 25) — live</li>
             <li class="done">In-App Guidance — 3 walkthroughs planned (Account Plans Intro, Opportunity Health Nudge, Pipeline Inspection Tour)</li>
             <li class="done">Pipeline Inspection Sandler methodology settings enabled</li>
+            <li class="done">Enter ECI + Email Insights Sandler keywords in SF UI — complete Jun 25, live</li>
             <li><strong>⚡ Investigate</strong> Where does Pipeline Inspection Sandler data actually save? Confirm field mapping before assuming it's writing correctly</li>
             <li><strong>⚡ Pardot</strong> Migrate team off legacy pi.com interface → Salesforce-native Lightning experience (change management, not technical)</li>
             <li><strong>⚡ Investigate</strong> Account Scoring via Unified Identities — has Identity Resolution / Data Cloud gotchas, understand before touching</li>
@@ -959,9 +938,9 @@
         <div class="project-card status-tabled">
           <div class="project-name">
             SF Org Security Best Practices
-            <span class="status-badge badge-tabled">Hygiene · Low Priority</span>
+            <span class="status-badge badge-tabled">Part of SF of the Future OKR</span>
           </div>
-          <div class="project-desc">Michael Cruz owns most of these. Two companion docs: Security-And-Cleanup-Remediation.md + Salesforce-Org-Audit-2026-06.md.</div>
+          <div class="project-desc">Rolled into the Salesforce of the Future OKR. Michael Cruz owns most action items. Two companion docs: Security-And-Cleanup-Remediation.md + Salesforce-Org-Audit-2026-06.md.</div>
           <div class="project-next">Frame hygiene task list for Michael Cruz — handle when capacity allows</div>
           <ul class="todo-list">
             <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in</li>
@@ -1017,30 +996,22 @@
         <div class="project-card status-tabled">
           <div class="project-name">
             Sandler Meeting Quality Suite
-            <span class="status-badge badge-tabled">Skills Ready · Write-Back Next Phase</span>
+            <span class="status-badge badge-tabled">Complete · Folded into rAIdarr</span>
           </div>
-          <div class="project-desc">Skills ready on this machine (/expedient-meeting-analyzer, Pre/Post/SBR). SF write-back (11 Event fields) is next-phase — tabled until leadership scopes what to track.</div>
-          <div class="project-blocker">SF write-back tabled — needs scope on what to track</div>
+          <div class="project-desc">Skills complete and deployed. Folded into rAIdarr as next-phase work — SF Event write-back (11 fields) to be cooked into rAIdarr app updates, not tracked separately.</div>
           <ul class="todo-list">
             <li class="done">Skills ready: /expedient-meeting-analyzer, Pre/Post/SBR — use now for review sessions</li>
-            <li>11 Event fields spec saved (project_sandler_meeting_fields.md memory)</li>
-            <li>Meeting_Pain_Level__c = most important for AVP coaching</li>
-            <li>AI prompt update needed to return structured JSON for write-back</li>
+            <li class="done">SF write-back scope folded into rAIdarr P2 roadmap (Jun 25)</li>
+            <li>Meeting_Pain_Level__c = most important field for AVP coaching (next phase)</li>
           </ul>
         </div>
 
         <div class="section-label">Tabled · Parked</div>
 
         <div class="project-card status-tabled">
-          <div class="project-name">SF Field Metadata Labeling <span class="status-badge badge-tabled">Backlog Hygiene</span></div>
-          <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
+          <div class="project-name">SF Field Metadata Labeling <span class="status-badge badge-tabled">Part of SF of the Future OKR</span></div>
+          <div class="project-desc">Rolled into Salesforce of the Future OKR (KR3). Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
           <div class="project-next">Start after Dashboard Phase 1 kickoff. Confirm data owner mapping with Michael Cruz/Allison.</div>
-        </div>
-
-        <div class="project-card status-parked">
-          <div class="project-name">Rep Calendar / Scheduling Automation <span class="status-badge badge-parked">Backburner · Waiting on Cruz/Graph API</span></div>
-          <div class="project-desc">Michael Cruz working with Helpdesk to move Expedient to Microsoft Graph API. Once live, revisit: Graph API (native M365), SF Inbox, or Zoom Scheduler API. No active build until Graph is confirmed.</div>
-          <div class="project-next">Wait for Cruz/Helpdesk Graph API migration → scope options</div>
         </div>
 
       </div>
@@ -1103,9 +1074,9 @@
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
-          <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 Enter ECI + Email Insights keywords in SF UI (docs ready, manual config step)</span>
-          <span class="focus-label label-high">High</span>
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ ECI + Email Insights keywords entered in SF UI — live (Jun 25)</span>
+          <span class="focus-label label-done">Done ✓</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1113,18 +1084,18 @@
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
-          <span class="dot dot-gray"></span>
-          <span class="focus-name">⏸ rAIdarr v2 P2 fixes — HOLD until after Thu Jun 25 (@mesi patch)</span>
-          <span class="focus-label label-queued">Hold</span>
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 rAIdarr: P2 fixes + Partner Scorecard AI rebuild + RPM integration (after @mesi patch)</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Formalize Q3 OKRs + present to Jim/team</span>
+          <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-gray"></span>
-          <span class="focus-name">⏸ rAIdarr v2 → wire to Retool (after patch + fixes)</span>
-          <span class="focus-label label-queued">Hold</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-gray"></span>
-          <span class="focus-name">🔵 SF Field Metadata pilot — Opportunity object (OKR 2)</span>
+          <span class="focus-name">🔵 SF Field Metadata pilot — Opportunity object (OKR 2 / SF of the Future)</span>
           <span class="focus-label label-queued">Queued</span>
         </div>
       </div>
@@ -1267,10 +1238,11 @@
               <td><div class="owner-name">Nick (You)</div><div class="owner-sub">RevOps</div></td>
               <td style="color:var(--charcoal-mid);">
                 ✓ SF of the Future pilot live — AI features activated (Jun 24)<br>
-                Enter ECI + Email Insights Sandler keywords in SF UI (docs ready)<br>
+                ✓ ECI + Email Insights Sandler keywords entered in SF UI (Jun 25)<br>
                 Migrate Pardot users off pi.com → SF Lightning interface<br>
                 Investigate Pipeline Inspection Sandler data write path<br>
-                Upload 2026 Quotas (data ready — after Collab Forecasting is on)<br>
+                Formalize Q3 OKRs + present to Jim/team<br>
+                Get 2026 Quota numbers from Tim → upload after Collab Forecasting on<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
                 Rotate .envrc ES_API_KEY
@@ -1296,8 +1268,8 @@
           <span class="fact-value amber">4 tasks (SF Admin tab)</span>
         </div>
         <div class="fact-row">
-          <span class="fact-label">In Scoping</span>
-          <span class="fact-value">1 (BigTinCan → AI CTRL)</span>
+          <span class="fact-label">In Build Queue</span>
+          <span class="fact-value">5 (AI Notes · Portal 3.0 · Rep Calendar · BTC · 90-Day)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Hard-Blocked</span>
@@ -1305,7 +1277,7 @@
         </div>
         <div class="fact-row">
           <span class="fact-label">Tabled / Decision Needed</span>
-          <span class="fact-value">3 (Partner Convert Flow · Sandler write-back · BTC)</span>
+          <span class="fact-value">1 (Partner Convert Flow — team decision)</span>
         </div>
         <div class="fact-row">
           <span class="fact-label">Q3 OKR Status</span>
@@ -1396,15 +1368,15 @@
         <div class="project-next">Validate in sandbox with Michael → then enable in prod</div>
       </div>
 
-      <div class="project-card status-active">
-        <div class="project-name">Upload 2026 Quotas <span class="status-badge badge-active">Nick Owns · Ready</span></div>
-        <div class="project-desc">Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Nick has the data. Blocked on Collaborative Forecasting being enabled first.</div>
-        <div class="project-next">Wait for Collab Forecasting → prep CSV + run Data Loader</div>
+      <div class="project-card status-tabled">
+        <div class="project-name">Upload 2026 Quotas <span class="status-badge badge-tabled">Rolled into rAIdarr</span></div>
+        <div class="project-desc">Quota upload now tracked under rAIdarr project (Tim working to get numbers). Load rep-level monthly quota data into ForecastingQuota object via Data Loader CSV. Blocked on Collaborative Forecasting being enabled first.</div>
+        <div class="project-next">Wait for Collab Forecasting + Tim's Quota numbers → prep CSV + run Data Loader</div>
       </div>
 
       <div class="project-card status-tabled">
-        <div class="project-name">Update Fields — Description, Help Text, Owners <span class="status-badge badge-tabled">Backlog Hygiene</span></div>
-        <div class="project-desc">Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
+        <div class="project-name">Update Fields — Description, Help Text, Owners <span class="status-badge badge-tabled">Part of SF of the Future OKR</span></div>
+        <div class="project-desc">Rolled into Salesforce of the Future OKR (KR3). Add Help Text, Description, Data Owner, Field Usage, Data Sensitivity to all active Expedient custom SF fields. Labeling only — no FLS changes. Pilot: Opportunity (~30 fields).</div>
         <div class="project-next">Pilot with Opportunity fields → check-only deploy → show Nick → deploy → next object</div>
         <div class="project-blocker">Confirm which L1 Pain field is being deprecated + data owner mapping</div>
       </div>
@@ -1423,10 +1395,6 @@
         </ul>
       </div>
 
-      <div class="project-card status-tabled">
-        <div class="project-name">Active Validated Partner Report — Tim's Task <span class="status-badge badge-done">✓ Done · Jun 23</span></div>
-        <div class="project-desc">Report built and live in Tim's weekly review. 4,334 Active + 256 Expired. Tim owns ongoing review — not Nick's task.</div>
-      </div>
 
     </div>
   </div>
@@ -1450,38 +1418,8 @@
       <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Scoped, not yet started. Ordered roughly by urgency.</div>
 
       <div class="project-card status-active">
-        <div class="project-name">Duplicate Opp Merge Screen Flow <span class="status-badge badge-active">2–3 Wks</span></div>
-        <div class="project-desc">Screen Flow to link/unlink Validated Partner Object from active Opp during duplicate merges. Currently manual — breaks partner attribution, miscalculates commissions, inflates pipeline. Need to map downstream relationships before building.</div>
-      </div>
-
-      <div class="project-card status-active">
-        <div class="project-name">RPM Head/Tail Attribution Flow <span class="status-badge badge-active">2–3 Wks</span></div>
-        <div class="project-desc">Screen Flow + automation to tag RPMs on Leads and carry attribution through Lead conversion to Opportunity. Missing RPM attribution = invisible partner pipeline = broken channel comp + ROI reporting. Audit current Lead conversion rules first.</div>
-      </div>
-
-      <div class="project-card status-active">
         <div class="project-name">AI Notes Ingestion → Opp Pain Points <span class="status-badge badge-active">2–3 Wks</span></div>
         <div class="project-desc">Button on Opp record: paste OneNote notes → AI parses → updates Pain Point fields in SF. Built in Retool. Key Q: auto-update fields or stage for rep review first? (Ben to decide — changes trust model.)</div>
-      </div>
-
-      <div class="project-card status-active">
-        <div class="project-name">Win Review Assembly Button <span class="status-badge badge-active">2–3 Wks</span></div>
-        <div class="project-desc">Button on Won Opp: pulls SF data + rep notes → structured Win Review email/PDF. Similar to SBR workflow. Need field enforcement before button fires.</div>
-      </div>
-
-      <div class="project-card status-active">
-        <div class="project-name">Partner Account List + 6sense Tagging Tool <span class="status-badge badge-active">3–5 Wks</span></div>
-        <div class="project-desc">Retool tool: parse partner account list → match to SF → check 6sense/ICP data → bulk-tag Influencing Partners. Hard part: fuzzy account name matching with confidence thresholds.</div>
-      </div>
-
-      <div class="project-card status-active">
-        <div class="project-name">AI Team Reporting Rebuild <span class="status-badge badge-active">3–4 Wks · Michael</span></div>
-        <div class="project-desc">Existing dashboards need rebuild to reflect Robbie's new market structure. Confirm structure is finalized before starting.</div>
-      </div>
-
-      <div class="project-card status-active">
-        <div class="project-name">Event / Partner IRB Approval Overhaul <span class="status-badge badge-tabled">~10% · Waiting Mktg</span></div>
-        <div class="project-desc">Marketing regrouping before bringing formalized ask. Current process has compliance risk + friction.</div>
       </div>
 
       <div class="project-card status-active">
@@ -1490,8 +1428,21 @@
       </div>
 
       <div class="project-card status-active">
-        <div class="project-name">QT Feature Requests <span class="status-badge badge-tabled">Kothe</span></div>
-        <div class="project-desc">4 QT enhancements: Validated Partner lookup · Margin calculator · Quote approval levels · Partner commissions. Allison Betts owns QT (mat leave). Target: migrate off QT within 18 months.</div>
+        <div class="project-name">Rep Calendar / Scheduling Automation <span class="status-badge badge-active">Build Queue · Graph API Dependency</span></div>
+        <div class="project-desc">Automate scheduling for reps — get meetings on calendars. Three options: Microsoft Graph API (preferred, Cruz + Helpdesk migration), SF Inbox, or Zoom Scheduler API. No active build until Graph API path confirmed.</div>
+        <div class="project-next">Wait for Cruz/Helpdesk Graph API migration confirmation → scope and build</div>
+      </div>
+
+      <div class="project-card status-active">
+        <div class="project-name">BigTinCan → AI CTRL Integration <span class="status-badge badge-active">Build Queue · License Check Needed</span></div>
+        <div class="project-desc">Add BigTinCan as a content library in ai.expedient.cloud (AI CTRL). Nick already connected BTC to Retool (pubapi.bigtincan.com). Ben Gallo owns platform. Caleb Hills owns AI CTRL side.</div>
+        <ul class="todo-list">
+          <li>Confirm API access tier — BTC API requires enterprise plan bolt-on (Helpdesk owns licensing)</li>
+          <li>Get OAuth credentials: Client ID, Client Secret, Access Token</li>
+          <li>Confirm AS_USER support for per-rep permission inheritance</li>
+          <li>Scope ingestion: Stories, Files, Search, Channels/Tabs</li>
+        </ul>
+        <div class="project-next">Helpdesk confirm API license → Ben + Caleb Hills + Peter Shelly to coordinate.</div>
       </div>
 
       <div class="project-card status-tabled">
@@ -1500,11 +1451,6 @@
         <div class="project-next">Wire Microsoft Graph OAuth in Retool · Confirm Monty's UPN · Pull 90-day-touch SOQL</div>
       </div>
 
-      <div class="project-card status-active">
-        <div class="project-name">Pre-Call / Post-Call Planner — Phase 2 <span class="status-badge badge-active">Next Phase</span></div>
-        <div class="project-desc">Core workflow in production. Next phase: identify enhancement requests, expand output coverage, improve AI field schema alignment, evaluate additional use cases (renewal prep, expansion plays).</div>
-      </div>
-
     </div>
   </div>
 
@@ -1513,53 +1459,8 @@
 </div>
 
 
-<!-- ══════════════════════════════ TAB: SCOPING ══════════════════════════════ -->
-<div id="tab-scoping" style="display:none;">
-<div class="page-body">
-<div class="single-col-tab">
-
-  <div class="panel">
-    <div class="panel-header cream-header">
-      <span class="panel-title">In Scoping</span>
-    </div>
-    <div class="panel-body">
-      <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Being defined. Not yet ready to build.</div>
-
-      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
-        <div class="project-name">Dashboards & Reporting Strategy <span class="status-badge badge-tabled">Scoping</span></div>
-        <div class="project-desc">Broader reporting strategy — SF native reports cleanup, Sigma dashboard roadmap, handoff between RevOps-owned vs IS-owned reports.</div>
-        <ul class="todo-list">
-          <li>CSM Dashboard / Retention Radar (SF Case #7, George Hamm, High priority)</li>
-          <li>2026 Sales Leaderboard (SF Case #16, Jim Kothe, New)</li>
-          <li>Homepage Dashboard (SF Case #14, Kasey Cowan, New)</li>
-          <li>OKR – AI Reporting Needs (SF Case #6, Robert Brennan) — what does this scope?</li>
-        </ul>
-      </div>
-
-      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
-        <div class="project-name">How To Use AI As Admin <span class="status-badge badge-tabled">Scoping</span></div>
-        <div class="project-desc">Internal guide for SF admins (Michael Cruz, Jenna Fitzpatrick, etc.) on using AI tools in the RevOps workflow. Format TBD: Confluence SOP, live demo, or recorded walkthrough.</div>
-        <div class="project-next">Define audience + format before scoping content</div>
-      </div>
-
-      <div class="project-card" style="border-left-color:var(--charcoal-mid);">
-        <div class="project-name">BigTinCan → AI CTRL Integration <span class="status-badge badge-blocked">Backlog · Blocked</span></div>
-        <div class="project-desc">Add BigTinCan as a content library in ai.expedient.cloud (AI CTRL). Nick already connected BTC to Retool (pubapi.bigtincan.com). Ben Gallo owns platform. Caleb Hills owns AI CTRL side.</div>
-        <ul class="todo-list">
-          <li>Confirm API access tier — BTC API requires enterprise plan bolt-on (Helpdesk owns licensing)</li>
-          <li>Get OAuth credentials: Client ID, Client Secret, Access Token</li>
-          <li>Confirm AS_USER support for per-rep permission inheritance</li>
-          <li>Scope ingestion: Stories, Files, Search, Channels/Tabs</li>
-        </ul>
-        <div class="project-next">Blocked on Helpdesk confirming API license. Ben + Caleb Hills + Peter Shelly to coordinate.</div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-</div>
-</div>
+<!-- ══════════════════════════════ TAB: SCOPING (removed Jun 25) ══════════════════════════════ -->
+<div id="tab-scoping" style="display:none;"></div>
 
 
 <!-- ══════════════════════════════ TAB: COMPLETED ══════════════════════════════ -->
@@ -1573,6 +1474,23 @@
       <span class="panel-title">Completed Work</span>
     </div>
     <div class="panel-body">
+
+      <div class="section-label">Jun 25 2026</div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">ECI + Email Insights Keywords Entered in SF UI <span class="status-badge badge-active">✓ Done · Jun 25</span></div>
+        <div class="project-desc">Einstein Call Insights (10 Sandler categories, 25 keywords each, Said By mapped) and Einstein Email Custom Insights (10 Sandler categories, 10 keywords each) fully entered in SF UI and live. Reference docs: salesforce/eci-call-insights-sandler.md + salesforce/einstein-insights-sandler.md.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">rAIdarr Scope Expanded — RPM Dashboard + Partner Scorecard + Dashboard Merged <span class="status-badge badge-active">✓ Done · Jun 25</span></div>
+        <div class="project-desc">Tim approved folding RPM Dashboard request into rAIdarr (Jun 25). Partner Scorecard in rAIdarr rebuilt as AI-driven program-wide overview, filterable by program / rep / partner. Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story, Sandler Meeting Quality Suite, and 2026 Quota upload all merged into rAIdarr roadmap. These are no longer separate projects.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Build Queue Cleanup — 7 Items Closed or Reassigned <span class="status-badge badge-active">✓ Done · Jun 25</span></div>
+        <div class="project-desc">Cleared from active tracking: Win Review Assembly Button (Nick Leaf owns), AI Team Reporting Rebuild (Michael's), Event/Partner IRB Approval Overhaul (Michael's), QT Feature Requests (IS handles), RPM Head/Tail Attribution Flow (complete), Partner Account List + 6sense Tagging Tool (ATLAS → Rachel/third party), Pre-Call/Post-Call Phase 2 (folded into rAIdarr). BigTinCan → AI CTRL and Rep Calendar / Scheduling moved to Build Queue. Scoping section removed.</div>
+      </div>
 
       <div class="section-label">Jun 24 2026</div>
 
@@ -1895,7 +1813,7 @@
 <footer class="site-footer">
   <div class="footer-name">lans.cloud</div>
   <div>Nick Lansberry · Pittsburgh, PA · Revenue Technology Architect</div>
-  <div style="margin-top:4px;font-size:11px;">Updated June 24, 2026 · v13</div>
+  <div style="margin-top:4px;font-size:11px;">Updated June 25, 2026 · v14</div>
   <div class="footer-badges">
     <span class="footer-badge">Salesforce</span>
     <span class="footer-badge">Retool</span>
@@ -1908,7 +1826,7 @@
 
 <script>
   function showTab(name, btn) {
-    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'scoping', 'completed', 'about'];
+    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'completed', 'about'];
     tabs.forEach(function(t) {
       var el = document.getElementById('tab-' + t);
       if (el) el.style.display = (t === name) ? '' : 'none';

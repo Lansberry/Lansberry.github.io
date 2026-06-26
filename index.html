@@ -810,29 +810,31 @@
         <div class="project-card status-active">
           <div class="project-name">
             <span class="dot dot-green"></span>
-            rAIdarr — AVP Review + Partner Scorecard + RPM + Dashboard
-            <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
+            rAIdarr — The Dashboard
+            <span class="status-badge badge-active">Expanding · Alliances + RPM Next</span>
           </div>
-          <div class="warn-inline">⚠ Retool changes via GUI only (no git push) — @mesi source control patch pending. After patch: fix 4 P2 bugs → wire v2 to React App Builder.</div>
-          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. SF-native Partner Dashboard built in SF already models the data structure.</div>
-          <div class="project-next">After @mesi patch: fix 4 P2 bugs → wire v2 → rebuild Partner Scorecard as AI overview → get Quota numbers from Tim → formalize Q3 OKRs for Jim</div>
+          <div class="project-desc">Evolving from AVP Weekly Review into The Dashboard for the full revenue org. Tim approved (Jun 25) folding RPM Dashboard + Partner Alliances Story + Sandler Meeting Quality into rAIdarr — one app until Sigma cutover. Tab structure: Home (Exec KPIs) → Direct → Alliances → ICPs → Meetings → Pipeline → Marketing. v2 prototype local only (not committed to retool mirror until @mesi patches Retool source control). RepScore data model synced to live transformer (NOCs, Take Rate, pipeline bands, New Logo, Net MRR, Hot Accounts, Dormant Hot). Rep login defaults to their own row via current_user.salesforceId.</div>
+          <div class="project-next">Alliances tab — RPM scorecard (moved from Direct) + partner leads. After: Home tab KPIs + Business Pulse AI. Then wire v2 to Retool React App Builder once @mesi patches source control.</div>
           <ul class="todo-list">
-            <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
+            <li class="done">rAIdarr v2 React prototype — Market Pulse, Pre-Call, Post-Call, ICP Coverage, Partner tab, AI chain (Jun 19)</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
-            <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
+            <li class="done">Retool deployment fixed · Claude fixed · AVP filter · NOCs + Take Rate · competitors piped · Ben coaching tone</li>
             <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
             <li class="done">Partner Alliances Story MVP delivered Jun 19 — merged into rAIdarr scope (Jun 25)</li>
-            <li class="done">RPM Scorecard in v1 — Tim approved folding full RPM Dashboard request into rAIdarr (Jun 25)</li>
-            <li class="done">Sandler Meeting Quality Suite — skills ready, folded into rAIdarr next-phase work</li>
+            <li class="done">Tim approved (Jun 25): fold full RPM Dashboard + Dashboard analytics + Sandler Meeting Quality into rAIdarr</li>
+            <li class="done">ICP Funnel Stats wired — totalNewLogoFunnel + totalNewLogoWon threaded (Jun 26)</li>
+            <li class="done">RPMs removed from Direct Scorecard — moving to Alliances tab (Jun 26)</li>
+            <li class="done">Leads section removed — partner leads → Alliances, campaigns → Marketing (Jun 26)</li>
+            <li class="done">Pipeline consolidated to single 180-day view (Jun 26)</li>
+            <li class="done">v2 prototype: data model synced to live RSX, new tab structure (Home/Direct/Alliances/ICPs/Meetings/Pipeline/Marketing), HomeTab added, rep-login default wired (Jun 26)</li>
+            <li><strong>Next:</strong> Alliances tab — RPM scorecard + partner leads + partner deep-dive AI</li>
+            <li><strong>Next:</strong> Home tab — finalize org KPIs, Business Pulse AI prompt</li>
+            <li><strong>Bug:</strong> aiPipelineAnalysis intermittent failure on Direct tab — guard condition: only fire when selectedRep data fully loaded</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
-            <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
-            <li><strong>P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
-            <li><strong>P2</strong> Zoom API: check transcript availability before calling (before making Zoom API call in Rep Modal)</li>
-            <li><strong>P2</strong> Meeting write-back — SF Event fields after AI analysis (scope TBD, tabled)</li>
-            <li><strong>NEW</strong> Rebuild Partner Scorecard as AI overview — program-wide, per-rep, per-partner drill (RPM view from scorecard moves here)</li>
+            <li><strong>P2</strong> Zoom API: check transcript availability before calling</li>
             <li><strong>NEW</strong> Get 2026 Quota numbers from Tim → upload to rAIdarr/SF (after Collab Forecasting on)</li>
-            <li><strong>NEW</strong> Embed commercial analytics lenses (Dashboard) into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
+            <li><strong>NEW</strong> Embed commercial analytics lenses into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
             <li><strong>OKR</strong> Formalize Q3 OKRs and present to Jim/team</li>
           </ul>
         </div>

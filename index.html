@@ -733,7 +733,7 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 06.25.2026 v14
+    Updated 06.30.2026 v15
   </div>
 </header>
 
@@ -750,6 +750,14 @@
 <div class="activity-strip">
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
+    <div class="activity-card amber">
+      <div class="ac-date">Jun 30 · Lead Enrichment Fixed</div>
+      RingLead root cause found and fixed. DOZISF__ZoomInfo_Enrich_Status__c confirmed as the real match status field — Enrich_Match_Status__c is a dead shell. LEAD IS CREATED filter updated: added Missing Source + null LeadSource criteria. Nicole Osterhout's 67 stuck leads reassigned to Peggy Hancock. 290 leads bulk reprocessed (App Field blanked + LeadSource = Missing Source). 0 failures. YTD enrichment rate: 89% across 12k+ leads. Pardot → SF sync runs under Michael Cruz/SF Admin user — explains queue lead attribution.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jun 30 · Channel Performance Dashboard</div>
+      POC built (5-tab layout matching Tim's full spec) and shared with Tim. Tim: pump the brakes until Retool v4+ upgrade + underpinnings stable. Anita aligned — using her reports through EOM. Immediate priority = true up Opps to Assigned_RPM__c. Full spec captured: Line 1 program summary → Line 2 partner activity → Lines 3-5 leads/pipeline/closed-won by RPM + partner.
+    </div>
     <div class="activity-card amber">
       <div class="ac-date">Jun 25 · rAIdarr Expansion</div>
       Tim approved RPM Dashboard → folded into rAIdarr. Partner Scorecard becomes AI-driven program/rep/partner overview. Dashboard lives in Retool as rAIdarr until Sigma cutover. Partner Alliances Story + Sandler MQ Suite + Quota upload all merged in.
@@ -810,31 +818,31 @@
         <div class="project-card status-active">
           <div class="project-name">
             <span class="dot dot-green"></span>
-            rAIdarr — The Dashboard
-            <span class="status-badge badge-active">Expanding · Alliances + RPM Next</span>
+            rAIdarr — AVP Review + Partner Scorecard + RPM + Dashboard
+            <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
           </div>
-          <div class="project-desc">Evolving from AVP Weekly Review into The Dashboard for the full revenue org. Tim approved (Jun 25) folding RPM Dashboard + Partner Alliances Story + Sandler Meeting Quality into rAIdarr — one app until Sigma cutover. Tab structure: Home (Exec KPIs) → Direct → Alliances → ICPs → Meetings → Pipeline → Marketing. v2 prototype local only (not committed to retool mirror until @mesi patches Retool source control). RepScore data model synced to live transformer (NOCs, Take Rate, pipeline bands, New Logo, Net MRR, Hot Accounts, Dormant Hot). Rep login defaults to their own row via current_user.salesforceId.</div>
-          <div class="project-next">Alliances tab — RPM scorecard (moved from Direct) + partner leads. After: Home tab KPIs + Business Pulse AI. Then wire v2 to Retool React App Builder once @mesi patches source control.</div>
+          <div class="warn-inline">⚠ Retool changes via GUI only (no git push) — blocked on Retool React App Builder upgrade (v4+). After upgrade: fix RepScorecard AI → fix 4 P2 bugs → wire v2.</div>
+          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first.</div>
+          <div class="project-next">After Retool v4+ upgrade: fix RepScorecard AI → fix 4 P2 bugs → wire v2 → rebuild Partner Scorecard as AI overview → get Quota numbers from Tim</div>
           <ul class="todo-list">
-            <li class="done">rAIdarr v2 React prototype — Market Pulse, Pre-Call, Post-Call, ICP Coverage, Partner tab, AI chain (Jun 19)</li>
+            <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
-            <li class="done">Retool deployment fixed · Claude fixed · AVP filter · NOCs + Take Rate · competitors piped · Ben coaching tone</li>
+            <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
             <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
             <li class="done">Partner Alliances Story MVP delivered Jun 19 — merged into rAIdarr scope (Jun 25)</li>
-            <li class="done">Tim approved (Jun 25): fold full RPM Dashboard + Dashboard analytics + Sandler Meeting Quality into rAIdarr</li>
-            <li class="done">ICP Funnel Stats wired — totalNewLogoFunnel + totalNewLogoWon threaded (Jun 26)</li>
-            <li class="done">RPMs removed from Direct Scorecard — moving to Alliances tab (Jun 26)</li>
-            <li class="done">Leads section removed — partner leads → Alliances, campaigns → Marketing (Jun 26)</li>
-            <li class="done">Pipeline consolidated to single 180-day view (Jun 26)</li>
-            <li class="done">v2 prototype: data model synced to live RSX, new tab structure (Home/Direct/Alliances/ICPs/Meetings/Pipeline/Marketing), HomeTab added, rep-login default wired (Jun 26)</li>
-            <li><strong>Next:</strong> Alliances tab — RPM scorecard + partner leads + partner deep-dive AI</li>
-            <li><strong>Next:</strong> Home tab — finalize org KPIs, Business Pulse AI prompt</li>
-            <li><strong>Bug:</strong> aiPipelineAnalysis intermittent failure on Direct tab — guard condition: only fire when selectedRep data fully loaded</li>
+            <li class="done">RPM Scorecard in v1 — Tim approved folding full RPM Dashboard request into rAIdarr (Jun 25)</li>
+            <li class="done">Sandler Meeting Quality Suite — skills ready, folded into rAIdarr next-phase work</li>
+            <li class="done">Channel Performance Dashboard POC built (Jun 30) — 5-line spec from Tim's chicken scratch, shared + approved direction. Paused pending Retool v4+ upgrade.</li>
+            <li><strong>🔴 OKR 3 BLOCKING</strong> RepScorecard AI not running in Retool — investigate + fix before Q2 closes</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
+            <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
-            <li><strong>P2</strong> Zoom API: check transcript availability before calling</li>
+            <li><strong>P2</strong> RPM data source: AccountTeamMember + OppTeamMember (not OwnerId)</li>
+            <li><strong>P2</strong> Zoom API: check transcript availability before calling (before making Zoom API call in Rep Modal)</li>
+            <li><strong>P2</strong> Meeting write-back — SF Event fields after AI analysis (scope TBD, tabled)</li>
+            <li><strong>NEW</strong> Rebuild Partner Scorecard as AI overview — program-wide, per-rep, per-partner drill (RPM view from scorecard moves here)</li>
             <li><strong>NEW</strong> Get 2026 Quota numbers from Tim → upload to rAIdarr/SF (after Collab Forecasting on)</li>
-            <li><strong>NEW</strong> Embed commercial analytics lenses into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
+            <li><strong>NEW</strong> Embed commercial analytics lenses (Dashboard) into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
             <li><strong>OKR</strong> Formalize Q3 OKRs and present to Jim/team</li>
           </ul>
         </div>
@@ -1066,9 +1074,29 @@
           <span class="focus-label label-done">Done ✓</span>
         </div>
         <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ RingLead enrichment root-caused + fixed — LEAD IS CREATED filter updated, 290 leads reprocessed, 0 failures (Jun 30)</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ Orphaned contacts cleanup complete (Jun 30)</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-red"></span>
+          <span class="focus-name">🔴 RepScorecard AI not running in Retool — fix before OKR 3 / Q2 closes</span>
+          <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
           <span class="dot dot-red"></span>
           <span class="focus-name">🔴 Deactivate 2 external SF admins (2015 / 2022)</span>
           <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Tim reports: combined Anita report (Oppty + Account Assigned RPM) + active validated partners — for Opp true-up to Assigned_RPM__c</span>
+          <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1087,7 +1115,7 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 rAIdarr: P2 fixes + Partner Scorecard AI rebuild + RPM integration (after @mesi patch)</span>
+          <span class="focus-name">🟠 rAIdarr: P2 fixes + Partner Scorecard AI rebuild + RPM integration (after Retool v4+ upgrade)</span>
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">

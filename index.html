@@ -733,13 +733,14 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 06.30.2026 v15
+    Updated 07.02.2026 v16
   </div>
 </header>
 
 <!-- ── TAB NAV ── -->
 <nav class="tab-nav">
   <button class="tab-btn active" onclick="showTab('tracker', this)">Tracker</button>
+  <button class="tab-btn" onclick="showTab('okr', this)">OKRs</button>
   <button class="tab-btn" onclick="showTab('sfadmin', this)">SF Admin</button>
   <button class="tab-btn" onclick="showTab('buildqueue', this)">Build Queue</button>
   <button class="tab-btn" onclick="showTab('completed', this)">Completed</button>
@@ -750,6 +751,10 @@
 <div class="activity-strip">
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
+    <div class="activity-card amber">
+      <div class="ac-date">Jul 2 · Retool v4 Unlocks MCP</div>
+      next.retool.com upgraded to v4 — Retool now exposes MCP over HTTP. Installed Retool MCP server into Claude (`claude mcp add --transport http retool https://next.expedient.cloud/mcp`), now driving the rAIdarr v1→v2 migration directly instead of GUI copy-paste. Retool Public (prod) still on the older version. Also fixed Opportunity Edit Flow to look up Validated Partners newest-entry-first.
+    </div>
     <div class="activity-card amber">
       <div class="ac-date">Jun 30 · Lead Enrichment Fixed</div>
       RingLead root cause found and fixed. DOZISF__ZoomInfo_Enrich_Status__c confirmed as the real match status field — Enrich_Match_Status__c is a dead shell. LEAD IS CREATED filter updated: added Missing Source + null LeadSource criteria. Nicole Osterhout's 67 stuck leads reassigned to Peggy Hancock. 290 leads bulk reprocessed (App Field blanked + LeadSource = Missing Source). 0 failures. YTD enrichment rate: 89% across 12k+ leads. Pardot → SF sync runs under Michael Cruz/SF Admin user — explains queue lead attribution.
@@ -821,9 +826,9 @@
             rAIdarr — AVP Review + Partner Scorecard + RPM + Dashboard
             <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
           </div>
-          <div class="warn-inline">⚠ Retool changes via GUI only (no git push) — blocked on Retool React App Builder upgrade (v4+). After upgrade: fix RepScorecard AI → fix 4 P2 bugs → wire v2.</div>
-          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first.</div>
-          <div class="project-next">After Retool v4+ upgrade: fix RepScorecard AI → fix 4 P2 bugs → wire v2 → rebuild Partner Scorecard as AI overview → get Quota numbers from Tim</div>
+          <div class="warn-inline">⚠ Retool <strong>Public</strong> (prod) still pre-v4 — GUI-only, no git push there. <strong>next.retool.com is now on v4</strong>, which exposes MCP over HTTP — Nick installed the Retool MCP server and is using it to drive the v2 migration directly on `next`.</div>
+          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first. <strong>Jul 2 update:</strong> next.retool.com hit v4 — MCP access installed, migration now moving faster than planned. Nick's vote: v2 lands sooner than expected, so v1's RepScorecard AI bug is being deferred rather than patched (pending Ben sign-off) — see backlog note below.</div>
+          <div class="project-next">Monday: run RPM data-load job (Assigned_RPM__c from Account → Opportunity, Tim-blessed) → retire manual "match Account RPM" check → update current/look-forward reports (check Sigma impact w/ Lessick) → continue v2 migration via Retool MCP</div>
           <ul class="todo-list">
             <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
@@ -833,7 +838,8 @@
             <li class="done">RPM Scorecard in v1 — Tim approved folding full RPM Dashboard request into rAIdarr (Jun 25)</li>
             <li class="done">Sandler Meeting Quality Suite — skills ready, folded into rAIdarr next-phase work</li>
             <li class="done">Channel Performance Dashboard POC built (Jun 30) — 5-line spec from Tim's chicken scratch, shared + approved direction. Paused pending Retool v4+ upgrade.</li>
-            <li><strong>🔴 OKR 3 BLOCKING</strong> RepScorecard AI not running in Retool — investigate + fix before Q2 closes</li>
+            <li><strong>DEFERRED (Jul 2)</strong> RepScorecard AI (v1) not running — suspected data quality issue. Decision: skip the v1 patch, cut over to v2 once Retool Public reaches v4. Needs final go/no-go with Ben.</li>
+            <li><strong>MONDAY</strong> Run RPM data-load job — Assigned_RPM__c from Account → Opportunity (Tim-blessed) → retire manual match check → update current/look-forward reports</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
             <li><strong>P2</strong> ICP Funnel stats — thread AVP param into totalNewLogoFunnel.soql + totalNewLogoWon.soql</li>
             <li><strong>P2</strong> ICP: AVP dropdown + chart click interaction conflict</li>
@@ -862,6 +868,7 @@
             <li><strong>Backlog</strong> Add 6sense data to Pre-Call, Post-Call, and SBR (intent signals, keyword topics, engagement tier)</li>
             <li><strong>Backlog</strong> Ensure RPMs + SAs on a meeting get pre/post emails (not just primary rep)</li>
             <li><strong>Backlog</strong> Filter known partner domains in pre-meeting agent — surface real end-client domain</li>
+            <li><strong>NEW (Jul 2)</strong> Remove George from Pre-Call/Post-Call Planner distribution</li>
           </ul>
         </div>
 
@@ -972,16 +979,18 @@
           <div class="project-name">
             <span class="dot dot-green"></span>
             Oppty Edit v4 — Partner Process + RPM Flow
-            <span class="status-badge badge-active">Updated Jun 23</span>
+            <span class="status-badge badge-active">Updated Jul 2</span>
           </div>
-          <div class="project-desc">Commissionable Partner field now locked — only QT or Tim can set it. RPM write-back (Assigned_RPM__c) now active. Account Team copied onto Opp. Space reserved for MSA closed-won → Validated Partner link. Opp Splits (Cruz) needed so Head + Tail both land on Opp Team every time.</div>
+          <div class="project-desc">Commissionable Partner field now locked — only QT or Tim can set it. RPM write-back (Assigned_RPM__c) now active. Account Team copied onto Opp. Space reserved for MSA closed-won → Validated Partner link. Opp Splits (Cruz) needed so Head + Tail both land on Opp Team every time. <strong>Jul 2:</strong> Validated Partner lookup fixed to pull the newest entry first (was surfacing stale records).</div>
           <div class="project-next">Cruz enables Opp Splits → verify Head + Tail both appear on Opp Team</div>
           <ul class="todo-list">
             <li class="done">Commissionable Partner locked — only QT or Tim sets this field</li>
             <li class="done">RPM field write-back active (Assigned_RPM__c now set by flow)</li>
             <li class="done">Account Team copied onto Opp</li>
+            <li class="done">Validated Partner lookup fixed — newest entry first (Jul 2)</li>
             <li><strong>Cruz</strong> Enable Opp Splits → verify Head + Tail on Opp Team for every deal</li>
             <li><strong>Later</strong> Wire MSA closed-won → link back to Validated Partner object (space reserved)</li>
+            <li><strong>NEW (Stacey, Jul 2)</strong> Rename "Head Support" → "Partner Support" and "Tail Support" → "Field Support" across Opp Team roles/labels</li>
           </ul>
         </div>
 
@@ -1085,13 +1094,28 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-red"></span>
-          <span class="focus-name">🔴 RepScorecard AI not running in Retool — fix before OKR 3 / Q2 closes</span>
+          <span class="focus-name">🔴 Monday: Run RPM data-load job (Assigned_RPM__c Account → Opportunity, Tim-blessed)</span>
           <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">⏸ RepScorecard AI (v1) — fix DEFERRED, cutting to v2 instead (needs Ben sign-off)</span>
+          <span class="focus-label label-queued">Deferred</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-red"></span>
           <span class="focus-name">🔴 Deactivate 2 external SF admins (2015 / 2022)</span>
           <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Remove George from Pre-Call/Post-Call Planner distribution</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Rename Head/Tail Support → Partner/Field Support (Stacey ask)</span>
+          <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1115,7 +1139,7 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 rAIdarr: P2 fixes + Partner Scorecard AI rebuild + RPM integration (after Retool v4+ upgrade)</span>
+          <span class="focus-name">🟠 rAIdarr v2 migration — accelerated via Retool MCP on next.retool.com (v4 live)</span>
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
@@ -1151,82 +1175,14 @@
       </div>
     </div>
 
-    <!-- OKR TRACKER -->
+    <!-- OKR TRACKER: moved to dedicated OKRs tab Jul 2 2026 -->
     <div class="panel">
       <div class="panel-header">
         <span class="dot dot-amber"></span>
         <span class="panel-title">Q3 2026 OKRs</span>
       </div>
       <div class="panel-body">
-        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Q3 = July – September 2026 · Established Jun 23 2026</div>
-
-        <div class="okr-group">
-          <div class="okr-title">OKR 1 — The Dashboard <span class="okr-meta" style="color:var(--red-alert);">★ #1 Priority</span></div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: Single pane of glass for commercial performance — replaces Anita's 48-sheet EOM xlsx.</div>
-          <div class="okr-row">
-            <span class="okr-name">KR1: All 6 lenses scoped + signed off (Tim/Jim/Daniel) by Jul 31</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:5%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">5%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR2: Sigma Phase 1 — Revenue Health lens live + used in review by Sep 30</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">0%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR3: Collaborative Forecasting enabled in prod by Aug 31 (Cruz)</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:10%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">10%</span>
-          </div>
-        </div>
-
-        <div class="okr-group">
-          <div class="okr-title">OKR 2 — Salesforce of the Future</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: AI governance framework + SF data access infra so team uses Claude safely at scale. Governance by Aug 31.</div>
-          <div class="okr-row">
-            <span class="okr-name">KR1: P1 SF MCP Server live at sf-mcp.expedient.cloud by Aug 31</span>
-            <div class="bar-wrap"><div class="bar-fill amber" style="width:30%"></div></div>
-            <span class="bar-pct">30%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR2: AI governance policy published + ratified by Aug 31</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">0%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR3: SF Field Metadata pilot complete (Opportunity) by Sep 30</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:5%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">5%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR4: Enterprise app connection intake process documented by Sep 30</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">0%</span>
-          </div>
-        </div>
-
-        <div class="okr-group">
-          <div class="okr-title">OKR 3 — rAIdarr v2 + AI Workflows</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: Ship rAIdarr v2 to Retool, close P2 bugs, deliver Pre/Post Phase 2 so RPMs + SAs get the right intel every meeting.</div>
-          <div class="okr-row">
-            <span class="okr-name">KR1: rAIdarr v2 deployed to Retool React App Builder by Jul 31</span>
-            <div class="bar-wrap"><div class="bar-fill" style="width:65%"></div></div>
-            <span class="bar-pct">65%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR2: All P2 bugs closed (Partner KPI · ICP funnel · RPM source · loading) by Aug 31</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">0%</span>
-          </div>
-          <div class="okr-row">
-            <span class="okr-name">KR3: Pre/Post Phase 2 shipped (RPMs+SAs emails · partner domain filter) by Sep 30</span>
-            <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
-            <span class="bar-pct" style="color:var(--red-alert);">0%</span>
-          </div>
-        </div>
-
-        <div style="font-size:11px;color:var(--text-muted);margin-top:8px;font-style:italic;">Q2 carryover (tracking): AI Workflows · Revenue Dashboard · RPM Dashboard · VAR · SF Experience</div>
-
+        <div style="font-size:12px;color:var(--text-muted);">Moved to the dedicated <strong>OKRs</strong> tab (top nav) — now includes Q1/Q2 history and the draft Q3 proposal for the next RevOps call.</div>
       </div>
     </div>
 
@@ -1380,6 +1336,161 @@
 </div><!-- end tab-tracker -->
 
 
+<!-- ══════════════════════ TAB: OKRs ══════════════════════ -->
+<div id="tab-okr" style="display:none;">
+<div class="page-body">
+<div class="single-col-tab">
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot dot-amber"></span>
+      <span class="panel-title">Q3 2026 OKRs — Established</span>
+    </div>
+    <div class="panel-body">
+      <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Q3 = July – September 2026 · Established Jun 23 2026</div>
+
+      <div class="okr-group">
+        <div class="okr-title">OKR 1 — The Dashboard <span class="okr-meta" style="color:var(--red-alert);">★ #1 Priority</span></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: Single pane of glass for commercial performance — replaces Anita's 48-sheet EOM xlsx.</div>
+        <div class="okr-row">
+          <span class="okr-name">KR1: All 6 lenses scoped + signed off (Tim/Jim/Daniel) by Jul 31</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:5%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">5%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR2: Sigma Phase 1 — Revenue Health lens live + used in review by Sep 30</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">0%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR3: Collaborative Forecasting enabled in prod by Aug 31 (Cruz)</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:10%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">10%</span>
+        </div>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">OKR 2 — Salesforce of the Future</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: AI governance framework + SF data access infra so team uses Claude safely at scale. Governance by Aug 31.</div>
+        <div class="okr-row">
+          <span class="okr-name">KR1: P1 SF MCP Server live at sf-mcp.expedient.cloud by Aug 31</span>
+          <div class="bar-wrap"><div class="bar-fill amber" style="width:30%"></div></div>
+          <span class="bar-pct">30%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR2: AI governance policy published + ratified by Aug 31</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">0%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR3: SF Field Metadata pilot complete (Opportunity) by Sep 30</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:5%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">5%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR4: Enterprise app connection intake process documented by Sep 30</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">0%</span>
+        </div>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">OKR 3 — rAIdarr v2 + AI Workflows</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-style:italic;">O: Ship rAIdarr v2 to Retool, close P2 bugs, deliver Pre/Post Phase 2 so RPMs + SAs get the right intel every meeting.</div>
+        <div class="okr-row">
+          <span class="okr-name">KR1: rAIdarr v2 deployed to Retool React App Builder by Jul 31</span>
+          <div class="bar-wrap"><div class="bar-fill" style="width:65%"></div></div>
+          <span class="bar-pct">65%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR2: All P2 bugs closed (Partner KPI · ICP funnel · RPM source · loading) by Aug 31</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">0%</span>
+        </div>
+        <div class="okr-row">
+          <span class="okr-name">KR3: Pre/Post Phase 2 shipped (RPMs+SAs emails · partner domain filter) by Sep 30</span>
+          <div class="bar-wrap"><div class="bar-fill alert" style="width:0%"></div></div>
+          <span class="bar-pct" style="color:var(--red-alert);">0%</span>
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:6px;font-style:italic;">Jul 2: Retool v4 landed on next.retool.com — MCP access installed, accelerating KR1 ahead of the 65% mark shown above (not yet re-scored).</div>
+      </div>
+
+      <div style="font-size:11px;color:var(--text-muted);margin-top:8px;font-style:italic;">Q2 carryover (tracking): AI Workflows · Revenue Dashboard · RPM Dashboard · VAR · SF Experience</div>
+
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <span class="dot" style="background:var(--text-muted);"></span>
+      <span class="panel-title">Q1 / Q2 2026 — History</span>
+    </div>
+    <div class="panel-body">
+      <div style="font-size:12px;">No structured Q1/Q2 OKR record exists in the tracker or memory — Q3 (established Jun 23 2026) is the first quarter tracked in this OKR format. The only carryover reference from Q2 is the line below.</div>
+      <div style="margin-top:8px;font-size:12px;"><strong>Q2 carryover (tracking):</strong> AI Workflows · Revenue Dashboard · RPM Dashboard · VAR · SF Experience</div>
+      <div class="warn-inline" style="margin-top:8px;">⚠ Gap flagged, not filled. If Q1/Q2 OKRs exist elsewhere (Confluence, 15Five, a doc on disk), point me at it and this section gets backfilled.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header" style="background:var(--forest-mid);">
+      <span class="dot" style="background:var(--cream);opacity:0.7;"></span>
+      <span class="panel-title">Q3 OKRs — DRAFT Proposal (for next RevOps call)</span>
+    </div>
+    <div class="panel-body">
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Captured Jul 2 2026 — a broader 5-pillar draft, not yet reconciled with the 3 established OKRs above. Needs discussion + formal adoption at the next RevOps call.</div>
+
+      <div class="okr-group">
+        <div class="okr-title">1. Salesforce For The Future</div>
+        <ul class="todo-list">
+          <li><strong>MC</strong> Migrate Microsoft API connection to Graph API — session w/ Kirk + Villa scheduled next Wednesday</li>
+          <li><strong>NL</strong> Modernize/fix Case Flow to align with RevOps + Marketing + Events updates</li>
+          <li><strong>NL obtain / MC upload</strong> Upload Quotas for Reps and RPMs (required for reporting)</li>
+          <li><strong>MC/NL</strong> Pipeline Inspection / Quota / Forecasting</li>
+        </ul>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">2. Sales</div>
+        <ul class="todo-list">
+          <li><strong>Open question</strong> Revisit Manager Reports and Dashboards — better way to handle inactive employees?</li>
+          <li><strong>NL/TC</strong> Commercial Dashboard whiteboard/definition</li>
+          <li><strong>NL</strong> Pre/Post/SBR/rAIdarr updates</li>
+        </ul>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">3. Partner</div>
+        <ul class="todo-list">
+          <li><strong>MC</strong> Expanded/enhanced Validated Partner view + alerts</li>
+          <li><strong>NL</strong> Partner Portal refresh</li>
+          <li><strong>MC</strong> Ben's RPM Dashboard for RPM activity</li>
+        </ul>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">4. Retention</div>
+        <ul class="todo-list">
+          <li><strong>NL</strong> Automate Account Plan creation?</li>
+        </ul>
+      </div>
+
+      <div class="okr-group">
+        <div class="okr-title">5. Marketing</div>
+        <ul class="todo-list">
+          <li><strong>MC</strong> Rescope/cleanup/fix Partner IRB / event submission process to align with Marketing updates</li>
+        </ul>
+      </div>
+
+      <div class="warn-inline" style="margin-top:8px;">⚠ Open for the call: how do these 5 pillars reconcile with the 3 established OKRs above? Some items (Quota upload, Partner Portal, Commercial Dashboard) already exist under OKR 1/3 in different language — likely a merge, not an addition.</div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
 <!-- ══════════════════════════════ TAB: SF ADMIN ══════════════════════════════ -->
 <div id="tab-sfadmin" style="display:none;">
 <div class="page-body">
@@ -1479,6 +1590,12 @@
         <div class="project-name">90-Day-Touch → Outlook Calendar Auto-Scheduler <span class="status-badge badge-parked">Low · Monty</span></div>
         <div class="project-desc">Run SF 90-day-touch report → auto-schedule 15-min Outlook self-appointments for each client, spread randomly across weekday 9–5, max 2/day. Retool workflow + Microsoft Graph API. No SF Scheduler license needed. Est. 1–2 days once Graph OAuth wired.</div>
         <div class="project-next">Wire Microsoft Graph OAuth in Retool · Confirm Monty's UPN · Pull 90-day-touch SOQL</div>
+      </div>
+
+      <div class="project-card status-parked">
+        <div class="project-name">Cases + Ideas Voting Portal <span class="status-badge badge-parked">New · Stacey · Unscoped</span></div>
+        <div class="project-desc">Stacey wants a place to view open Cases/Ideas and "vote" + leave feedback on them — modeled on how Salesforce runs its own public feature-idea review process. Nick's initial take: build on Cases + Experience Cloud Communities rather than custom voting logic.</div>
+        <div class="project-next">Check whether the standard Salesforce Ideas object is enabled/licensed before scoping custom build</div>
       </div>
 
     </div>
@@ -1843,7 +1960,7 @@
 <footer class="site-footer">
   <div class="footer-name">lans.cloud</div>
   <div>Nick Lansberry · Pittsburgh, PA · Revenue Technology Architect</div>
-  <div style="margin-top:4px;font-size:11px;">Updated June 25, 2026 · v14</div>
+  <div style="margin-top:4px;font-size:11px;">Updated July 2, 2026 · v16</div>
   <div class="footer-badges">
     <span class="footer-badge">Salesforce</span>
     <span class="footer-badge">Retool</span>
@@ -1856,7 +1973,7 @@
 
 <script>
   function showTab(name, btn) {
-    var tabs = ['tracker', 'sfadmin', 'buildqueue', 'completed', 'about'];
+    var tabs = ['tracker', 'okr', 'sfadmin', 'buildqueue', 'completed', 'about'];
     tabs.forEach(function(t) {
       var el = document.getElementById('tab-' + t);
       if (el) el.style.display = (t === name) ? '' : 'none';

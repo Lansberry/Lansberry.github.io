@@ -733,7 +733,7 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 07.02.2026 v17
+    Updated 07.07.2026 v18
   </div>
 </header>
 
@@ -751,6 +751,18 @@
 <div class="activity-strip">
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
+    <div class="activity-card amber">
+      <div class="ac-date">Jul 7 · rAIdarr First Demo</div>
+      Walked Michael Cruz through rAIdarr v2 — first internal viewer besides Nick, deliberately kept stealth (no mid-year presentation planned). Deployment target decided: Salesforce iframe pointing at Retool Next app (currently VPN-gated). New feature ideas surfaced: Clients tab, personal "My Agenda" tab, YoY trending overlay, partner-account-mapping CSV tool, product-reporting drill-down. Bug found: Tim's account not showing correct SF highlight panel/banner (not registering as partner).
+    </div>
+    <div class="activity-card amber">
+      <div class="ac-date">Jul 7 · SF AI Access Plan</div>
+      MCP server auth approach decided: repurpose one of the two legacy sfdcadmin1/sfdcadmin2 accounts into a scoped Connected App user for AI read access (previously slated for straight deactivation — see SF Org Security card). Proposed 3-tier access model: MCP server (general read-only) · direct OAuth (full user perms, flagged as the risky/ungoverned path already happening today) · Retool-mediated (already-sanctioned, may split into a second less-privileged resource). Plan to publish a formal lightweight SF AI governance policy (never-touch / touch-with-values / freeform fields) as a doc or Claude skill.
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jul 7 · rAIdarr Sandler Scoring Upgrade</div>
+      aiSandlerGaps prompt upgraded to structured JSON with weighted scoring (Pain 30% · Decision Access 25% · Budget/Commercial 20% · UFC Health 15% · Timeline/Process 10%), modeled on Command Center's CARE renewal-analysis pattern. Added a [[NEEDS INPUT]] anti-fabrication guardrail — live in COACHING_PROMPT_TEMPLATE, documented for 5 other Retool-only prompts. See apps/rAIdar v2/RETOOL-SANDLER-SCORING-UPGRADE.md.
+    </div>
     <div class="activity-card amber">
       <div class="ac-date">Jul 2 · Retool v4 Unlocks MCP</div>
       next.retool.com upgraded to v4 — Retool now exposes MCP over HTTP. Installed Retool MCP server into Claude (`claude mcp add --transport http retool https://next.expedient.cloud/mcp`), now driving the rAIdarr v1→v2 migration directly instead of GUI copy-paste. Retool Public (prod) still on the older version. Also fixed Opportunity Edit Flow to look up Validated Partners newest-entry-first.
@@ -791,13 +803,9 @@
       <div class="ac-date">Jun 23 · Q3 OKRs</div>
       Q3 OKRs established: The Dashboard (#1), Salesforce of the Future, rAIdarr v2 + AI Workflows. Governance target: end of August.
     </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 19 · rAIdarr</div>
-      v2 React component built — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain.
-    </div>
     <div class="activity-card urgent">
       <div class="ac-date">Security · Ongoing</div>
-      2 dormant external SF admins still active (last login 2015 / 2022) — deactivate ASAP.
+      2 dormant external SF admins (last login 2015 / 2022) — plan shifted Jul 7 from straight deactivation to repurposing one as a scoped AI Connected App user, then locking the rest down.
     </div>
   </div>
 </div>
@@ -827,10 +835,12 @@
             <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
           </div>
           <div class="warn-inline">⚠ Retool <strong>Public</strong> (prod) still pre-v4 — GUI-only, no git push there. <strong>next.retool.com is now on v4</strong>, which exposes MCP over HTTP — Nick installed the Retool MCP server and is using it to drive the v2 migration directly on `next`.</div>
-          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first. <strong>Jul 2 update:</strong> next.retool.com hit v4 — MCP access installed, migration now moving faster than planned. Nick's vote: v2 lands sooner than expected, so v1's RepScorecard AI bug is being deferred rather than patched (pending Ben sign-off) — see backlog note below.</div>
-          <div class="project-next">Monday: run RPM data-load job (Assigned_RPM__c from Account → Opportunity, Tim-blessed) → retire manual "match Account RPM" check → update current/look-forward reports (check Sigma impact w/ Lessick) → continue v2 migration via Retool MCP</div>
+          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first. <strong>Jul 2 update:</strong> next.retool.com hit v4 — MCP access installed, migration now moving faster than planned. Nick's vote: v2 lands sooner than expected, so v1's RepScorecard AI bug is being deferred rather than patched (pending Ben sign-off) — see backlog note below. <strong>Jul 7 update:</strong> First internal demo delivered to Michael Cruz — kept deliberately stealth, no mid-year presentation planned. Deployment target decided: Salesforce iframe pointing at Retool Next app (currently VPN-gated, untested outside VPN). aiSandlerGaps prompt upgraded to structured JSON scoring + [[NEEDS INPUT]] guardrail (see apps/rAIdar v2/RETOOL-SANDLER-SCORING-UPGRADE.md).</div>
+          <div class="project-next">Monday: run RPM data-load job (Assigned_RPM__c from Account → Opportunity, Tim-blessed — confirm it does NOT trigger convert/notification emails) → retire manual "match Account RPM" check → update current/look-forward reports (check Sigma impact w/ Lessick) → continue v2 migration via Retool MCP</div>
           <ul class="todo-list">
             <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
+            <li class="done">First internal demo delivered to Michael Cruz (Jul 7) — deployment target set as SF iframe of Retool Next app</li>
+            <li class="done">aiSandlerGaps prompt upgraded to structured JSON + weighted scoring + [[NEEDS INPUT]] guardrail (Jul 7)</li>
             <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
             <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
             <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
@@ -850,6 +860,15 @@
             <li><strong>NEW</strong> Get 2026 Quota numbers from Tim → upload to rAIdarr/SF (after Collab Forecasting on)</li>
             <li><strong>NEW</strong> Embed commercial analytics lenses (Dashboard) into rAIdarr — Revenue Health, Sales Engine, Pipeline Integrity until Sigma cutover</li>
             <li><strong>OKR</strong> Formalize Q3 OKRs and present to Jim/team</li>
+            <li><strong>BUG (Jul 7)</strong> Tim's account not showing correct SF highlight panel/banner — not registering as a partner account, needs investigation</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Clients tab — for George's client-facing work</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Personal "My Agenda" tab — needs running-user auth</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> YoY trending overlay from Snowflake data already flowing in</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Partner-account-mapping CSV upload/match tool</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Product-reporting drill-down (recurring support-ticket ask)</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Rescue-plan automation — auto-create net-new MSA opp when account gets at-risk flag (George's ask)</li>
+            <li><strong>NEW IDEA (Jul 7)</strong> Explore folding AI Notes Ingestion → Opp Pain Points (Build Queue item) directly into rAIdarr instead of building separately</li>
+            <li><strong>Absorb (Jul 7)</strong> Michael to send 3 dashboards he currently maintains manually (client + AI dashboard for Robbie, retention/cohort dashboard for Ben) — fold into rAIdarr so Michael can retire them</li>
           </ul>
         </div>
 
@@ -901,10 +920,10 @@
             P1 Read Gateway (SF MCP Server)
             <span class="status-badge badge-active">Active · Nick Owns</span>
           </div>
-          <div class="project-desc">TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf and related skills. Server code complete — need to figure out user auth/connect approach.</div>
-          <div class="project-next">Decide user auth approach → build Connected App + MCP server config</div>
+          <div class="project-desc">TypeScript/Node MCP server wrapping SF read access via JWT Bearer. Deploys to Railway at sf-mcp.expedient.cloud/mcp. Paired with /expedient-sf and related skills. <strong>Jul 7 update:</strong> auth approach decided in principle — repurpose one of the two legacy sfdcadmin1/sfdcadmin2 accounts (see SF Org Security card) into a scoped Connected App user for AI read access, part of a broader 3-tier SF AI access model (MCP read-only / direct OAuth / Retool-mediated). Nick wants a little more research before building.</div>
+          <div class="project-next">Finish research on sfdcadmin1/2 repurpose approach → build Connected App + MCP server config</div>
           <ul class="todo-list">
-            <li>Decide on user authentication approach</li>
+            <li class="done">Decide on user authentication approach (Jul 7) — repurpose legacy sfdcadmin1/2 account</li>
             <li>Build Connected App in SF + configure MCP server</li>
             <li class="done">Server scaffolded: JWT auth, SELECT-only, object allow-list, fail-loud boot</li>
             <li>Fix: MCP_AUTH_TOKEN — make required (not optional) in prod</li>
@@ -961,7 +980,7 @@
           <div class="project-next">Frame hygiene task list for Michael Cruz — handle when capacity allows</div>
           <ul class="todo-list">
             <li>🔴 Deactivate jennifer.priddy@epedient.com — typo domain, never logged in</li>
-            <li>🔴 Deactivate sfdcadmin1 (last login 2015) + sfdcadmin2 (2022)</li>
+            <li>🟠 <strong>Plan changed Jul 7:</strong> repurpose sfdcadmin1 (last login 2015) into a scoped Connected App user for AI read access (P1 Read Gateway MCP), then lock down; deactivate sfdcadmin2 (2022) as originally planned</li>
             <li>Move RingLead off System Administrator → API Only + scoped PSG</li>
             <li>Remove Modify All Data from Expedient Sales Manager profile (14 managers)</li>
             <li>Rename btc-integration@expedient.com → svc_6sense@expedient.com</li>
@@ -981,16 +1000,19 @@
             Oppty Edit v4 — Partner Process + RPM Flow
             <span class="status-badge badge-active">Updated Jul 2</span>
           </div>
-          <div class="project-desc">Commissionable Partner field now locked — only QT or Tim can set it. RPM write-back (Assigned_RPM__c) now active. Account Team copied onto Opp. Space reserved for MSA closed-won → Validated Partner link. Opp Splits (Cruz) needed so Head + Tail both land on Opp Team every time. <strong>Jul 2:</strong> Validated Partner lookup fixed to pull the newest entry first (was surfacing stale records).</div>
-          <div class="project-next">Cruz enables Opp Splits → verify Head + Tail both appear on Opp Team</div>
+          <div class="project-desc">Commissionable Partner field now locked — only QT or Tim can set it. RPM write-back (Assigned_RPM__c) now active. Account Team copied onto Opp. Space reserved for MSA closed-won → Validated Partner link. <strong>Jul 2:</strong> Validated Partner lookup fixed to pull the newest entry first (was surfacing stale records). <strong>Jul 7:</strong> Opp Splits confirmed already technically enabled in prod — Cruz just needs to add it to a page layout, smaller lift than previously tracked.</div>
+          <div class="project-next">Cruz adds Opp Splits to page layout → verify Head + Tail both appear on Opp Team</div>
           <ul class="todo-list">
             <li class="done">Commissionable Partner locked — only QT or Tim sets this field</li>
             <li class="done">RPM field write-back active (Assigned_RPM__c now set by flow)</li>
             <li class="done">Account Team copied onto Opp</li>
             <li class="done">Validated Partner lookup fixed — newest entry first (Jul 2)</li>
-            <li><strong>Cruz</strong> Enable Opp Splits → verify Head + Tail on Opp Team for every deal</li>
+            <li class="done">Opp Splits confirmed already enabled in prod (Jul 7) — just needs page layout exposure</li>
+            <li><strong>Cruz</strong> Add Opp Splits to page layout → verify Head + Tail on Opp Team for every deal</li>
             <li><strong>Later</strong> Wire MSA closed-won → link back to Validated Partner object (space reserved)</li>
             <li><strong>NEW (Stacey, Jul 2)</strong> Rename "Head Support" → "Partner Support" and "Tail Support" → "Field Support" across Opp Team roles/labels</li>
+            <li><strong>Idea (Nick, Jul 7)</strong> Convert Competitor field from picklist to a lookup on Account (type = Competitor) instead</li>
+            <li><strong>NEW (Jul 7)</strong> Restrict Telarus Commission Disputes tab to admin-only visibility (Cruz)</li>
           </ul>
         </div>
 
@@ -1006,6 +1028,7 @@
             <li class="done">Screenflow for lead submit — complete</li>
             <li><strong>Blocked</strong> Wire "Existing Opportunity" route — waiting on team decision first</li>
             <li>Partner Portal UI cleanup — backlog</li>
+            <li><strong>NEW (Robbie, Jul 7)</strong> Clean up Validated Partner record layout to match the lead-submission page — fields exist, just need to be dragged onto the page so nothing looks missing</li>
           </ul>
         </div>
 
@@ -1094,8 +1117,23 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-red"></span>
-          <span class="focus-name">🔴 Monday: Run RPM data-load job (Assigned_RPM__c Account → Opportunity, Tim-blessed)</span>
+          <span class="focus-name">🔴 Monday: Run RPM data-load job (Assigned_RPM__c Account → Opportunity, Tim-blessed — confirm no convert/notification emails fire)</span>
           <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-green"></span>
+          <span class="focus-name">✅ rAIdarr first internal demo — Michael Cruz (Jul 7)</span>
+          <span class="focus-label label-done">Done ✓</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Research sfdcadmin1 repurpose approach for MCP Connected App (SF AI access plan)</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Michael: send Nick the 3 manually-maintained dashboards to fold into rAIdarr</span>
+          <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-gray"></span>
@@ -1202,7 +1240,7 @@
             </tr>
             <tr>
               <td><div class="owner-name">Michael Cruz</div><div class="owner-sub">RevOps</div></td>
-              <td>Collab Forecasting — open ticket + enable sandbox → prod (Cruz owns fully) · Enable Opp Splits (Head/Tail on Opp Team) · Budget_Target__c object · Tenured__c fallback · Graph API migration with Helpdesk</td>
+              <td>Collab Forecasting — open ticket + enable sandbox → prod (Cruz owns fully) · Add Opp Splits to page layout (Head/Tail — feature already enabled) · Budget_Target__c object · Tenured__c fallback · Graph API migration with Helpdesk · Send Nick the 3 dashboards he maintains manually (client + AI for Robbie, retention/cohort for Ben) to fold into rAIdarr · Restrict Telarus Commission Disputes tab to admins · Loop in Kim's manager Rob re: her activity-grading complaint</td>
             </tr>
             <tr>
               <td><div class="owner-name">Anita Osborne</div><div class="owner-sub">Financial</div></td>
@@ -1231,7 +1269,10 @@
                 Get 2026 Quota numbers from Tim → upload after Collab Forecasting on<br>
                 Expire old SF cases<br>
                 Fix home dir git tree (~/.git)<br>
-                Rotate .envrc ES_API_KEY
+                Rotate .envrc ES_API_KEY<br>
+                Redraw/combine Comcast sales territories (Midwest, Northeast, FL/GA, West/Mountain West)<br>
+                Research sfdcadmin1 repurpose approach for MCP Connected App<br>
+                Pull alliance-partner closed-won report for Catherine (via Michael) — watch for SKU/product-category scope creep
               </td>
             </tr>
           </tbody>
@@ -1676,7 +1717,7 @@
 
       <div class="project-card status-parked">
         <div class="project-name">Cases + Ideas Voting Portal <span class="status-badge badge-parked">New · Stacey · Unscoped</span></div>
-        <div class="project-desc">Stacey wants a place to view open Cases/Ideas and "vote" + leave feedback on them — modeled on how Salesforce runs its own public feature-idea review process. Nick's initial take: build on Cases + Experience Cloud Communities rather than custom voting logic.</div>
+        <div class="project-desc">Stacey wants a place to view open Cases/Ideas and "vote" + leave feedback on them — modeled on how Salesforce runs its own public feature-idea review process. <strong>Jul 7:</strong> Nick walked back his own Experience Cloud Communities lean mid-conversation — thinks it'd confuse people at current company size, now leaning toward folding it into rAIdarr instead if it happens at all. Still unscoped.</div>
         <div class="project-next">Check whether the standard Salesforce Ideas object is enabled/licensed before scoping custom build</div>
       </div>
 
@@ -2042,7 +2083,7 @@
 <footer class="site-footer">
   <div class="footer-name">lans.cloud</div>
   <div>Nick Lansberry · Pittsburgh, PA · Revenue Technology Architect</div>
-  <div style="margin-top:4px;font-size:11px;">Updated July 2, 2026 · v17</div>
+  <div style="margin-top:4px;font-size:11px;">Updated July 7, 2026 · v18</div>
   <div class="footer-badges">
     <span class="footer-badge">Salesforce</span>
     <span class="footer-badge">Retool</span>

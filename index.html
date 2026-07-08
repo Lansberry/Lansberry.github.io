@@ -733,7 +733,7 @@
     <div class="site-subtitle">Nick Lansberry · RevOps · GTM · AI</div>
   </div>
   <div class="header-meta">
-    Updated 07.07.2026 v18
+    Updated 07.08.2026 v19
   </div>
 </header>
 
@@ -751,6 +751,14 @@
 <div class="activity-strip">
   <div class="activity-strip-label">Recent Activity</div>
   <div class="activity-cards">
+    <div class="activity-card amber">
+      <div class="ac-date">Jul 8 · rAIdar Security &amp; Usability Audit</div>
+      Full audit of the live rAIdar Retool app — all 13 AI functions + every SF/Snowflake data function + the render layer. Report at apps/rAIdar v2/SECURITY-USABILITY-AUDIT.md (ranked, fix-per-finding). Central finding: every query runs through one shared SF integration user, so "who can open the app" is the only access control today. 3 findings verified against prod: header Quota Attainment % uses a wrong unbounded denominator; "Denny DiPasquale" misspelled in quotaData.ts → silently dropped from quota; QuoteTrackerID injection concern cleared (numeric field). Access-model decided (Nick): aggregates shared, individuals private — reps see % attainment/budget roll-ups, not each other's quota/comp. Speced as Appendix A, not yet implemented (needs group membership + SSO confirm).
+    </div>
+    <div class="activity-card">
+      <div class="ac-date">Jul 8 · Alliance Partner Reporting</div>
+      Tim's board-prep ask: show accounts with an active Alliance validated partner cross-referenced to Closed Won YTD + open pipeline. Native SF report + custom report type both hit platform walls (joined-report block aliasing; linear-chain-only report types), so pivoted to a SOQL pull — 292 active Alliance-partner accounts (49 Closed Won YTD, 46 pipeline ≥10%, 7 multi-partner). Delivered a reviewable artifact for the internal Tim/Nick/Michael review + a Retool wiring guide (context/Alliance-Partner-Coverage-Retool-Guide.md). Live report left untouched. Caveat flagged: account-level join over-counts deals the partner wasn't part of — needs a real Alliance-sourced tag on Opportunity.
+    </div>
     <div class="activity-card amber">
       <div class="ac-date">Jul 7 · rAIdarr First Demo</div>
       Walked Michael Cruz through rAIdarr v2 — first internal viewer besides Nick, deliberately kept stealth (no mid-year presentation planned). Deployment target decided: Salesforce iframe pointing at Retool Next app (currently VPN-gated). New feature ideas surfaced: Clients tab, personal "My Agenda" tab, YoY trending overlay, partner-account-mapping CSV tool, product-reporting drill-down. Bug found: Tim's account not showing correct SF highlight panel/banner (not registering as partner).
@@ -774,34 +782,6 @@
     <div class="activity-card">
       <div class="ac-date">Jun 30 · Channel Performance Dashboard</div>
       POC built (5-tab layout matching Tim's full spec) and shared with Tim. Tim: pump the brakes until Retool v4+ upgrade + underpinnings stable. Anita aligned — using her reports through EOM. Immediate priority = true up Opps to Assigned_RPM__c. Full spec captured: Line 1 program summary → Line 2 partner activity → Lines 3-5 leads/pipeline/closed-won by RPM + partner.
-    </div>
-    <div class="activity-card amber">
-      <div class="ac-date">Jun 25 · rAIdarr Expansion</div>
-      Tim approved RPM Dashboard → folded into rAIdarr. Partner Scorecard becomes AI-driven program/rep/partner overview. Dashboard lives in Retool as rAIdarr until Sigma cutover. Partner Alliances Story + Sandler MQ Suite + Quota upload all merged in.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 25 · Project Cleanup</div>
-      Cleared: Win Review Button (Nick Leaf), AI Team Reporting (Michael), Event IRB (Michael), QT Features (IS), RPM Head/Tail Flow (✓ done), Partner Account List (ATLAS → Rachel). Scoping section removed. BTC + Rep Scheduling moved to Build Queue. ECI + Email Insights keywords entered and live.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 24 · SF of the Future</div>
-      5 AI features assigned to Nick (pilot): Account Plans, Sales Workspace, EAC v2, Agentforce Coworker, Prompt Templates. Einstein Email + Call Insights rebuilt with Sandler keywords. Pipeline Inspection Sandler settings enabled. 14 skills registered as slash commands.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 24 · Data Hygiene</div>
-      238 remaining orphan contacts updated — LeadSource = "Missing Source" + Needs_Enriched__c = true. Now in RingLead enrichment queue. Pardot migration discovery: org is on legacy pi.com interface, SF-native Lightning migration needed.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 23 · SF Data</div>
-      Oppty Edit v4 locked — Commissionable Partner field locked (QT/Tim only). RPM write-back active. Account Team copied to Opp. 253 Opps assigned Assigned_RPM__c via bulk update.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 23 · Data Hygiene</div>
-      6,531 orphan contacts deleted. Active Validated Partner Report built for Tim. ATLAS handed to Rachel — third-party scoping next.
-    </div>
-    <div class="activity-card">
-      <div class="ac-date">Jun 23 · Q3 OKRs</div>
-      Q3 OKRs established: The Dashboard (#1), Salesforce of the Future, rAIdarr v2 + AI Workflows. Governance target: end of August.
     </div>
     <div class="activity-card urgent">
       <div class="ac-date">Security · Ongoing</div>
@@ -835,19 +815,14 @@
             <span class="status-badge badge-active">Expanding · RPM + Dashboard Merged In</span>
           </div>
           <div class="warn-inline">⚠ Retool <strong>Public</strong> (prod) still pre-v4 — GUI-only, no git push there. <strong>next.retool.com is now on v4</strong>, which exposes MCP over HTTP — Nick installed the Retool MCP server and is using it to drive the v2 migration directly on `next`.</div>
-          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first. <strong>Jul 2 update:</strong> next.retool.com hit v4 — MCP access installed, migration now moving faster than planned. Nick's vote: v2 lands sooner than expected, so v1's RepScorecard AI bug is being deferred rather than patched (pending Ben sign-off) — see backlog note below. <strong>Jul 7 update:</strong> First internal demo delivered to Michael Cruz — kept deliberately stealth, no mid-year presentation planned. Deployment target decided: Salesforce iframe pointing at Retool Next app (currently VPN-gated, untested outside VPN). aiSandlerGaps prompt upgraded to structured JSON scoring + [[NEEDS INPUT]] guardrail (see apps/rAIdar v2/RETOOL-SANDLER-SCORING-UPGRADE.md).</div>
-          <div class="project-next">Monday: run RPM data-load job (Assigned_RPM__c from Account → Opportunity, Tim-blessed — confirm it does NOT trigger convert/notification emails) → retire manual "match Account RPM" check → update current/look-forward reports (check Sigma impact w/ Lessick) → continue v2 migration via Retool MCP</div>
+          <div class="project-desc">v1 deployed stable. v2 React App Builder rewrite built Jun 19. <strong>Jun 25 update:</strong> Tim approved folding RPM Dashboard request into rAIdarr. Partner Scorecard rebuilt as AI-driven overview — filterable by Program / Rep / Partner. The Dashboard project lives in Retool and becomes rAIdarr until BI team ready for Sigma cutover. Partner Alliances Story merged. Sandler Meeting Quality Suite folded in. Tim working to get 2026 Quota numbers. <strong>Jun 30 update:</strong> Channel Performance Dashboard POC built + shared with Tim. Tim pumping brakes — Retool v4+ upgrade + underpinnings must stabilize first. <strong>Jul 2 update:</strong> next.retool.com hit v4 — MCP access installed, migration now moving faster than planned. Nick's vote: v2 lands sooner than expected, so v1's RepScorecard AI bug is being deferred rather than patched (pending Ben sign-off) — see backlog note below. <strong>Jul 7 update:</strong> First internal demo delivered to Michael Cruz — kept deliberately stealth, no mid-year presentation planned. Deployment target decided: Salesforce iframe pointing at Retool Next app (currently VPN-gated, untested outside VPN). aiSandlerGaps prompt upgraded to structured JSON scoring + [[NEEDS INPUT]] guardrail (see apps/rAIdar v2/RETOOL-SANDLER-SCORING-UPGRADE.md). <strong>Jul 8 update:</strong> full security + usability audit done (apps/rAIdar v2/SECURITY-USABILITY-AUDIT.md). Access model decided — <strong>aggregates shared, individuals private</strong>: reps see % attainment/budget roll-ups, not each other's quota/comp. Speced as Appendix A, enforce server-side. 3 bugs verified vs prod (header attainment % denominator, Denny quota spelling, QuoteTrackerID injection cleared).</div>
+          <div class="project-next">Define rep/manager/admin group membership + confirm Retool SSO email → implement the access model (minimum-viable-privacy first) · then Monday RPM data-load job (Tim-blessed — confirm no convert emails fire) · continue v2 migration via Retool MCP</div>
           <ul class="todo-list">
-            <li class="done">rAIdarr v2 React component built (Jun 19) — Market Pulse, Pre-Call modal, Post-Call debrief, ICP Coverage, Partner tab, AI deal inspection chain. Vite preview at localhost:5173.</li>
-            <li class="done">First internal demo delivered to Michael Cruz (Jul 7) — deployment target set as SF iframe of Retool Next app</li>
-            <li class="done">aiSandlerGaps prompt upgraded to structured JSON + weighted scoring + [[NEEDS INPUT]] guardrail (Jul 7)</li>
-            <li class="done">P1 FIXED Jun 19 — aiDealInspection. Retool timeout + max_tokens resolved.</li>
-            <li class="done">Retool deployment fixed · Claude fixed in Public · AVP filter · NOCs + Take Rate live · competitors piped · Ben coaching tone added</li>
-            <li class="done">P1 FIXED Jun 24 — No loading state during 4-query AI chain in Rep Modal resolved</li>
-            <li class="done">Partner Alliances Story MVP delivered Jun 19 — merged into rAIdarr scope (Jun 25)</li>
-            <li class="done">RPM Scorecard in v1 — Tim approved folding full RPM Dashboard request into rAIdarr (Jun 25)</li>
-            <li class="done">Sandler Meeting Quality Suite — skills ready, folded into rAIdarr next-phase work</li>
-            <li class="done">Channel Performance Dashboard POC built (Jun 30) — 5-line spec from Tim's chicken scratch, shared + approved direction. Paused pending Retool v4+ upgrade.</li>
+            <li class="done">v1 shipped + stable; v2 React rewrite built; deal-inspection AI chain, loading states, AVP filter all fixed; first internal demo to Michael Cruz (Jul 7); RPM Dashboard + Partner Scorecard + Sandler MQ Suite + Alliances Story all folded in. (Full history in Completed.)</li>
+            <li><strong>NEW (Jul 8)</strong> Implement access model — aggregates shared, individuals private, enforced server-side. Blocked on group membership + SSO confirm. Minimum-viable-privacy first: gate full scorecards/quota rosters + "View as" to manager+, return own-row + aggregates to reps, stop shipping the full quota map.</li>
+            <li><strong>BUG (Jul 8, verified)</strong> Header Quota Attainment % divides this-year bookings by an unbounded ForecastingQuota SUM — wrong + inconsistent with market basis. Bound to THIS_YEAR + reconcile.</li>
+            <li><strong>BUG (Jul 8, verified)</strong> "Denny DiPasquale" misspelled in quotaData.ts (SF has "Dipasquale") → dropped from quota. One-char fix.</li>
+            <li><strong>NEW (Jul 8)</strong> Add silent-failure states — every query catches to [] and renders zeros with no indicator (dangerous for leadership metrics).</li>
             <li><strong>DEFERRED (Jul 2)</strong> RepScorecard AI (v1) not running — suspected data quality issue. Decision: skip the v1 patch, cut over to v2 once Retool Public reaches v4. Needs final go/no-go with Ben.</li>
             <li><strong>MONDAY</strong> Run RPM data-load job — Assigned_RPM__c from Account → Opportunity (Tim-blessed) → retire manual match check → update current/look-forward reports</li>
             <li><strong>P2</strong> Partner Scorecard KPI tiles — use tablePartnerCoverage.<strong>.filteredData</strong> not .data (1-word fix per tile)</li>
@@ -1071,49 +1046,9 @@
       </div>
       <div class="panel-body">
         <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ ATLAS handed to Rachel — walked through Jun 23</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ RPM Backlog — 253 opps updated, 190 in ticket (Jun 23)</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ Active Validated Partner Report built for Tim (Jun 23)</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ Orphan Contacts — 6,531 deleted (Jun 23)</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ Routing stable — partner lead incident resolved (Jun 23)</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ SF of the Future — AI feature pilot live (Jun 24), Sandler ECI + Email Insights designed</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ 238 orphan contacts updated — Missing Source + Needs Enriched → RingLead queue</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ RingLead enrichment root-caused + fixed — LEAD IS CREATED filter updated, 290 leads reprocessed, 0 failures (Jun 30)</span>
-          <span class="focus-label label-done">Done ✓</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ Orphaned contacts cleanup complete (Jun 30)</span>
-          <span class="focus-label label-done">Done ✓</span>
+          <span class="dot dot-red"></span>
+          <span class="focus-name">🔴 rAIdar access model — define rep/manager/admin group membership + confirm Retool SSO email (unblocks the privacy fixes; aggregates shared, individuals private)</span>
+          <span class="focus-label label-urgent">Urgent</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-red"></span>
@@ -1121,9 +1056,19 @@
           <span class="focus-label label-urgent">Urgent</span>
         </div>
         <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ rAIdarr first internal demo — Michael Cruz (Jul 7)</span>
-          <span class="focus-label label-done">Done ✓</span>
+          <span class="dot dot-red"></span>
+          <span class="focus-name">🔴 Deactivate 2 external SF admins (2015 / 2022)</span>
+          <span class="focus-label label-urgent">Urgent</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 Alliance partner report — internal review with Tim + Michael before it goes wider (SOQL pull ready; artifact + Retool guide done)</span>
+          <span class="focus-label label-high">High</span>
+        </div>
+        <div class="focus-row">
+          <span class="dot dot-amber"></span>
+          <span class="focus-name">🟠 rAIdar — fix verified audit bugs: header Quota Attainment % denominator, Denny quota spelling, add silent-failure states</span>
+          <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1132,18 +1077,8 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 Michael: send Nick the 3 manually-maintained dashboards to fold into rAIdarr</span>
+          <span class="focus-name">🟠 Michael: send Nick the 3 manually-maintained dashboards to fold into rAIdar</span>
           <span class="focus-label label-high">High</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-gray"></span>
-          <span class="focus-name">⏸ RepScorecard AI (v1) — fix DEFERRED, cutting to v2 instead (needs Ben sign-off)</span>
-          <span class="focus-label label-queued">Deferred</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-red"></span>
-          <span class="focus-name">🔴 Deactivate 2 external SF admins (2015 / 2022)</span>
-          <span class="focus-label label-urgent">Urgent</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1157,18 +1092,8 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 Tim reports: combined Anita report (Oppty + Account Assigned RPM) + active validated partners — for Opp true-up to Assigned_RPM__c</span>
-          <span class="focus-label label-high">High</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-amber"></span>
           <span class="focus-name">🟠 Schedule Tim/Jim/Daniel — Dashboard kickoff (OKR 1 gate)</span>
           <span class="focus-label label-high">High</span>
-        </div>
-        <div class="focus-row">
-          <span class="dot dot-green"></span>
-          <span class="focus-name">✅ ECI + Email Insights keywords entered in SF UI — live (Jun 25)</span>
-          <span class="focus-label label-done">Done ✓</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
@@ -1177,13 +1102,13 @@
         </div>
         <div class="focus-row">
           <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 rAIdarr v2 migration — accelerated via Retool MCP on next.retool.com (v4 live)</span>
+          <span class="focus-name">🟠 Formalize Q3 OKRs + present to Jim/team</span>
           <span class="focus-label label-high">High</span>
         </div>
         <div class="focus-row">
-          <span class="dot dot-amber"></span>
-          <span class="focus-name">🟠 Formalize Q3 OKRs + present to Jim/team</span>
-          <span class="focus-label label-high">High</span>
+          <span class="dot dot-gray"></span>
+          <span class="focus-name">⏸ RepScorecard AI (v1) — fix DEFERRED, cutting to v2 instead (needs Ben sign-off)</span>
+          <span class="focus-label label-queued">Deferred</span>
         </div>
         <div class="focus-row">
           <span class="dot dot-gray"></span>
@@ -1261,8 +1186,8 @@
             <tr>
               <td><div class="owner-name">Nick (You)</div><div class="owner-sub">RevOps</div></td>
               <td style="color:var(--charcoal-mid);">
-                ✓ SF of the Future pilot live — AI features activated (Jun 24)<br>
-                ✓ ECI + Email Insights Sandler keywords entered in SF UI (Jun 25)<br>
+                Define rAIdar access groups (rep/manager/admin) + confirm Retool SSO email → unblocks the privacy fixes<br>
+                Internal review of the Alliance partner report with Tim + Michael before wider share<br>
                 Migrate Pardot users off pi.com → SF Lightning interface<br>
                 Investigate Pipeline Inspection Sandler data write path<br>
                 Formalize Q3 OKRs + present to Jim/team<br>
@@ -1744,6 +1669,18 @@
       <span class="panel-title">Completed Work</span>
     </div>
     <div class="panel-body">
+
+      <div class="section-label">Jul 8 2026</div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">rAIdar Security &amp; Usability Audit <span class="status-badge badge-active">✓ Done · Jul 8</span></div>
+        <div class="project-desc">Full audit of the live rAIdar Retool app — every AI function, SF/Snowflake data function, and the frontend render layer. Ranked, fix-per-finding report at apps/rAIdar v2/SECURITY-USABILITY-AUDIT.md. Central finding: all queries run through one shared SF integration user, so app access is the only control today. 3 findings verified against prod (header attainment % denominator bug, "Denny DiPasquale" quota-drop, QuoteTrackerID injection cleared as a numeric field). Access model decided + speced (Appendix A): aggregates shared, individuals private, enforced server-side. Speced, not yet implemented — needs group membership + SSO confirm.</div>
+      </div>
+
+      <div class="project-card status-tabled">
+        <div class="project-name">Alliance Partner Coverage Report (SOQL + Artifact) <span class="status-badge badge-active">✓ Done · Jul 8</span></div>
+        <div class="project-desc">Tim's board-prep ask — accounts with an active Alliance validated partner, cross-referenced to Closed Won YTD + open pipeline. Native SF report and custom report type both hit platform walls, so delivered via a SOQL pull: 292 active Alliance-partner accounts (49 Closed Won YTD, 46 pipeline ≥10%, 7 multi-partner). Reviewable artifact + Retool wiring guide (context/Alliance-Partner-Coverage-Retool-Guide.md). Internal Tim/Nick/Michael review before wider share; live report left untouched. Caveat: account-level join over-counts — needs a real Alliance-sourced tag on Opportunity (ties to Mark B / Revy sync).</div>
+      </div>
 
       <div class="section-label">Jun 25 2026</div>
 
